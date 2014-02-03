@@ -33,6 +33,7 @@
     <key>ParentRecipe</key>
     <string>com.github.hansen-m.download.tn3270X</string>
     <key>Process</key>
+    <array>
         <dict>
             <key>Arguments</key>
             <dict>
