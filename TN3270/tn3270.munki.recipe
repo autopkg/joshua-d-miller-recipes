@@ -33,19 +33,6 @@
     <key>ParentRecipe</key>
     <string>com.github.hansen-m.download.tn3270X</string>
     <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>tn3270URLProvider</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
         <dict>
             <key>Arguments</key>
             <dict>

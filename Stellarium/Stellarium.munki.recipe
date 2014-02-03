@@ -31,11 +31,6 @@
     <key>ParentRecipe</key>
     <string>com.github.hansen-m.download.Stellarium</string>
     <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
         <dict>
             <key>Arguments</key>
             <dict>
