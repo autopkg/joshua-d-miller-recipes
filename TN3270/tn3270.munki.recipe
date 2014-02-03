@@ -12,8 +12,6 @@
         <string>Administrative</string>
         <key>NAME</key>
         <string>tn3270X</string>
-        <key>base_url</key>
-        <string>http://www.brown.edu/cis/tn3270/</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
