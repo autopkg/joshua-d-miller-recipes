@@ -34,21 +34,6 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>SourceForgeURLProvider</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%url%</string>
-                <key>filename</key>
-                <string>%NAME%.dmg</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
             <string>EndOfCheckPhase</string>
         </dict>
         <dict>
