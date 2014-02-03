@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>References</string>
+        <string>Reference</string>
         <key>NAME</key>
         <string>Mendeley Desktop</string>
     	<key>pkginfo</key>
