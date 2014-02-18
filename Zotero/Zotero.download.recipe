@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest verison of Zotero</string>
 	<key>Identifier</key>
-	<string>com.github.joshua-d-miller.download.Zotero</string>
+	<string>com.github.joshua-d-miller.download.zotero</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
