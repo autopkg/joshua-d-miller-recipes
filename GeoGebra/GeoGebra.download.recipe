@@ -35,7 +35,11 @@
                 <string>%NAME%.zip</string>
             </dict>
         </dict>
-        <dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
         	<key>Processor</key>
         	<string>Unarchiver</string>
         	<key>Arguments</key>
@@ -44,10 +48,17 @@
         		<true/>
         	</dict>
         </dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
+        <dict>
+        	<key>Processor</key>
+        	<string>DmgCreator</string>
+        	<key>Arguements</key>
+        	<dict>
+        		<key>dmg_root</key>
+        		<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+        		<key>dmg_path</key>
+        		<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+        	</dict>
+        </dict>
 	</array>
 </dict>
 </plist>
