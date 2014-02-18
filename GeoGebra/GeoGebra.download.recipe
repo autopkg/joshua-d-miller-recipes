@@ -51,7 +51,7 @@
         <dict>
         	<key>Processor</key>
         	<string>DmgCreator</string>
-        	<key>Arguements</key>
+        	<key>Arguments</key>
         	<dict>
         		<key>dmg_root</key>
         		<string>%RECIPE_CACHE_DIR%/%NAME%</string>
