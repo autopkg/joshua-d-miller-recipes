@@ -31,8 +31,8 @@
         	<string>URLDownloader</string>
         	<key>Arguments</key>
         	<dict>
-        		<key>http:%url%</key>
-        		<string></string>
+        		<key>url</key>
+        		<string>http:%url%</string>
         		<key>filename</key>
         		<string>%NAME%.dmg</string>
         	</dict>
