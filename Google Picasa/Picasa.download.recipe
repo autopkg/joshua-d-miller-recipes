@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://picasa.google.com</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://dl.google.com/photos/picasamac.*?\.dmg)</string>
+                <string>(?P&lt;url&gt;//dl.google.com/photos/picasamac.*?\.dmg)</string>
             </dict>
         </dict>
         <dict>
@@ -31,7 +31,7 @@
         	<string>URLDownloader</string>
         	<key>Arguments</key>
         	<dict>
-        		<key>%url%</key>
+        		<key>http:%url%</key>
         		<string></string>
         		<key>filename</key>
         		<string>%NAME%.dmg</string>
