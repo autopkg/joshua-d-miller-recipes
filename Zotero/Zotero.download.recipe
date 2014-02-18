@@ -34,7 +34,7 @@
         		<key>url</key>
         		<string>%url%</string>
         		<key>filename</key>
-        		<string>%NAME%.zip</string>
+        		<string>%NAME%.dmg</string>
         	</dict>
         </dict>
 		<dict>
