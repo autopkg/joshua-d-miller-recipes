@@ -28,7 +28,7 @@
         </dict>
         <dict>
         	<key>Processor</key>
-        	<sring>URLTextSearcher</sring>
+        	<string>URLTextSearcher</sring>
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
