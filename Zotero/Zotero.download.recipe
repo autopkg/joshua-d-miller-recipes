@@ -32,7 +32,7 @@
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-        		<string>http://www.zotero.org/download/%url%</string>
+        		<string>http://download.zotero.org/standalone/%url%</string>
         		<key>filename</key>
         		<string>%NAME%.zip</string>
         	</dict>
