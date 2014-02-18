@@ -44,6 +44,11 @@
             </dict>
             <key>Processor</key>
             <string>MunkiImporter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>munkiimport_appname</key>
+                <string>Picasa</string>
+            </dict>
         </dict>
     </array>
 </dict>
