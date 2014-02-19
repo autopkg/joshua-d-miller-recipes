@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of Mendeley and imports it into Munki.</string>
+    <string>Download the latest version of Box Sync and imports it into Munki.</string>
     <key>Identifier</key>
     <string>com.github.joshua-d-miller.autopkg.munki.boxsync</string>
     <key>Input</key>

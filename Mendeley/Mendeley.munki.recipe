@@ -19,7 +19,7 @@
     			<string>testing</string>
     		</array>
     		<key>description</key>
-    		<string>Mendeley is a free reference manager and academic social network that can help you organize your research, collaborate with others online, and discover the latest research. - www.mendeley.com</string>
+    		<string>Mendeley is a free reference manager and academic social network that can help you organize your research, collaborate with others online, and discover the latest research. - http://www.mendeley.com</string>
     		<key>name</key>
     		<string>%NAME%</string>
     		<key>unattended_install</key>
