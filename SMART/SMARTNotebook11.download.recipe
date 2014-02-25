@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest verison of SMART NoteBook 11</string>
+	<key>Identifier</key>
+	<string>com.github.joshua-d-miller.download.smartnotebook11</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>SMART-Tools-NoteBook</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>Process</key>
+	<array>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>http://smarttech.com/Support/Browse+Support/Download+Software</string>
+                <key>re_pattern</key>
+                <string>(?P&lt;url&gt;http://smarttech.com/us/Support/Browse\+Support/Download\+Software/Software/SMART\+Notebook\+collaborative\+learning\+software/SMART\+Notebook\+software/SMART\+Notebook\+11.*?\+Mac)</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%url%</string>
+                <key>re_pattern</key>
+                <string>(?P&lt;download&gt;http://downloads\.smarttech\.com/software/esi/.*?\/.*?\/smartesi.*?\.dmg)</string>
+            </dict>
+        </dict>
+        <dict>
+        	<key>Processor</key>
+        	<string>URLDownloader</string>
+        	<key>Arguments</key>
+        	<dict>
+        		<key>url</key>
+        		<string>%download%</string>
+        		<key>filename</key>
+        		<string>%NAME%.dmg</string>
+        	</dict>
+        </dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
