@@ -21,7 +21,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://smarttech.com/Support/Browse+Support/Download+Software</string>
+                <string>http://smarttech.com/Support/Browse+Support/Download+Admin+Software</string>
                 <key>re_pattern</key>
                 <string>(?P&lt;url&gt;http://smarttech.com/us/Support/Browse\+Support/Download\+Software/Software/SMART\+Notebook\+collaborative\+learning\+software/SMART\+Notebook\+software/SMART\+Notebook\+11.*?\+Mac)</string>
             </dict>
