@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://smarttech.com/Support/Browse+Support/Download+Admin+Software</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://smarttech.com/us/Support/Browse\+Support/Download\+Software/Software/SMART\+Notebook\+collaborative\+learning\+software/SMART\+Notebook\+software/SMART\+Notebook\+11.*?\+Mac)</string>
+                <string>(?P&lt;url&gt;http://smarttech.com/us/Support/Browse\+Support/Download\+Admin\+Software/Software/SMART\+Notebook\+collaborative\+learning\+software/SMART\+Notebook\+software/SMART\+Notebook\+11.*?\+Mac\+admin)</string>
             </dict>
         </dict>
         <dict>
@@ -34,7 +34,7 @@
                 <key>url</key>
                 <string>%url%</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;download&gt;http://downloads\.smarttech\.com/software/esi/.*?\/.*?\/smartesi.*?\.dmg)</string>
+                <string>(?P&lt;download&gt;http://downloads\.smarttech\.com/software/esi/.*?\/.*?\/smartesi.*?admin\.dmg)</string>
             </dict>
         </dict>
         <dict>
