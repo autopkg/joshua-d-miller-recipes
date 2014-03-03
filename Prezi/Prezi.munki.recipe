@@ -11,7 +11,7 @@
         <key>MUNKI_REPO_SUBDIR</key>
         <string>Productivity</string>
         <key>NAME</key>
-        <string>PreziDesktop</string>
+        <string>Prezi Desktop</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -25,6 +25,8 @@
     		<key>name</key>
     		<string>%NAME%</string>
     		<key>unattended_install</key>
+            <key>display_name</key>
+            <string>%NAME%</string>
     		<true/>
     	</dict>
     </dict>

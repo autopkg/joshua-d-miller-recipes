@@ -24,6 +24,8 @@
     		<string>Zotero - zoh-TAIR-oh - is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources. It lives right where you do your work-in the web browser itself.</string>
     		<key>name</key>
     		<string>%NAME%</string>
+            <key>display_name</key>
+            <string>%NAME%</string>
     		<key>unattended_install</key>
     		<true/>
     	</dict>

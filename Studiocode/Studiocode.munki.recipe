@@ -11,7 +11,7 @@
         <key>MUNKI_REPO_SUBDIR</key>
         <string>Media</string>
         <key>NAME</key>
-        <string>Studiocode5</string>
+        <string>Studiocode 5</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -41,6 +41,8 @@ www.studiocodegroup.com</string>
     		<key>name</key>
     		<string>%NAME%</string>
     		<key>unattended_install</key>
+            <key>display_name</key>
+            <string>%NAME%</string>
     		<true/>
     	</dict>
     </dict>

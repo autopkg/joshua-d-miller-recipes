@@ -11,7 +11,7 @@
         <key>MUNKI_REPO_SUBDIR</key>
         <string>Media</string>
         <key>NAME</key>
-        <string>Google-Picasa</string>
+        <string>Google Picasa</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>

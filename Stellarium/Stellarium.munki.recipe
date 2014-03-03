@@ -23,6 +23,8 @@
     		<key>name</key>
     		<string>%NAME%</string>
     		<key>unattended_install</key>
+            <key>display_name</key>
+            <string>%NAME%</string>
     		<true/>
     	</dict>
     </dict>
