@@ -26,6 +26,15 @@
     		<string>%NAME%</string>
     		<key>unattended_install</key>
     		<true/>
+            <key>postinstall_script</key>
+            <string>#!bin/bash
+# Install the helper tool (Credit Matt Hansen 03-05-2014)
+/bin/cp -f "/Applications/Box Sync.app/Contents/Resources/com.box.sync.bootstrapper" /Library/PrivilegedHelperTools/com.box.sync.bootstrapper
+/bin/cp -f "/Applications/Box Sync.app/Contents/Resources/com.box.sync.iconhelper" /Library/PrivilegedHelperTools/com.box.sync.iconhelper
+
+/usr/sbin/chown root:wheel /Library/PrivilegedHelperTools/com.box.sync.bootstrapper /Library/PrivilegedHelperTools/com.box.sync.iconhelper
+/bin/chmod 4755 /Library/PrivilegedHelperTools/com.box.sync.bootstrapper /Library/PrivilegedHelperTools/com.box.sync.iconhelper
+            </string>
     	</dict>
     </dict>
     <key>MinimumVersion</key>
