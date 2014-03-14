@@ -26,10 +26,14 @@
     		<string>%NAME%</string>
     		<key>unattended_install</key>
     		<true/>
+            <key>requires</key>
+            <array>
+                <string>R</string>
+            </array>
     	</dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.2.9</string>
     <key>ParentRecipe</key>
     <string>com.github.hansen-m.download.RStudio</string>
     <key>Process</key>
