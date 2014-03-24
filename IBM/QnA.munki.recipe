@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of Box Sync and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.boxsync</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>Social</string>
+        <key>NAME</key>
+        <string>Box Sync</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>display_name</key>
+            <string>Box Sync</string>
+            <key>description</key>
+            <string>Box – the single, secure solution for content access, sharing and collaboration – lets you replace a myriad of file transfer systems and unsecured, consumer-focused tools like YouSendIt and Dropbox. Bottom line: You reduce content silos, lower costs and give users the simplicity and functionality they want with the security IT requires.</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+            <key>postinstall_script</key>
+            <string>#!bin/bash
+# Install the helper tool so there is no prompt for Admin Credentials
+# Matt Hansen 03-05-2014
+/bin/cp -f "/Applications/Box Sync.app/Contents/Resources/com.box.sync.bootstrapper" /Library/PrivilegedHelperTools/com.box.sync.bootstrapper
+/bin/cp -f "/Applications/Box Sync.app/Contents/Resources/com.box.sync.iconhelper" /Library/PrivilegedHelperTools/com.box.sync.iconhelper
+
+/usr/sbin/chown root:wheel /Library/PrivilegedHelperTools/com.box.sync.bootstrapper /Library/PrivilegedHelperTools/com.box.sync.iconhelper
+/bin/chmod 4755 /Library/PrivilegedHelperTools/com.box.sync.bootstrapper /Library/PrivilegedHelperTools/com.box.sync.iconhelper
+            </string>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.hansen-m.download.boxsync</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
