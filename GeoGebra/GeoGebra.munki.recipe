@@ -20,6 +20,8 @@
     		</array>
             <key>display_name</key>
             <string>GeoGebra</string>
+            <key>category</key>
+            <string>Mathematics</string>
     		<key>description</key>
     		<string>GeoGebra (www.geogebra.org) is free dynamic mathematics software for all levels of education that brings together geometry, algebra, spreadsheets, graphing, statistics and calculus in one easy-to-use package. Interactive learning, teaching and evaluation resources created with GeoGebra can be shared and used by everyone at www.geogebratube.org.</string>
     		<key>name</key>

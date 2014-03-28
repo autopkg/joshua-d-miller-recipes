@@ -20,6 +20,8 @@
     		</array>
             <key>display_name</key>
             <string>DinoXcope</string>
+            <key>category</key>
+            <string>Science</string>
     		<key>description</key>
     		<string>This package will install the driver and software needed to use DinoXcope microscopes.  These microscopes are used for industrial inspection, health care, research, documentation, education, and more.</string>
     		<key>name</key>

@@ -20,6 +20,8 @@
     		</array>
             <key>display_name</key>
             <string>DYMO Label v.8</string>
+            <key>category</key>
+            <string>Printer and Scanner Software</string>
     		<key>description</key>
     		<string>Print one label or hundreds, with ease... With DYMO Label v.8 software and your DYMO LabelWriter printer, you'll design and print impressive labels that look exactly the way you want them to look - without the waste and hassle of sheet labels.</string>
     		<key>name</key>
