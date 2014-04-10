@@ -27,16 +27,16 @@
             # Mircosoft Word 2011 Plugin for Mendeley
             # Last Updated April 10, 2014 - Joshua D. Miller
             # Set Permissions to allow the Mendeley Word Plugin to Install
-            chmod o+w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
+            [ -e /Applications/Microsoft\ Office\ 2011/ ] &amp;&amp; chmod o+w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
             </string>
             <key>postuninstall_script</key>
             <string>#!/bin/bash
             # Uninstall Script for Word Plugin for Mendeley
             # Last Updated April 10, 2014 - Joshua D. Miller
             # Remove the Mendeley Template file
-            rm /Applications/Microsoft\ Office\ 2011/Office/Startup/Word/Mendeley.dot
+            [ -e /Applications/Microsoft\ Office\ 2011/Office/Word/Startup/Mendeley.dot ] &amp;&amp; rm /Applications/Microsoft\ Office\ 2011/Office/Startup/Word/Mendeley.dot
             # Restore Permissions on the folder /Applications/Microsoft Office 2011/Office/Startup/Word/
-            chmod o-w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
+            [ -e /Applications/Microsoft\ Office\ 2011/ ] &amp;&amp; chmod o-w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
             </string>
     		<key>unattended_install</key>
     		<true/>
