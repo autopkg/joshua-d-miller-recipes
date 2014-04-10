@@ -22,6 +22,22 @@
     		<string>Mendeley is a free reference manager and academic social network that can help you organize your research, collaborate with others online, and discover the latest research. - http://www.mendeley.com</string>
     		<key>name</key>
     		<string>%NAME%</string>
+            <key>postinstall_script</key>
+            <string>#!/bin/bash
+            # Mircosoft Word 2011 Plugin for Mendeley
+            # Last Updated April 10, 2014 - Joshua D. Miller
+            # Set Permissions to allow the Mendeley Word Plugin to Install
+            chmod o+w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
+            </string>
+            <key>postuninstall_script</key>
+            <string>#!/bin/bash
+            # Uninstall Script for Word Plugin for Mendeley
+            # Last Updated April 10, 2014 - Joshua D. Miller
+            # Remove the Mendeley Template file
+            rm /Applications/Microsoft\ Office\ 2011/Office/Startup/Word/Mendeley.dot
+            # Restore Permissions on the folder /Applications/Microsoft Office 2011/Office/Startup/Word/
+            chmod o-w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
+            </string>
     		<key>unattended_install</key>
     		<true/>
     	</dict>
