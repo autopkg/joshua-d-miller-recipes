@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of Exceed onDemand Client and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.exceedondemandclient</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>Admin</string>
+        <key>NAME</key>
+        <string>Exceed onDemand Client</string>
+    	<key>pkginfo</key>
+    	<dict>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
+            <key>display_name</key>
+            <string>Excced onDemand Client</string>
+            <key>category</key>
+            <string></string>
+    		<key>description</key>
+    		<string>Exceed onDemand is a commercial software product that allows a high-fidelity graphical connection to be made to a remove system by means of a dedicated display server. Each Hammer system has such a server running, thus allowing a connection to be made. Remote Desktop connections present users with a familiar desktop GUI and do not require manual configuration of an SSH client. The remote GUI applications may be presented as a self-contained remote desktop with its own window management (similar to Remote Desktop) or may be seamlessly integrated into the users existing desktop.</string>
+    		<key>name</key>
+    		<string>%NAME%</string>
+    		<key>unattended_install</key>
+    		<true/>
+            <key>requires</key>
+            <array>
+                <string>XQuartz</string>
+            </array>
+    	</dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>ParentRecipe</key>
+    <string>com.github.hansen-m.download.exceedondemandclient</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
