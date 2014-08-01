@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of Adobe Digital Editions and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.AdobeDigitalEditions</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>Reference</string>
+        <key>NAME</key>
+        <string>Adobe Digital Editions</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>display_name</key>
+            <string>Adobe Digital Editions</string>
+            <key>description</key>
+            <string>Adobe Digital Editions software offers an engaging way to view and manage eBooks and other digital publications. Use it to download and purchase digital content, which can be read both online and offline. Transfer copy-protected eBooks from your personal computer to other computers or devices. Organize your eBooks into a custom library and annotate pages. Digital Editions also supports industry-standard eBook formats, including PDF/A and EPUB.</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>ParentRecipe</key>
+    <string>com.github.hansen-m.download.AdobeDigitalEditions</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>source</key>
+                <string>%RECIPE_CACHE_DIR%/AdobeDigitalEditions.dmg</string>
+                <key>target</key>
+                <string>%RECIPE_CACHE_DIR%/Adobe Digital Editions.dmg</string>
+            </dict>
+            <key>Processor</key>
+            <string>FileMover</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
