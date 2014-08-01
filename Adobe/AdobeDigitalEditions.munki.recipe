@@ -37,17 +37,6 @@
         <dict>
             <key>Arguments</key>
             <dict>
-                <key>source</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/Adobe Digital Editions.dmg</string>
-                <key>target</key>
-                <string>%RECIPE_CACHE_DIR%/Adobe Digital Editions.dmg</string>
-            </dict>
-            <key>Processor</key>
-            <string>FileMover</string>
-        </dict>
-        <dict>
-            <key>Arguments</key>
-            <dict>
                 <key>pkg_path</key>
                 <string>%pathname%</string>
                 <key>repo_subdirectory</key>
