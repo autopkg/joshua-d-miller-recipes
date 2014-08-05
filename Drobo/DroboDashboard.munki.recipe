@@ -71,6 +71,17 @@ exit 0
         <dict>
             <key>Arguments</key>
             <dict>
+                <key>path_list</key>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/Drobo_Dashboard_Installer_%version%.pkg</string>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
                 <key>source</key>
                 <string>%RECIPE_CACHE_DIR%/Drobo_Dashboard_Installer.pkg</string>
                 <key>target</key>
