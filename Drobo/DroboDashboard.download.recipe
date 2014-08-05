@@ -30,7 +30,7 @@
                     <string>%USER_AGENT%</string>
                 </dict>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://files\.drobo\.com/webrelease/dashboard/Drobo-Dashboard.*?\.dmg)</string>
+                <string>(?P&lt;url&gt;http://files\.drobo\.com/webrelease/dashboard/Drobo-Dashboard.(?P&lt;version&gt;.*?)\.dmg)</string>
             </dict>
         </dict>
         <dict>
