@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Peripherals</string>
+            <key>developer</key>
+            <string>DYMO</string>
             <key>display_name</key>
             <string>DYMO Label v.8</string>
             <key>category</key>

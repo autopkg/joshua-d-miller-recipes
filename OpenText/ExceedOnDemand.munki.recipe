@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Social</string>
+            <key>developer</key>
+            <string>OpenText Connectivity Solutions Group</string>
             <key>display_name</key>
             <string>Excced onDemand Client</string>
             <key>category</key>

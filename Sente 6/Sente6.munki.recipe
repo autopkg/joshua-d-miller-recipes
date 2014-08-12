@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Reference</string>
+            <key>developer</key>
+            <string>Third Street Software Inc.</string>
             <key>display_name</key>
             <string>Sente 6</string>
     		<key>description</key>

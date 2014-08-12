@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Science</string>
+            <key>developer</key>
+            <string>Stellarium Development Team</string>
     		<key>description</key>
     		<string>Stellarium is a free open source planetarium for your computer. It shows a realistic sky in 3D, just like what you see with the naked eye, binoculars or a telescope.</string>
     		<key>name</key>

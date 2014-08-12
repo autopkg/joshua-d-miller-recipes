@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Productivity</string>
+            <key>developer</key>
+            <string>Prezi</string>
             <key>display_name</key>
             <string>Prezi Desktop</string>
     		<key>description</key>

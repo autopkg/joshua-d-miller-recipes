@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Peripherals</string>
+            <key>developer</key>
+            <string>Logitech International S.A.</string>
             <key>display_name</key>
             <string>Logitech Preference Manager</string>
             <key>RestartAction</key>

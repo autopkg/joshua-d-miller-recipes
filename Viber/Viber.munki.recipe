@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Social</string>
+            <key>developer</key>
+            <string>Viber Media</string>
             <key>display_name</key>
             <string>Viber</string>
     		<key>description</key>

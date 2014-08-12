@@ -18,6 +18,10 @@
             <array>
                 <string>testing</string>
             </array>
+            <key>category</key>
+            <string>Web Plugins</string>
+            <key>developer</key>
+            <string>Google Inc.</string>
             <key>display_name</key>
             <string>Google Voice and Video PlugIn</string>
             <key>description</key>

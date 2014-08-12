@@ -21,7 +21,9 @@
             <key>display_name</key>
             <string>Box Sync</string>
             <key>category</key>
-            <string>File Sharing</string>
+            <string>Social</string>
+            <key>developer</key>
+            <string>Box</string>
             <key>description</key>
             <string>Box – the single, secure solution for content access, sharing and collaboration – lets you replace a myriad of file transfer systems and unsecured, consumer-focused tools like YouSendIt and Dropbox. Bottom line: You reduce content silos, lower costs and give users the simplicity and functionality they want with the security IT requires.</string>
             <key>name</key>

@@ -18,6 +18,10 @@
             <array>
                 <string>testing</string>
             </array>
+            <key>category</key>
+            <string>Reference</string>
+            <key>developer</key>
+            <string>Adobe Systems Inc.</string>
             <key>display_name</key>
             <string>Adobe Digital Editions</string>
             <key>description</key>

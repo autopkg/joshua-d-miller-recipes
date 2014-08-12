@@ -20,6 +20,10 @@
     		</array>
             <key>display_name</key>
             <string>Drobo Dashboard</string>
+            <key>category</key>
+            <string>Administrative Tools</string>
+            <key>developer</key>
+            <string>Drobo, Inc.</string>
     		<key>description</key>
     		<string>Mac Installer for the Drobo Dashboard Application.  This will allow users to access their Drobo Firewire storage or NAS.</string>
     		<key>name</key>

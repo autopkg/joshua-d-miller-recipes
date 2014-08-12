@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Administrative Tools</string>
+            <key>developer</key>
+            <string>Peter DiCamillo</string>
     		<key>description</key>
     		<string>Brown TN3720 is designed for Macintosh users who have an account on a remote host that requires 3270 terminal emulation. Typically at Penn State, TN3720 is used to connect to the IBM mainframe maintained by AIS. Generally, it is used to connect to a VM- or MVS-based host from a Macintosh, providing the capability to login to a remote host, so that the Mac can function as a terminal connected to that host. Note that in most cases, users will need an account in order to connect to a machine. To connect to a UNIX system or computers, users can use SSH or an SSH-based client rather than TN3270. - http://ais.its.psu.edu/support/mainframe_mac.asp</string>
     		<key>name</key>

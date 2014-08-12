@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Media</string>
+            <key>developer</key>
+            <string>Techsmith</string>
             <key>display_name</key>
             <string>Jing</string>
     		<key>description</key>

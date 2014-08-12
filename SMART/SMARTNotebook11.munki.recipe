@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Productivity</string>
+            <key>developer</key>
+            <string>SMART Technologies</string>
             <key>display_name</key>
             <string>SMART Board Tools + Notebook</string>
             <key>postinstall_script</key>

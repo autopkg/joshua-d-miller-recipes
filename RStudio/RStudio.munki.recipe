@@ -18,6 +18,10 @@
     		<array>
     			<string>testing</string>
     		</array>
+            <key>category</key>
+            <string>Mathematics</string>
+            <key>developer</key>
+            <string>RStudio</string>
             <key>display_name</key>
             <string>RStudio</string>
     		<key>description</key>
