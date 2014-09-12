@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://www.logitech.com/en-us/support/preference-manager?section=downloads&amp;osid=43</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;)http://www.logitech.com/pub/techsupport/keyboards/.*?\.zip</string>
+                <string>(?P&lt;url&gt;http://www.logitech.com/pub/techsupport/keyboards/LogiMgr.*?\.zip)</string>
             </dict>
         </dict>
         <dict>
