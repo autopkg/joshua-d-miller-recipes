@@ -21,9 +21,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.logitech.com/en-us/support/preference-manager</string>
+                <string>http://www.logitech.com/en-us/support/preference-manager?section=downloads&osid=43</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://www.logitech.com/pub/techsupport/keyboards/LogiMgr.*?\.zip)</string>
+                <string>(?P&lt;url&gt;)http://www.logitech.com/pub/techsupport/keyboards/.*?\.zip</string>
             </dict>
         </dict>
         <dict>
