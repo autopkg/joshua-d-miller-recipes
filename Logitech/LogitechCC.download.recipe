@@ -21,7 +21,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.logitech.com/en-us/support/3129?section=downloads&amp;bit=&amp;osid=35</string>
+                <string>https://support.logitech.com/en_us/software/logitech-control-center-for-macintosh-os-x</string>
                 <key>re_pattern</key>
                 <string>(?P&lt;url&gt;http://www.logitech.com/pub/techsupport/mouse/mac/lcc.*?\.zip)</string>
             </dict>
