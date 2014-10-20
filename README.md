@@ -12,7 +12,4 @@ Known Issues:
 
 DYMO LabelMaker: The DYMO recipe works fine and imports into Munki fine however some of the PKG receipts written out to the PKGInfo do not install properly thus users are prompted to reinstall.  Remove these PKG receipts before placing into production as a workaround to resolve the issue:
 
-com.dymo.dls.uninstall
-com.dymo.dls.npapi.addin.105
-com.dymo.drivers
-com.dymo.cups.leopard
+com.dymo.dls.uninstall - com.dymo.dls.npapi.addin.105 - com.dymo.drivers - com.dymo.cups.leopard
