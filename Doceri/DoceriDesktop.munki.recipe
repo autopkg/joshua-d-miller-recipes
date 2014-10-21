@@ -11,7 +11,7 @@
         <key>MUNKI_REPO_SUBDIR</key>
         <string>Productivity</string>
         <key>NAME</key>
-        <string>Doceri</string>
+        <string>Doceri Desktop</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -19,9 +19,9 @@
                 <string>testing</string>
             </array>
             <key>display_name</key>
-            <string>Doceri</string>
+            <string>Doceri Desktop</string>
             <key>category</key>
-            <string>Social</string>
+            <string>Productivity</string>
             <key>developer</key>
             <string>SP Controls, Inc.</string>
             <key>description</key>
@@ -41,8 +41,39 @@
         <dict>
             <key>Arguments</key>
             <dict>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <key>purge_destination</key>
+                <true/>
+            </dict>
+            <key>Processor</key>
+            <string>Unarchiver</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pattern</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/*.dmg</string>
+            </dict>
+            <key>Processor</key>
+            <string>FileFinder</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>source</key>
+                <string>%found_filename%</string>
+                <key>target</key>
+                <string>%RECIPE_CACHE_DIR%/Doceri Desktop.dmg</string>
+            </dict>
+            <key>Processor</key>
+            <string>FileMover</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
                 <key>pkg_path</key>
-                <string>%pathname%</string>
+                <string>%RECIPE_CACHE_DIR%/Doceri Desktop.dmg</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
