@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of Samsung Kies and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.kies</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>Media</string>
+        <key>NAME</key>
+        <string>Samsung Kies</string>
+    	<key>pkginfo</key>
+    	<dict>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
+            <key>display_name</key>
+            <string>Samsung Kies</string>
+            <key>category</key>
+            <string>Media</string>
+            <key>developer</key>
+            <string>Samsung</string>
+    		<key>description</key>
+    		<string>Samsung Kies is a freeware software application used to communicate between Windows or Macintosh operating systems, and more recently manufactured Samsung mobile phone and tablet computer devices, usually using a USB cable connection (though wireless LAN Kies connectivity is now possible using some devices).</string>
+    		<key>name</key>
+    		<string>%NAME%</string>
+    		<key>unattended_install</key>
+    		<true/>
+    	</dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.3.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.joshua-d-miller.download.kies</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
