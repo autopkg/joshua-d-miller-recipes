@@ -29,6 +29,7 @@
                 <key>re_pattern</key>
                 <string>(?P&lt;url&gt;http://downloadcenter\.samsung\.com/content/SW/*.?/.*?/KiesMacSetup\.dmg)</string>
             </dict>
+        </dict>
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
