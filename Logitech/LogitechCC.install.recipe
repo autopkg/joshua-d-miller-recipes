@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Installs the current release version of MSLync.</string>
+    <string>Installs the current release version of Logitech Control Center.</string>
     <key>Identifier</key>
     <string>com.github.joshua-d-miller.install.logitechcc</string>
     <key>Input</key>
