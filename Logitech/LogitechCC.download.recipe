@@ -2,19 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Description</key>
-	<string>Downloads the latest verison of Logitech Control Center</string>
-	<key>Identifier</key>
-	<string>com.github.joshua-d-miller.download.logitechcc</string>
-	<key>Input</key>
-	<dict>
-		<key>NAME</key>
-		<string>LogiCntr</string>
-	</dict>
-	<key>MinimumVersion</key>
-	<string>0.2.9</string>
-	<key>Process</key>
-	<array>
+    <key>Description</key>
+    <string>Downloads the latest verison of Logitech Control Center</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.download.logitechcc</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>LogiCntr</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.3.1</string>
+    <key>Process</key>
+    <array>
         <dict>
             <key>Processor</key>
             <string>URLTextSearcher</string>
@@ -27,15 +27,15 @@
             </dict>
         </dict>
         <dict>
-        	<key>Processor</key>
-        	<string>URLDownloader</string>
-        	<key>Arguments</key>
-        	<dict>
-        		<key>url</key>
-        		<string>%url%</string>
-        		<key>filename</key>
-        		<string>%NAME%.zip</string>
-        	</dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%url%</string>
+                <key>filename</key>
+                <string>%NAME%.zip</string>
+            </dict>
         </dict>
         <dict>
             <key>Processor</key>
@@ -70,10 +70,25 @@
                 </array>
             </dict>
         </dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
-	</array>
+    <dict>
+        <key>Processor</key>
+        <string>EndOfCheckPhase</string>
+    </dict>
+    <dict>
+        <key>Processor</key>
+        <string>CodeSignatureVerifier</string>
+        <key>Arguments</key>
+        <dict>
+            <key>input_path</key>
+            <string>%RECIPE_CACHE_DIR%/Logitech Control Center.mpkg</string>
+            <key>expected_authority_names</key>
+            <array>
+                <string>Developer ID Installer: Logitech Inc.</string>
+                <string>Developer ID Certification Authority</string>
+                <string>Apple Root CA</string>
+            </array>
+        </dict>
+    </dict>
+  </array>
 </dict>
 </plist>
