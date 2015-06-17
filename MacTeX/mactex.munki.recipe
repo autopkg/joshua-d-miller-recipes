@@ -33,14 +33,30 @@
             <string>%NAME%</string>
     		<key>unattended_install</key>
     		<true/>
+            <key>postuninstall_script</key>
+            <string>#!/bin/bash
+            /bin/rm -rf /Applications/TeX
+            </string>
     	</dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.1</string>
+    <string>0.3.0</string>
     <key>ParentRecipe</key>
     <string>com.github.joshua-d-miller.download.MacTeX</string>
     <key>Process</key>
     <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>additional_pkginfo</key>
+                <dict>
+                    <key>version</key>
+                    <string>%version%</string>
+                </dict>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
         <dict>
             <key>Arguments</key>
             <dict>
