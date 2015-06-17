@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of Logitech Control Center and imports it into Munki.</string>
+    <string>Download the latest version of Logitech Options (Bluetooth and USB) and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.autopkg.munki.logitechcc</string>
+    <string>com.github.joshua-d-miller.autopkg.munki.logitechoptions</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>Setup</string>
         <key>NAME</key>
-        <string>Logitech Control Center</string>
+        <string>Logitech Options</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -23,11 +23,11 @@
             <key>developer</key>
             <string>Logitech International S.A.</string>
             <key>display_name</key>
-            <string>Logitech Control Manager</string>
+            <string>Logitech Options</string>
             <key>RestartAction</key>
             <string>RequireRestart</string>
     		<key>description</key>
-    		<string>Logitech Control Center will allow the user to control all of their USB Logitech Accessories using an easy to use System Preference Pane.</string>
+    		<string>Logitech Options lets you customize gesture controls for Logitech touch products. It also adds enhanced key functions for Logitech keyboards, and notification for device-specific status features such as battery level, key backlighting level, and Caps Lock.</string>
     		<key>name</key>
     		<string>%NAME%</string>
             <key>display_name</key>
@@ -39,14 +39,14 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.download.logitechcc</string>
+    <string>com.github.joshua-d-miller.download.logitechoptions</string>
     <key>Process</key>
     <array>
         <dict>
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/Logitech Control Center.mpkg</string>
+                <string>%RECIPE_CACHE_DIR%/Logitech Options.mpkg</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>

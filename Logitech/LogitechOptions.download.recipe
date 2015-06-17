@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest verison of Logitech Preference Manager</string>
+	<string>Downloads the latest verison of Logitech Options (Bluetooth and USB)</string>
 	<key>Identifier</key>
-	<string>com.github.joshua-d-miller.download.logitechpm</string>
+	<string>com.github.joshua-d-miller.download.logitechoptions</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -21,9 +21,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://support.logitech.com/software/preference-manager</string>
+                <string>http://support.logitech.com/en_us/software/options-mac</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://www\.logitech\.com/pub/techsupport/keyboards/LogiMgr.*?\.zip)</string>
+                <string>(?P&lt;url&gt;http://www\.logitech\.com/pub/techsupport/options/Options.*?\.zip)</string>
             </dict>
         </dict>
         <dict>
@@ -56,7 +56,7 @@
                 <key>source</key>
                 <string>%RECIPE_CACHE_DIR%/LogiMgr/LogiMgr Installer.app/Contents/Resources/LogiMgr.mpkg</string>
                 <key>target</key>
-                <string>%RECIPE_CACHE_DIR%/Logitech Preference Manager.mpkg</string>
+                <string>%RECIPE_CACHE_DIR%/Logitech Options.mpkg</string>
             </dict>
         </dict>
         <dict>
