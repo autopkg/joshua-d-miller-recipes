@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>com.github.joshua-d-miller.autopkg.munki.boxedit</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>Social</string>
+		<key>NAME</key>
+		<string>Box Edit</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>Box Edit is an add-on feature that allows you to edit or create files directly on Box. Designed for all file types, browsers, and platforms, Box Edit uses the default application installed on your computer to edit or create simple and centralized content: DOC files open in Microsoft Word, PPT files open in Microsoft PowerPoint, images open in Photoshop (if installed), CAD files open in AutoCAD, and so forth.</string>
+			<key>display_name</key>
+			<string>Box Edit</string>
+			<key>category</key>
+			<string>Social</string>
+			<key>developer</key>
+			<string>Box</string>
+			<key>minimum_os_version</key>
+			<string>10.7</string>
+			<key>name</key>
+			<string>%NAME%</string>
+      <key>postinstall_script</key>
+      <string>#!/bin/bash
+# This script will create the LaunchAgent and script needed
+# to make this application somewhat enterprise ready - Joshua D. Miller 
+# josh@psu.edu - July 22, 2015 - The Pennsylvania State University
+
+# Check if College of Education Script Directory exists and if not make it
+/bin/test -d /Library/Scripts/EDUC || /bin/mkdir /Library/Scripts/EDUC
+
+# Create Box Edit Fix Script if it doesn't exist
+if [ ! -e "/Library/Scripts/EDUC/Box Edit" ]
+then
+  /bin/echo "#!/bin/bash
+# This simple bash script runs at login and determines if Box is Running
+# If not it will launch it and remove the user login agents it attempts to
+# create.  Used with the login agent - Joshua D. Miller - josh@psu.edu
+# July 22, 2015 - They Pennsylvania State University
+if /bin/ps -ax | /usr/bin/grep \"Box Edit\" | /usr/bin/grep -v grep | /usr/bin/grep -v bash
+then
+  if /usr/bin/osascript -e 'tell application \"System Events\" to get the name of login items whose name contains \"Box Edit\"'
+  then
+    /usr/bin/osascript -e 'tell application \"System Events\" to delete login item \"Box Edit\"'
+    /usr/bin/osascript -e 'tell application \"System Events\" to delete login item \"Box Local Com Server\"'
+  else
+    exit 0
+  fi
+else
+  /usr/bin/open \"/Library/Application Support/Box/Box Edit/Box Edit.app\"
+  /bin/sleep 5
+  if /usr/bin/osascript -e 'tell application \"System Events\" to get the name of login items whose name contains \"Box Edit\"'
+  then
+    /usr/bin/osascript -e 'tell application \"System Events\" to delete login item \"Box Edit\"'
+    /usr/bin/osascript -e 'tell application \"System Events\" to delete login item \"Box Local Com Server\"'
+  else
+    exit 0
+  fi
+fi
+  " &gt; "/Library/Scripts/EDUC/Box Edit"
+else
+  /bin/echo "Script exists.  Creation not needed."
+fi
+
+# Set Box Edit Script as Executable
+/bin/chmod 755 "/Library/Scripts/EDUC/Box Edit"
+
+# Create Box Edit LaunchAgent
+if [ ! -e /Library/LaunchAgents/edu.psu.educ.boxedit.plist ]
+then
+  /bin/echo "&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+  &lt;key&gt;KeepAlive&lt;/key&gt;
+  &lt;false/&gt;
+  &lt;key&gt;Label&lt;/key&gt;
+  &lt;string&gt;edu.psu.educ.boxedit&lt;/string&gt;
+  &lt;key&gt;ProgramArguments&lt;/key&gt;
+  &lt;array&gt;
+    &lt;string&gt;/Library/Scripts/EDUC/Box Edit&lt;/string&gt;
+  &lt;/array&gt;
+  &lt;key&gt;RunAtLoad&lt;/key&gt;
+  &lt;true/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+  " &gt; /Library/LaunchAgents/edu.psu.educ.boxedit.plist
+else
+  /bin/echo "LaunchAgent exists.  Creation not needed."
+fi
+
+exit 0
+      </string>
+      <key>postuninstall_script</key>
+      <string>#!/bin/bash
+# This script will remove all the pieces of Box Edit that were
+# installed - Joshua D. Miller - josh@psu.edu - July 22, 2015
+# The Pennsylvania State University
+# Remove LaunchAgent
+if [ -e "/Library/LaunchAgents/edu.psu.educ.boxedit.plist" ]
+then
+  /bin/rm -f "/Library/LaunchAgents/edu.psu.edu.boxedit.plist"
+else
+  echo "LaunchAgent not installed.  Continuing..."
+fi
+
+# Remove Script
+if [ -e "/Library/Scripts/EDUC/BoxEdit" ]
+then
+  /bin/rm -f "/Library/Scripts/EDUC/BoxEdit"
+else
+  /bin/echo "Script not installed.  Continuing..."
+fi
+
+# Remove EDUC Directory if empty
+if /usr/bin/find /Library/Scripts/EDUC -maxdepth 0 -empty | read;
+then
+  /bin/rm -rf /Library/Scripts/EDUC
+else
+  /bin/echo "Directory not empty.  Continuing..."
+fi
+
+# Remove Box Edit Directory from /Library/Application Support
+/bin/rm -rf "/Library/Application Support/Box/Box Edit"
+if /usr/bin/find "/Library/Application Support/Box" -maxdepth 0 -empty | read;
+then
+  /bin/rm -rf "/Library/Application Support/Box"
+else
+  /bin/echo "Directory not empty.  Continuing..."
+fi
+      </string>
+      <key>preinstall_script</key>
+      <string>#!/bin/bash
+# This preinstall script will basically do what the Box
+# Edit Installer Application does and remove the remnants
+# of version 1.0+ - Joshua D. Miller - josh@psu.edu
+# July 22, 2015 - The Pennsylvania State University
+
+# Remove Box Edit Internet Plugin file
+if [ -e "/Library/Internet Plugins/Box Edit.plugin" ]
+then
+  /bin/rm -rf "/Library/Internet Plugins/Box Edit.plugin"
+else
+  /bin/echo "Plugin Not Present.  Continuing..."
+fi
+
+# Remove old Box Edit application
+if [ -e "/Applications/Box Edit.app" ]
+then
+  /bin/rm -rf "/Applications/Box Edit.app"
+else
+  /bin/echo "Old Version not present.  Continuing..."
+fi
+
+# If the new Box Edit application is running stop it
+if /bin/ps -ax | /usr/bin/grep "Box Edit" | grep -v grep
+then
+  /usr/bin/killall "Box Edit"
+  /usr/bin/killall "Box Local Com Server"
+else
+  /bin/echo "Box Edit is not running.  Proceeding with Install..."
+fi
+      </string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+  <key>MinimumVersion</key>
+  <string>0.2.9</string>
+	<key>ParentRecipe</key>
+	<string>com.github.hansen-m.download.boxedit</string>
+  <key>Process</key>
+  <array>
+      <dict>
+          <key>Processor</key>
+          <string>Versioner</string>
+          <key>Arguments</key>
+          <dict>
+              <key>input_plist_path</key>
+              <string>%pathname%/Install Box Edit.app/Contents/Resources/Box Edit.app/Contents/Info.plist</string>
+              <key>plist_version_key</key>
+              <string>CFBundleVersion</string>
+          </dict>
+      </dict>
+      <dict>
+        <key>Processor</key>
+        <string>MunkiPkginfoMerger</string>
+        <key>Arguments</key>
+        <dict>
+          <key>additional_pkginfo</key>
+          <dict>
+              <key>installs</key>
+              <array>
+                  <dict>
+                      <key>CFBundleIdentifier</key>
+                      <string>box.com.Box-Edit</string>
+                      <key>CFBundleName</key>
+                      <string>Box Edit</string>
+                      <key>CFBundleVersion</key>
+                      <string>%version%</string>
+                      <key>CFBundleShortVersionString</key>
+                      <string>%version%</string>
+                      <key>minosversion</key>
+                      <string>10.6</string>
+                      <key>path</key>
+                      <string>/Library/Application Support/Box/Box Edit/Box Edit.app</string>
+                      <key>type</key>
+                      <string>application</string>
+                      <key>version_comparison_key</key>
+                      <string>CFBundleVersion</string>
+                  </dict>
+                  <dict>
+                      <key>CFBundleIdentifier</key>
+                      <string>com.box.Box-Local-Com-Server</string>
+                      <key>CFBundleName</key>
+                      <string>Box Local Com Server</string>
+                      <key>CFBundleVersion</key>
+                      <string>%version%</string>
+                      <key>CFBundleShortVersionString</key>
+                      <string>%version%</string>
+                      <key>minosversion</key>
+                      <string>10.6</string>
+                      <key>path</key>
+                      <string>/Library/Application Support/Box/Box Edit/Box Local Com Server.app</string>
+                      <key>type</key>
+                      <string>application</string>
+                      <key>version_comparison_key</key>
+                      <string>CFBundleVersion</string>
+                  </dict>
+              </array>
+          </dict>
+        </dict>
+      </dict>
+      <dict>
+          <key>Processor</key>
+          <string>MunkiPkginfoMerger</string>
+          <key>Arguments</key>
+          <dict>
+              <key>additional_pkginfo</key>
+              <dict>
+                  <key>items_to_copy</key>
+                  <array>
+                  	<dict>
+                  		<key>destination_path</key>
+                  		<string>/Library/Application Support/Box/Box Edit</string>
+                  		<key>source_item</key>
+                  		<string>Install Box Edit.app/Contents/Resources/Box Edit.app</string>
+                  	</dict>
+                  	<dict>
+                  		<key>destination_path</key>
+                  		<string>/Library/Application Support/Box/Box Edit</string>
+                  		<key>source_item</key>
+                  		<string>Install Box Edit.app/Contents/Resources/Box Local Com Server.app</string>
+                  	</dict>
+                  </array>
+              </dict>
+          </dict>
+      </dict>
+      <dict>
+        <key>Processor</key>
+        <string>MunkiImporter</string>
+        <key>Arguments</key>
+        <dict>
+          <key>pkg_path</key>
+          <string>%pathname%</string>
+          <key>repo_subdirectory</key>
+          <string>%MUNKI_REPO_SUBDIR%</string>
+          <key>additional_makepkginfo_options</key>
+          <array>
+              <string>--item=Install Box Edit.app/Contents/Resources/Box Edit.app</string>
+              <string>--destinationpath=/Library/Application Support/Box/Box Edit.app</string>
+          </array>
+        </dict>
+      </dict>
+  </array>
+</dict>
+</plist>
