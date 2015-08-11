@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of Amazon Music and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.AmazonMusic</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>Media</string>
+        <key>NAME</key>
+        <string>Amazon Music</string>
+    	<key>pkginfo</key>
+    	<dict>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
+            <key>category</key>
+            <string>Media</string>
+            <key>developer</key>
+            <string>Amazon</string>
+            <key>display_name</key>
+            <string>Amazon Music</string>
+    		<key>description</key>
+    		<string>Amazon Music (previously Amazon MP3) is an online music store and music locker operated by Amazon.com.</string>
+    		<key>name</key>
+    		<string>%NAME%</string>
+            <key>display_name</key>
+            <string>%NAME%</string>
+    		<key>unattended_install</key>
+    		<true/>
+            <key>postinstall_script</key>
+            <string>#!/bin/bash
+/bin/sh "/private/tmp/Amazon Music Installer.app/Contents/MacOS/installbuilder.sh" --unattendedmodeui none
+        </string>
+    	</dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>ParentRecipe</key>
+    <string>com.github.hansen-m.download.AmazonMusic</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/Amazon Music Installer.app/Contents/Info.plist</string>
+                <key>plist_version_key</key>
+                <string>CFBundleVersion</string>
+            </dict>
+            <key>Processor</key>
+            <string>Versioner</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>additional_pkginfo</key>
+                <dict>
+                        <key>installs</key>
+                        <array>
+                            <dict>
+                                <key>CFBundleIdentifier</key>
+                                <string>com.amazon.music</string>
+                                <key>CFBundleName</key>
+                                <string>Amazon Music</string>
+                                <key>CFBundleVersion</key>
+                                <string>%version%</string>
+                                <key>minosversion</key>
+                                <string>10.6.0</string>
+                                <key>path</key>
+                                <string>/Applications/Amazon Music.app</string>
+                                <key>type</key>
+                                <string>application</string>
+                                <key>version_comparison_key</key>
+                                <string>CFBundleVersion</string>
+                            </dict>
+                        </array>
+                        <key>items_to_copy</key>
+                        <array>
+                            <dict>
+                                <key>destination_path</key>
+                                <string>/tmp/</string>
+                                <key>source_item</key>
+                                <string>Amazon Music Installer.app</string>
+                            </dict>
+                        </array>
+                        <key>uninstall_method</key>
+                        <string>uninstall_script</string>
+                        <key>uninstall_script</key>
+                        <string>#!/bin/bash
+/usr/bin/killall "Amazon Music Helper"
+/bin/rm -rf "/Applications/Amazon Music.app"
+            </string>
+                </dict>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
