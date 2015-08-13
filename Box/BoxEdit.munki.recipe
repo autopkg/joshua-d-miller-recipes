@@ -12,6 +12,8 @@
 		<string>Box Edit</string>
 		<key>pkginfo</key>
 		<dict>
+      <key>blocking_applications</key>
+      <array/>
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
@@ -73,6 +75,10 @@ fi
 # Set Box Edit Script as Executable
 /bin/chmod 755 "/Library/Scripts/EDUC/Box Edit"
 
+# Allow all users to modify the Box Edit Folder
+# This is required so that Box Edit can function from its new location
+/bin/chmod 777 -R "/Library/Application Support/Box/Box Edit/"
+
 # Create Box Edit LaunchAgent
 if [ ! -e /Library/LaunchAgents/edu.psu.educ.boxedit.plist ]
 then
@@ -99,23 +105,36 @@ fi
 
 exit 0
       </string>
+      <key>preuninstall_script</key>
+      <string>#!/bin/bash
+# Kill Box Edit Processes
+if /bin/ps -ax | /usr/bin/grep \"Box Edit\" | /usr/bin/grep -v grep | /usr/bin/grep -v bash
+then
+  /usr/bin/killall "Box Edit"
+  /usr/bin/killall "Box Local Com Server"
+else
+  /bin/echo "Processes not running.  Continuing..."
+fi
+      </string>
       <key>postuninstall_script</key>
       <string>#!/bin/bash
 # This script will remove all the pieces of Box Edit that were
 # installed - Joshua D. Miller - josh@psu.edu - July 22, 2015
 # The Pennsylvania State University
+
 # Remove LaunchAgent
 if [ -e "/Library/LaunchAgents/edu.psu.educ.boxedit.plist" ]
 then
-  /bin/rm -f "/Library/LaunchAgents/edu.psu.edu.boxedit.plist"
+  /bin/launchctl unload "/Library/LaunchAgents/edu.psu.educ.boxedit.plist"
+  /bin/rm -f "/Library/LaunchAgents/edu.psu.educ.boxedit.plist"
 else
-  echo "LaunchAgent not installed.  Continuing..."
+  /bin/echo "LaunchAgent not installed.  Continuing..."
 fi
 
 # Remove Script
 if [ -e "/Library/Scripts/EDUC/BoxEdit" ]
 then
-  /bin/rm -f "/Library/Scripts/EDUC/BoxEdit"
+  /bin/rm -f "/Library/Scripts/EDUC/Box Edit"
 else
   /bin/echo "Script not installed.  Continuing..."
 fi
@@ -145,9 +164,9 @@ fi
 # July 22, 2015 - The Pennsylvania State University
 
 # Remove Box Edit Internet Plugin file
-if [ -e "/Library/Internet Plugins/Box Edit.plugin" ]
+if [ -e "/Library/Internet Plug-Ins/Box Edit.plugin" ]
 then
-  /bin/rm -rf "/Library/Internet Plugins/Box Edit.plugin"
+  /bin/rm -rf "/Library/Internet Plug-Ins/Box Edit.plugin"
 else
   /bin/echo "Plugin Not Present.  Continuing..."
 fi
