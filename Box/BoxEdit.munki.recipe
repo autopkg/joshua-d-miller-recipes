@@ -132,7 +132,7 @@ else
 fi
 
 # Remove Script
-if [ -e "/Library/Scripts/EDUC/BoxEdit" ]
+if [ -e "/Library/Scripts/EDUC/Box Edit" ]
 then
   /bin/rm -f "/Library/Scripts/EDUC/Box Edit"
 else
