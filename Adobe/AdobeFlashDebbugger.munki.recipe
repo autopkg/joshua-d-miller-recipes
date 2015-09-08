@@ -27,7 +27,7 @@
             <key>display_name</key>
             <string>Adobe Flash Player Debug</string>
             <key>name</key>
-            <string>%NAME%</string>
+            <string>Adobe Flash Player Debug</string>
             <key>unattended_install</key>
             <true/>
         </dict>
@@ -56,8 +56,6 @@
                 <string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
-                <key>force_munkiimport</key>
-                <true />
             </dict>
             <key>Processor</key>
             <string>MunkiImporter</string>
