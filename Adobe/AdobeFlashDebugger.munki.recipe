@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of the Debug Version of Adobe Flash and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.AdobeFlashDebbugger</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Adobe Flash Player Debug</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>Utilities</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>developer</key>
+            <string>Adobe Systems Inc.</string>
+            <key>category</key>
+            <string>Web Plugins</string>
+            <key>description</key>
+            <string>Adobe® Flash® Player is a cross-platform browser-based application runtime that delivers uncompromised viewing of expressive applications, content, and videos across screens and browsers.  This installer installs the Debug version to be used with the development of Flash Applications.</string>
+            <key>display_name</key>
+            <string>Adobe Flash Player Debug</string>
+            <key>unattended_install</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.5.1</string>
+    <key>ParentRecipe</key>
+    <string>com.github.vmule.download.AdobeFlashDebugger</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>source_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/Install Adobe Flash Player Debugger.app/Contents/Resources/Adobe Flash Player Debugger.pkg</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+            </dict>
+            <key>Processor</key>
+            <string>Copier</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>flat_pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/unpack/</string>
+                <key>purge_destination</key>
+                <true />
+            </dict>
+            <key>Processor</key>
+            <string>FlatPkgUnpacker</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkgroot</key>
+                <string>%RECIPE_CACHE_DIR%/root/</string>
+                <key>pkgdirs</key>
+                <dict/>
+            </dict>
+            <key>Processor</key>
+            <string>PkgRootCreator</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>purge_destination</key>
+                <true />
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/root/</string>
+                <key>pkg_payload_path</key>
+                <string>%RECIPE_CACHE_DIR%/unpack/AdobeFlashPlayerComponent.pkg/Payload</string>
+            </dict>
+            <key>Processor</key>
+            <string>PkgPayloadUnpacker</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkgroot</key>
+                <string>%pkgroot%</string>
+                <key>finalize_script_path</key>
+                <string>%RECIPE_CACHE_DIR%/unpack/AdobeFlashPlayerComponent.pkg/Scripts</string>
+            </dict>
+            <key>Processor</key>
+            <string>AdobeFlashDmgUnpacker</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>faux_root</key>
+                <string>%RECIPE_CACHE_DIR%/root</string>
+                <key>installs_item_paths</key>
+                <array>
+                    <string>/Library/Internet Plug-Ins/Flash Player.plugin/Contents/PlugIns/FlashPlayerDebugger-10.6.plugin</string>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiInstallsItemsCreator</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+                <key>additional_makepkginfo_options</key>
+                <array>
+                    <key>name</key>
+                    <string>%NAME%</string>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
