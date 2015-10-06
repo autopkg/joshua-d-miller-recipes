@@ -21,7 +21,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.dino-lite.com/download.php</string>
+                <string>http://www.dino-lite.com/download02.php</string>
                 <key>re_pattern</key>
                 <string>support/(?P&lt;file&gt;DinoXcope_MacOSX.*?\.dmg)\.zip</string>
             </dict>
