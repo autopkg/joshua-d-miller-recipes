@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of NVivo and imports it into Munki.</string>
+    <string>Download the latest version of NVivo 11 and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.autopkg.munki.nvivo</string>
+    <string>com.github.joshua-d-miller.autopkg.munki.nvivo11</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
@@ -25,7 +25,7 @@
             <key>display_name</key>
             <string>NVivo</string>
     		<key>description</key>
-    		<string>NVivo 10 for Mac is your platform for analyzing all forms of unstructured data.  Quickly interrogate data using powerful search, query and visualization tools.  Get the big picture or get into the detail.  Uncover subtle connections, rigorously justify findings, and effortlessly share your work.</string>
+    		<string>NVivo 11 for Mac is your platform for analyzing all forms of unstructured data.  Quickly interrogate data using powerful search, query and visualization tools.  Get the big picture or get into the detail.  Uncover subtle connections, rigorously justify findings, and effortlessly share your work.</string>
     		<key>name</key>
     		<string>%NAME%</string>
             <key>display_name</key>
@@ -37,7 +37,7 @@
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.download.nvivo</string>
+    <string>com.github.joshua-d-miller.download.nvivo11</string>
     <key>Process</key>
     <array>
         <dict>

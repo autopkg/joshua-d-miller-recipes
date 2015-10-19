@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest verison of NVivo</string>
+	<string>Downloads the latest verison of NVivo 10</string>
 	<key>Identifier</key>
-	<string>com.github.joshua-d-miller.download.nvivo</string>
+	<string>com.github.joshua-d-miller.download.nvivo10</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
