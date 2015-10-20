@@ -21,9 +21,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.dino-lite.com/download02.php</string>
+                <string>http://www.dino-lite.eu/index.php/en/support/software</string>
                 <key>re_pattern</key>
-                <string>support/(?P&lt;file&gt;DinoXcope_MacOSX.*?\.dmg)\.zip</string>
+                <string>images/downloads/(?P&lt;file&gt;DinoXcope_MacOSX.*?\.dmg)\.zip</string>
             </dict>
         </dict>
         <dict>
@@ -32,7 +32,7 @@
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-        		<string>http://www.dino-lite.com/support/%file%.zip</string>
+        		<string>http://www.dino-lite.eu/images/downoads/%file%.zip</string>
                 <key>filename</key>
                 <string>%NAME%.zip</string>
         	</dict>
