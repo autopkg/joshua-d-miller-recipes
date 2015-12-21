@@ -26,14 +26,14 @@
             <string>Logitech Options</string>
             <key>RestartAction</key>
             <string>RequireRestart</string>
-    		<key>description</key>
-    		<string>Logitech Options lets you customize gesture controls for Logitech touch products. It also adds enhanced key functions for Logitech keyboards, and notification for device-specific status features such as battery level, key backlighting level, and Caps Lock.</string>
-    		<key>name</key>
-    		<string>%NAME%</string>
+    	<key>description</key>
+    	<string>Logitech Options lets you customize gesture controls for Logitech touch products. It also adds enhanced key functions for Logitech keyboards, and notification for device-specific status features such as battery level, key backlighting level, and Caps Lock.</string>
+            <key>name</key>
+            <string>%NAME%</string>
             <key>display_name</key>
             <string>%NAME%</string>
-    		<key>unattended_install</key>
-    		<true/>
+    	<key>unattended_install</key>
+    	<true/>
     	</dict>
     </dict>
     <key>MinimumVersion</key>
@@ -42,6 +42,49 @@
     <string>com.github.joshua-d-miller.download.logitechoptions</string>
     <key>Process</key>
     <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>%RECIPE_CACHE_DIR%/LogiMgr/LogiMgr Installer.app/Contents/Info.plist</string>
+            </dict>
+            <key>Processor</key>
+            <string>Versioner</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>source</key>
+                <string>%RECIPE_CACHE_DIR%/LogiMgr/LogiMgr Installer.app/Contents/Resources/LogiMgr.mpkg</string>
+                <key>target</key>
+                <string>%RECIPE_CACHE_DIR%/Logitech Options.mpkg</string>
+            </dict>
+            <key>Processor</key>
+            <string>FileMover</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/LogiMgr/</string>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>additional_pkginfo</key>
+                <dict>
+                    <key>version</key>
+                    <string>%version%</string>
+                </dict>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
         <dict>
             <key>Arguments</key>
             <dict>

@@ -10,6 +10,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>DinoXcope</string>
+                        <key>USER_AGENT</key>
+                        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
@@ -32,7 +34,7 @@
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-        		<string>http://www.dino-lite.eu/images/downoads/%file%.zip</string>
+        		<string>http://www.dino-lite.eu/images/downloads/%file%.zip</string>
                 <key>filename</key>
                 <string>%NAME%.zip</string>
         	</dict>
@@ -48,11 +50,20 @@
         </dict>
         <dict>
             <key>Processor</key>
+            <string>FileFinder</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pattern</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/DinoXcope*.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
             <string>FileMover</string>
             <key>Arguments</key>
             <dict>
                 <key>source</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/%file%</string>
+                <string>%found_filename%</string>
                 <key>target</key>
                 <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
             </dict>
