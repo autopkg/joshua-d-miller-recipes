@@ -12,12 +12,12 @@
         <string>Printers</string>
         <key>NAME</key>
         <string>DYMO Label</string>
-    	<key>pkginfo</key>
-    	<dict>
-    		<key>catalogs</key>
-    		<array>
-    			<string>testing</string>
-    		</array>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
             <key>category</key>
             <string>Peripherals</string>
             <key>developer</key>
@@ -26,13 +26,13 @@
             <string>DYMO Label v.8</string>
             <key>category</key>
             <string>Printer and Scanner Software</string>
-    		<key>description</key>
-    		<string>Print one label or hundreds, with ease... With DYMO Label v.8 software and your DYMO LabelWriter printer, you'll design and print impressive labels that look exactly the way you want them to look - without the waste and hassle of sheet labels.</string>
-    		<key>name</key>
-    		<string>%NAME%</string>
-    		<key>unattended_install</key>
-    		<true/>
-    	</dict>
+            <key>description</key>
+            <string>Print one label or hundreds, with ease... With DYMO Label v.8 software and your DYMO LabelWriter printer, you'll design and print impressive labels that look exactly the way you want them to look - without the waste and hassle of sheet labels.</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+        </dict>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
