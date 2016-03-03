@@ -23,7 +23,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.drobo.com/start-drobo/</string>
+                <string>http://www.drobo.com/drobo-downloads-2/</string>
                 <key>request_headers</key>
                 <dict>
                     <key>user-agent</key>

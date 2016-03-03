@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of Josh Jacob's TNEF's Enough and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.tnefenough</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>Productivity</string>
+        <key>NAME</key>
+        <string>TNEF Enough</string>
+    	<key>pkginfo</key>
+    	<dict>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
+            <key>category</key>
+            <string>Productivity</string>
+            <key>developer</key>
+            <string>Josh Jacob</string>
+            <key>display_name</key>
+            <string>Zotero</string>
+    	<key>description</key>
+    	<string>TNEF's Enough allows Macs to read and extract files from Microsoft TNEF stream files. The files are usually received by SMTP based e-mail programs from Microsoft Exchange and Microsoft Outlook users. The SMTP based e-mail program will usually receive either a MIME attachment named "winmail.dat" or a MIME attachment with the type "application/ms-tnef.  The file is a rich text (or MAPI) message that is sent from Outlook to Exchange. When Exchange sends the message to an outside server it writes the MAPI message as a MIME attachment. The unfortunate side effect of this plan is if the Outlook user has someone in their address book as a person who can receive "Rich Text" then the user will receive the TNEF file whether the user uses Outlook or not.</string>
+    	<key>name</key>
+    	<string>%NAME%</string>
+            <key>display_name</key>
+            <string>TNEF's Enough</string>
+            <key>unattended_install</key>
+            <true/>
+    	</dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>ParentRecipe</key>
+    <string>com.github.joshua-d-miller.download.tnefenough</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>

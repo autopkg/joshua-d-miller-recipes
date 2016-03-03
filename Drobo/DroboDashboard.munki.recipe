@@ -12,34 +12,32 @@
         <string>Admin</string>
         <key>NAME</key>
         <string>Drobo Dashboard</string>
-    	<key>pkginfo</key>
-    	<dict>
-    		<key>catalogs</key>
-    		<array>
-    			<string>testing</string>
-    		</array>
-            <key>display_name</key>
-            <string>Drobo Dashboard</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+    	</array>
             <key>category</key>
             <string>Administrative Tools</string>
             <key>developer</key>
             <string>Drobo, Inc.</string>
-    		<key>description</key>
-    		<string>Mac Installer for the Drobo Dashboard Application.  This will allow users to access their Drobo Firewire storage or NAS.</string>
-    		<key>name</key>
-    		<string>%NAME%</string>
+    	<key>description</key>
+    	<string>Mac Installer for the Drobo Dashboard Application.  This will allow users to access their Drobo Firewire storage or NAS.</string>
+    	<key>name</key>
+    	<string>%NAME%</string>
             <key>RestartAction</key>
             <string>RequireRestart</string>
             <key>display_name</key>
             <string>%NAME%</string>
-    		<key>unattended_install</key>
-    		<true/>
+    	<key>unattended_install</key>
+    	<true/>
             <key>postinstall_script</key>
             <string>#!/bin/bash
 /usr/libexec/ApplicationFirewall/socketfilterfw --add /Library/Application\ Support/Data\ Robotics/Drobo\ Dashboard/DDService64d
 exit 0
             </string>
-    	</dict>
+        </dict>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
@@ -50,10 +48,91 @@ exit 0
         <dict>
             <key>Arguments</key>
             <dict>
+                <key>source_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/Drobo Dashboard.dmg/Install.app/Contents/Drobo_Dashboard_Installer_*.pkg</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+                <key>overwrite</key>
+                <true/>
+            </dict>
+            <key>Processor</key>
+            <string>Copier</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>purge_destination</key>
+                <true/>
+                <key>flat_pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/Unpack</string>
+            </dict>
+            <key>Processor</key>
+            <string>FlatPkgUnpacker</string>
+        </dict>
+       <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkgroot</key>
+                <string>%RECIPE_CACHE_DIR%/application_payload/Applications</string>
+                <key>pkgdirs</key>
+                <dict/>
+            </dict>
+            <key>Processor</key>
+            <string>PkgRootCreator</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_payload_path</key>
+                <string>%RECIPE_CACHE_DIR%/Unpack/drobodashboard.pkg/Payload</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/application_payload/Applications</string>
+                <key>purge_destination</key>
+                <true/>
+            </dict>
+            <key>Processor</key>
+            <string>PkgPayloadUnpacker</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>%RECIPE_CACHE_DIR%/application_payload/Applications/Drobo Dashboard.app/Contents/Info.plist</string>
+            </dict>
+            <key>Processor</key>
+            <string>Versioner</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>additional_pkginfo</key>
+                <dict>
+                    <key>version</key>
+                    <string>%version%</string>
+                </dict>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/Unpack</string>
+                    <string>%RECIPE_CACHE_DIR%/application_payload</string>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
                 <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/Drobo Dashboard.dmg</string>
-                <key>munkiimport_pkgname</key>
-                <string>Install.app/Contents/Drobo_Dashboard_Installer_%version%.pkg</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
