@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string></string>
+		<string>Utilities</string>
 		<key>NAME</key>
 		<string>ShiftIt</string>
 		<key>pkginfo</key>
