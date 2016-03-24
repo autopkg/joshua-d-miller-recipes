@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://prezi.com/mac/</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;https://prezi-a.akamaihd.net/desktop/Prezi.*?\.dmg)</string>
+                <string>(?P&lt;url&gt;https://prezi-a.akamaihd.net/next-desktop/mac/Prezi.*?\.dmg)</string>
             </dict>
         </dict>
         <dict>
