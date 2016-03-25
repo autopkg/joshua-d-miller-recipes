@@ -17,61 +17,21 @@
 	<string>0.2.9</string>
 	<key>Process</key>
 	<array>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
             <dict>
-                <key>url</key>
-                <string>http://www.dino-lite.eu/index.php/en/support/software</string>
-                <key>re_pattern</key>
-                <string>images/downloads/(?P&lt;file&gt;DinoXcope_MacOSX.*?\.dmg)\.zip</string>
+        	   <key>Processor</key>
+        	   <string>URLDownloader</string>
+        	   <key>Arguments</key>
+        	   <dict>
+        	       <key>url</key>
+        	       <string>http://dinolite.us/index.php/downloads/dl/file/id/4/dinoxcope.dmg</string>
+                    <key>filename</key>
+                    <string>%NAME%.dmg</string>
+        	   </dict>
             </dict>
-        </dict>
-        <dict>
-        	<key>Processor</key>
-        	<string>URLDownloader</string>
-        	<key>Arguments</key>
-        	<dict>
-        		<key>url</key>
-        		<string>http://www.dino-lite.eu/images/downloads/%file%.zip</string>
-                <key>filename</key>
-                <string>%NAME%.zip</string>
-        	</dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>Unarchiver</string>
-            <key>Arguments</key>
-            <dict>
-                <key>purge_destination</key>
-                <true/>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>FileFinder</string>
-            <key>Arguments</key>
-            <dict>
-                <key>pattern</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/DinoXcope*.dmg</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>FileMover</string>
-            <key>Arguments</key>
-            <dict>
-                <key>source</key>
-                <string>%found_filename%</string>
-                <key>target</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-            </dict>
-        </dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
+	<dict>
+	   <key>Processor</key>
+                <string>EndOfCheckPhase</string>
+	</dict>
 	</array>
 </dict>
 </plist>
