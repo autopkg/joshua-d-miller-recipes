@@ -33,7 +33,7 @@
       <key>postinstall_script</key>
       <string>#!/bin/bash
 # This script will create the LaunchAgent and script needed
-# to make this application somewhat enterprise ready - Joshua D. Miller 
+# to make this application somewhat enterprise ready - Joshua D. Miller
 # josh@psu.edu - July 22, 2015 - The Pennsylvania State University
 
 # Check if College of Education Script Directory exists and if not make it
@@ -206,7 +206,7 @@ fi
           <key>Arguments</key>
           <dict>
               <key>input_plist_path</key>
-              <string>%pathname%/Install Box Edit.app/Contents/Resources/Box Edit.app/Contents/Info.plist</string>
+              <string>%pathname%/Install Box Tools.app/Contents/Resources/Box Edit.app/Contents/Info.plist</string>
               <key>plist_version_key</key>
               <string>CFBundleVersion</string>
           </dict>
@@ -273,13 +273,13 @@ fi
                   		<key>destination_path</key>
                   		<string>/Library/Application Support/Box/Box Edit</string>
                   		<key>source_item</key>
-                  		<string>Install Box Edit.app/Contents/Resources/Box Edit.app</string>
+                  		<string>Install Box Tools.app/Contents/Resources/Box Edit.app</string>
                   	</dict>
                   	<dict>
                   		<key>destination_path</key>
                   		<string>/Library/Application Support/Box/Box Edit</string>
                   		<key>source_item</key>
-                  		<string>Install Box Edit.app/Contents/Resources/Box Local Com Server.app</string>
+                  		<string>Install Box Tools.app/Contents/Resources/Box Local Com Server.app</string>
                   	</dict>
                   </array>
               </dict>
@@ -296,7 +296,7 @@ fi
           <string>%MUNKI_REPO_SUBDIR%</string>
           <key>additional_makepkginfo_options</key>
           <array>
-              <string>--item=Install Box Edit.app/Contents/Resources/Box Edit.app</string>
+              <string>--item=Install Box Tools.app/Contents/Resources/Box Edit.app</string>
               <string>--destinationpath=/Library/Application Support/Box/Box Edit.app</string>
           </array>
         </dict>
