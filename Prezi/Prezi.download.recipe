@@ -16,23 +16,12 @@
 	<key>Process</key>
 	<array>
         <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>http://prezi.com/mac/</string>
-                <key>re_pattern</key>
-                <string>(?P&lt;url&gt;https://prezi-a.akamaihd.net/next-desktop/mac/Prezi.*?\.dmg)</string>
-            </dict>
-        </dict>
-        <dict>
         	<key>Processor</key>
         	<string>URLDownloader</string>
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-        		<string>%url%</string>
+        		<string>https://prezi.com/download/mac/</string>
         		<key>filename</key>
         		<string>%NAME%.dmg</string>
         	</dict>
