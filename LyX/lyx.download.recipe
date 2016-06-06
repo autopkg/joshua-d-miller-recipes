@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://www.lyx.org/Download</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;ftp://ftp\.lyx\.org/pub/lyx/bin/.*?/LyX-.*?\+qt4-cocoa\.dmg)</string>
+                <string>(?P&lt;url&gt;ftp://ftp\.lyx\.org/pub/lyx/bin/.*?/LyX-.*?\+qt5-x86_64-cocoa\.dmg)</string>
             </dict>
         </dict>
         <dict>
