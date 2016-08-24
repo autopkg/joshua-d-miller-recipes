@@ -1,46 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Description</key>
-	<string>Downloads the latest verison of Gephi</string>
-	<key>Identifier</key>
-	<string>com.github.joshua-d-miller.download.gephi</string>
-	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Gephi</string>
+		<key>Description</key>
+		<string>Downloads the latest verison of Gephi</string>
+		<key>Identifier</key>
+		<string>com.github.joshua-d-miller.download.gephi</string>
+		<key>Input</key>
+		<dict>
+			<key>NAME</key>
+			<string>Gephi</string>
+		</dict>
+		<key>USER_AGENT</key>
+		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
+		<key>MinimumVersion</key>
+		<string>0.6.1</string>
+		<key>Process</key>
+		<array>
+			<dict>
+				<key>Processor</key>
+				<string>GitHubReleasesInfoProvider</string>
+				<key>Arguments</key>
+				<dict>
+					<key>asset_regex</key>
+					<!--Change regex to match linux.tar.gz or windows.exe-->
+					<string>(gephi-[0-9\.]+-macos.dmg)</string>
+					<key>github_repo</key>
+					<string>gephi/gephi</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>URLDownloader</string>
+				<key>Arguments</key>
+				<dict>
+					<key>url</key>
+					<string>%url%</string>
+					<key>filename</key>
+					<string>%NAME%.dmg</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>EndOfCheckPhase</string>
+			</dict>
+			<dict>
+				<key>Processor</key>
+				<string>CodeSignatureVerifier</string>
+				<key>Arguments</key>
+				<dict>
+					<key>input_path</key>
+					<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/%NAME%.app</string>
+					<key>requirement</key>
+					<string>identifier "org.gephi" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "3D8H75J8UL"</string>
+				</dict>
+			</dict>
+		</array>
 	</dict>
-            <key>USER_AGENT</key>
-            <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
-	<key>MinimumVersion</key>
-	<string>0.5.0</string>
-	<key>Process</key>
-	<array>
-                <dict>
-                    <key>Processor</key>
-                    <string>GitHubReleasesInfoProvider</string>
-                    <key>Arguments</key>
-                    <dict>
-                        <key>github_repo</key>
-                        <string>gephi/gephi</string>
-                    </dict>
-                </dict>
-                <dict>
-        	       <key>Processor</key>
-        	       <string>URLDownloader</string>
-        	       <key>Arguments</key>
-        	       <dict>
-        		  <key>url</key>
-        		  <string>%url%</string>
-        		  <key>filename</key>
-        		  <string>%NAME%.dmg</string>
-        	       </dict>
-                </dict>
-	   <dict>
-	       <key>Processor</key>
-	       <string>EndOfCheckPhase</string>
-	   </dict>
-	</array>
-</dict>
 </plist>
