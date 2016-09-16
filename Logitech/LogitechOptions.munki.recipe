@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>Setup</string>
+        <string>apps/logitech</string>
         <key>NAME</key>
         <string>Logitech Options</string>
     	<key>pkginfo</key>
@@ -45,17 +45,17 @@
         <dict>
             <key>Arguments</key>
             <dict>
-                <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/LogiMgr/LogiMgr Installer.app/Contents/Info.plist</string>
+                <key>pattern</key>
+                <string>%RECIPE_CACHE_DIR%/LogiMgr/LogiMgr Installer*</string>
             </dict>
             <key>Processor</key>
-            <string>Versioner</string>
+            <string>FileFinder</string>
         </dict>
         <dict>
             <key>Arguments</key>
             <dict>
                 <key>source</key>
-                <string>%RECIPE_CACHE_DIR%/LogiMgr/LogiMgr Installer.app/Contents/Resources/LogiMgr.mpkg</string>
+                <string>%found_filename%/Contents/Resources/LogiMgr.mpkg</string>
                 <key>target</key>
                 <string>%RECIPE_CACHE_DIR%/Logitech Options.mpkg</string>
             </dict>
