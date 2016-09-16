@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>Science</string>
+        <string>apps/dinoxcope</string>
         <key>NAME</key>
         <string>DinoXcope</string>
     	<key>pkginfo</key>

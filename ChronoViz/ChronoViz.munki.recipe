@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>Media</string>
+        <string>apps/chronoviz</string>
         <key>NAME</key>
         <string>ChronoViz</string>
     	<key>pkginfo</key>

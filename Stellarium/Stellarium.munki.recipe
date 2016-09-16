@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>Science</string>
+        <string>apps/stellarium</string>
         <key>NAME</key>
         <string>Stellarium</string>
     	<key>pkginfo</key>

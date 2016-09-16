@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>Reference</string>
+        <string>apps/adobe</string>
         <key>NAME</key>
         <string>Adobe Digital Editions</string>
         <key>pkginfo</key>

@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>Administrative</string>
+        <string>apps/tn3270s</string>
         <key>NAME</key>
         <string>tn3270X</string>
     	<key>pkginfo</key>

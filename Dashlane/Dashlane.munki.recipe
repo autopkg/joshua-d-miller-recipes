@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>Productivity</string>
+        <string>apps/dashlane</string>
         <key>NAME</key>
         <string>Dashlane</string>
     	<key>pkginfo</key>

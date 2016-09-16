@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v1.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of ShiftIt and imports it into Munki.</string>
 	<key>Identifier</key>
@@ -11,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>Utilities</string>
+		<string>apps/shiftit</string>
 		<key>NAME</key>
 		<string>ShiftIt</string>
 		<key>pkginfo</key>

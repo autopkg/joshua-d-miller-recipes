@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>Adobe Flash Player Debug</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>Utilities</string>
+        <string>apps/adobe</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>

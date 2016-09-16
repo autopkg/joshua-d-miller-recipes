@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>Media</string>
+        <string>apps/bookry</string>
         <key>NAME</key>
         <string>Bookry Uploader</string>
     	<key>pkginfo</key>

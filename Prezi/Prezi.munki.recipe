@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>Productivity</string>
+        <string>apps/prezi</string>
         <key>NAME</key>
         <string>Prezi Desktop</string>
     	<key>pkginfo</key>
