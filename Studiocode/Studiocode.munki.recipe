@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of Studiocode 5 and imports it into Munki.</string>
+    <string>Download the latest version of Studiocode and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.autopkg.munki.StudioCode5</string>
+    <string>com.github.joshua-d-miller.autopkg.munki.StudioCode</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/studiocode</string>
         <key>NAME</key>
-        <string>Studiocode 5</string>
+        <string>Studiocode 10</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -21,7 +21,7 @@
             <key>category</key>
             <string>Media</string>
             <key>developer</key>
-            <string>Studiocode Business Group</string>
+            <string>Vosaic</string>
     		<key>description</key>
     		<string>(LICENSE REQUIRED)
 
@@ -53,7 +53,7 @@ www.studiocodegroup.com</string>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.autopkg.download.Studiocode5</string>
+    <string>com.github.joshua-d-miller.autopkg.download.Studiocode</string>
     <key>Process</key>
     <array>
         <dict>
