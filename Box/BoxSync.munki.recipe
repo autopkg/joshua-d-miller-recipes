@@ -30,8 +30,10 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>unattended_uninstall</key>
+            <true/>
             <key>postinstall_script</key>
-            <string>#!bin/bash
+            <string>#!/bin/bash
 # Install the helper tool so there is no prompt for Admin Credentials
 # Matt Hansen 03-05-2014
 /bin/cp -f "/Applications/Box Sync.app/Contents/Resources/com.box.sync.bootstrapper" /Library/PrivilegedHelperTools/com.box.sync.bootstrapper
@@ -39,6 +41,13 @@
 
 /usr/sbin/chown root:wheel /Library/PrivilegedHelperTools/com.box.sync.bootstrapper /Library/PrivilegedHelperTools/com.box.sync.iconhelper
 /bin/chmod 4755 /Library/PrivilegedHelperTools/com.box.sync.bootstrapper /Library/PrivilegedHelperTools/com.box.sync.iconhelper
+            </string>
+            <key>postuninstall_script</key>
+            <string>#!/bin/sh
+# Remove the helper tools installed by the postinstall_script
+# Greg Neagle 12-01-2016
+/bin/rm -f /Library/PrivilegedHelperTools/com.box.sync.bootstrapper
+/bin/rm -f /Library/PrivilegedHelperTools/com.box.sync.iconhelper
             </string>
         </dict>
     </dict>
