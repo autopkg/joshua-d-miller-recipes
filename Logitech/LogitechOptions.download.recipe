@@ -16,30 +16,12 @@
         <key>Process</key>
         <array>
         <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>request_headers</key>
-                <dict>
-                    <key>j_id0:template:j_id7:selectedPlatfotmID</key>
-                    <string>Mac</string>
-                    <key>j_id0:template:j_id7:selectedOSID</key>
-                    <string>Mac OS X 10.11.x</string>
-                </dict>
-                <key>url</key>
-                <string>http://support.logitech.com/en_us/software/options</string>
-                <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://www\.logitech\.com/pub/techsupport/options/Options.*?\.zip)</string>
-            </dict>
-        </dict>
-        <dict>
         	<key>Processor</key>
         	<string>URLDownloader</string>
         	<key>Arguments</key>
         	<dict>
         	   <key>url</key>
-        	   <string>%url%</string>
+        	   <string>http://www.logitech.com/pub/download/Options.zip</string>
         	   <key>filename</key>
         	   <string>%NAME%.zip</string>
         	</dict>
