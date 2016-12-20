@@ -23,14 +23,14 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.drobo.com/drobo-downloads-2/</string>
+                <string>http://www.drobo.com/start/start-drobo-dashboard/</string>
                 <key>request_headers</key>
                 <dict>
                     <key>user-agent</key>
                     <string>%USER_AGENT%</string>
                 </dict>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://files\.drobo\.com/webrelease/dashboard/Drobo-Dashboard.(?P&lt;version&gt;.*?)\.dmg)</string>
+                <string>(http.*?-[\d+.]*.dmg)</string>
             </dict>
         </dict>
         <dict>
@@ -39,11 +39,26 @@
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-        		<string>%url%</string>
+        		<string>%match%</string>
         		<key>filename</key>
         		<string>%NAME%.dmg</string>
         	</dict>
         </dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Install.app/Contents/Drobo_Dashboard_Installer_*.pkg</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Drobo, Inc. (7L83S9698G)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
