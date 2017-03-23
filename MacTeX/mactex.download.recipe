@@ -26,20 +26,35 @@
 				<string>The current distribution is MacTeX-(?P&lt;version&gt;.*)</string>
 			</dict>
 		</dict>
-        <dict>
-        	<key>Processor</key>
-        	<string>URLDownloader</string>
-        	<key>Arguments</key>
-        	<dict>
-        		<key>url</key>
-        		<string>http://mirror.ctan.org/systems/mac/mactex/MacTeX.pkg</string>
-        		<key>filename</key>
-        		<string>%NAME%.pkg</string>
-        	</dict>
-        </dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>http://mirror.ctan.org/systems/mac/mactex/MacTeX.pkg</string>
+				<key>filename</key>
+				<string>%NAME%.pkg</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Richard Koch</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
 		</dict>
 	</array>
 </dict>
