@@ -12,7 +12,7 @@
 		<string>MacTeX</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.3.0</string>
+	<string>0.3.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
