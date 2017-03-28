@@ -28,11 +28,11 @@
     		<string>%NAME%</string>
             <key>postinstall_script</key>
             <string>#!/bin/bash
-            # Mircosoft Word 2011 Plugin for Mendeley
-            # Last Updated April 10, 2014 - Joshua D. Miller
-            # Set Permissions to allow the Mendeley Word Plugin to Install
-            [ -e /Applications/Microsoft\ Office\ 2011/ ] &amp;&amp; chmod o+w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
-            </string>
+# Mircosoft Word 2011 Plugin for Mendeley
+# Last Updated April 10, 2014 - Joshua D. Miller
+# Set Permissions to allow the Mendeley Word Plugin to Install
+[ ! -e /Applications/Microsoft\ Office\ 2011/ ] || chmod o+w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
+</string>
             <key>display_name</key>
             <string>%NAME%</string>
             <key>postuninstall_script</key>
