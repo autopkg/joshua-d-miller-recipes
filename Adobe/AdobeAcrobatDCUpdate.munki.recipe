@@ -48,7 +48,7 @@
                 <key>url</key>
                 <string>https://armmf.adobe.com/arm-manifests/mac/AcrobatDC/acrobat/current_version.txt</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;version&gt;15.*)</string>
+                <string>(?P&lt;version&gt;[0-9]*\.[0-9*?\.[0-9]*)</string>
             </dict>
             <key>Processor</key>
             <string>URLTextSearcher</string>
