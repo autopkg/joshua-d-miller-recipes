@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of ShiftIt.</string>
+	<string>Downloads the latest version of OBS Studio.</string>
 	<key>Identifier</key>
-	<string>com.github.joshua-d-miller.autopkg.download.ShiftIt</string>
+	<string>com.github.joshua-d-miller.autopkg.download.OBS</string>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>Process</key>
@@ -16,7 +16,7 @@
 		<key>Arguments</key>
 		<dict>
 			<key>github_repo</key>
-			<string>fikovnik/ShiftIt</string>
+			<string>jp9000/obs-studio</string>
 		</dict>
 	</dict>
 	<dict>
@@ -27,7 +27,7 @@
 			<key>url</key>
 			<string>%url%</string>
 			<key>filename</key>
-			<string>%NAME%.zip</string>
+			<string>%NAME%.pkg</string>
 		</dict>
 	</dict>
 	<dict>
