@@ -31,6 +31,8 @@
                         <key>user-agent</key>
                         <string>%USER_AGENT%</string>
                 </dict>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
             </dict>
         </dict>
         <dict>
