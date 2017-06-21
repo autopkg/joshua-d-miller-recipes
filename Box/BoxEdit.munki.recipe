@@ -230,7 +230,7 @@ fi
                       <key>CFBundleShortVersionString</key>
                       <string>%version%</string>
                       <key>minosversion</key>
-                      <string>10.6</string>
+                      <string>10.8</string>
                       <key>path</key>
                       <string>/Library/Application Support/Box/Box Edit/Box Edit.app</string>
                       <key>type</key>
@@ -248,13 +248,31 @@ fi
                       <key>CFBundleShortVersionString</key>
                       <string>%version%</string>
                       <key>minosversion</key>
-                      <string>10.6</string>
+                      <string>10.8</string>
                       <key>path</key>
                       <string>/Library/Application Support/Box/Box Edit/Box Local Com Server.app</string>
                       <key>type</key>
                       <string>application</string>
                       <key>version_comparison_key</key>
                       <string>CFBundleVersion</string>
+                  </dict>
+                  <dict>
+                    <key>CFBundleIdentifier</key>
+                    <string>com.box.Box-Device-Trust</string>
+                    <key>CFBundleName</key>
+                    <string>Box Device Trust</string>
+                    <key>CFBundleShortVersionString</key>
+                    <string>1.0</string>
+                    <key>CFBundleVersion</key>
+                    <string>1</string>
+                    <key>minosversion</key>
+                    <string>10.8</string>
+                    <key>path</key>
+                    <string>/Volumes/Box Tools Installer/Install Box Tools.app/Contents/Resources/Box Device Trust.app</string>
+                    <key>type</key>
+                    <string>application</string>
+                    <key>version_comparison_key</key>
+                    <string>CFBundleShortVersionString</string>
                   </dict>
               </array>
           </dict>
@@ -281,6 +299,12 @@ fi
                   		<key>source_item</key>
                   		<string>Install Box Tools.app/Contents/Resources/Box Local Com Server.app</string>
                   	</dict>
+                      <dict>
+                        <key>destination_path</key>
+                        <string>/Library/Application Support/Box/Box Edit</string>
+                        <key>source_item</key>
+                        <string>Install Box Tools.app/Contents/Resources/Box Device Trust.app</string>
+                      </dict>
                   </array>
               </dict>
           </dict>
