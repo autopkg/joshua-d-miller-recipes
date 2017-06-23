@@ -268,7 +268,7 @@ fi
                     <key>minosversion</key>
                     <string>10.8</string>
                     <key>path</key>
-                    <string>/Volumes/Box Tools Installer/Install Box Tools.app/Contents/Resources/Box Device Trust.app</string>
+                    <string>/Library/Application Support/Box/Box Edit/Box/Box Device Trust.app</string>
                     <key>type</key>
                     <string>application</string>
                     <key>version_comparison_key</key>
