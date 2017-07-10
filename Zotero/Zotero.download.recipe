@@ -23,7 +23,7 @@
 				<key>url</key>
 				<string>https://www.zotero.org/download/</string>
 				<key>re_pattern</key>
-				<string>(?P&lt;url&gt;download.zotero.org/standalone/.*?/Zotero-.*?\.dmg)</string>
+				<string>(?P&lt;url&gt;download.zotero.org/client/release/.*?/Zotero-.*?\.dmg)</string>
 			</dict>
 		</dict>
 		<dict>
