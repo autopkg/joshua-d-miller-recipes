@@ -57,7 +57,7 @@
                 <string>%pathname%/*v.8.pkg</string>
                 <key>expected_authority_names</key>
                 <array>
-                    <string>Developer ID Installer: Sanford, L.P.</string>
+                    <string>Developer ID Installer: Sanford, L.P. (N3S6676K3E)</string>
                     <string>Developer ID Certification Authority</string>
                     <string>Apple Root CA</string>
                 </array>
