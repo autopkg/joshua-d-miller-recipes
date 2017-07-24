@@ -75,7 +75,7 @@ exit 0
             <key>Arguments</key>
             <dict>
                 <key>pkgroot</key>
-                <string>%RECIPE_CACHE_DIR%/application_payload/Applications</string>
+                <string>%RECIPE_CACHE_DIR%/application_payload</string>
                 <key>pkgdirs</key>
                 <dict/>
             </dict>
@@ -88,7 +88,7 @@ exit 0
                 <key>pkg_payload_path</key>
                 <string>%RECIPE_CACHE_DIR%/Unpack/drobodashboard.pkg/Payload</string>
                 <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/application_payload/Applications</string>
+                <string>%RECIPE_CACHE_DIR%/application_payload</string>
                 <key>purge_destination</key>
                 <true/>
             </dict>
