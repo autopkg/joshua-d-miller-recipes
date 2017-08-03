@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of Box Notes and imports it into Munki.</string>
+    <string>Download the latest version of Box Notes and imports it into Munki. This borrows code from rustymyers' recipe as his deletes it upon verification.</string>
     <key>Identifier</key>
     <string>com.github.joshua-d-miller.autopkg.munki.boxnotes</string>
+    <key>DOWNLOAD_URL</key>
+    <string>https://e3.boxcdn.net/box-installers/boxnotes/mac/latest/Box%20Notes.zip</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
@@ -19,7 +21,7 @@
                 <string>testing</string>
             </array>
             <key>display_name</key>
-            <string>Box Notes</string>
+            <string>%NAME%</string>
             <key>category</key>
             <string>Social</string>
             <key>developer</key>
@@ -36,24 +38,55 @@
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
-    <key>ParentRecipe</key>
-    <string>com.github.rustymyers.download.boxnotes</string>
     <key>Process</key>
     <array>
         <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
-                <key>purge_destination</key>
-                <true/>
+                <key>url</key>
+                <string>%DOWNLOAD_URL%</string>
+                <key>request_headers</key>
+                <dict>
+                        <key>user-agent</key>
+                        <string>%USER_AGENT%</string>
+                </dict>
+                <key>filename</key>
+                <string>%NAME%.zip</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>dmg_path</key>
+                <string>%pathname%</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/</string>
             </dict>
             <key>Processor</key>
             <string>Unarchiver</string>
         </dict>
         <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%RECIPE_CACHE_DIR%/Box Notes.app</string>
+                <key>requirement</key>
+                <string>identifier "com.box.box-notes" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = M683GB7CPW</string>
+            </dict>
+        </dict>
+        <dict>
             <key>Arguments</key>
             <dict>
         		<key>dmg_root</key>
-        		<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+        		<string>%RECIPE_CACHE_DIR%/%NAME%.app</string>
         		<key>dmg_path</key>
         		<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
         	</dict>
