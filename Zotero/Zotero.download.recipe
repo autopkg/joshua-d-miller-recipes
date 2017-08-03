@@ -17,11 +17,22 @@
 	<array>
 		<dict>
 			<key>Processor</key>
+			<string>URLTextSearcher</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>https://www.zotero.org/download/</string>
+				<key>re_pattern</key>
+				<string>(?P&lt;url&gt;client/dl?channel=release&amp;platform=mac&amp;version=.*?)</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
 			<string>URLDownloader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://www.zotero.org/download/client/dl?channel=release&amp;platform=mac</string>
+				<string>https://www.zotero.org/download/%url%</string>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 			</dict>
