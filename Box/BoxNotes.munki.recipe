@@ -6,8 +6,6 @@
     <string>Download the latest version of Box Notes and imports it into Munki. This borrows code from rustymyers' recipe as his deletes it upon verification.</string>
     <key>Identifier</key>
     <string>com.github.joshua-d-miller.autopkg.munki.boxnotes</string>
-    <key>DOWNLOAD_URL</key>
-    <string>https://e3.boxcdn.net/box-installers/boxnotes/mac/latest/Box%20Notes.zip</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
@@ -46,11 +44,11 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%DOWNLOAD_URL%</string>
+                <string>https://e3.boxcdn.net/box-installers/boxnotes/mac/latest/Box%20Notes.zip</string>
                 <key>request_headers</key>
                 <dict>
                         <key>user-agent</key>
-                        <string>%USER_AGENT%</string>
+                        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
                 </dict>
                 <key>filename</key>
                 <string>%NAME%.zip</string>
