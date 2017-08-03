@@ -32,9 +32,13 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Box.app</string>
-				<key>requirement</key>
-				<string>identifier "com.box.desktop" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = M683GB7CPW</string>
+				<string>%pathname%/%NAME%.pkg</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Box, Inc. (M683GB7CPW)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
 			</dict>
 		</dict>
 		<dict>
