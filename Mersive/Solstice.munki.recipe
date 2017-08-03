@@ -35,7 +35,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.download.zotero</string>
+    <string>com.github.joshua-d-miller.download.solstice</string>
     <key>Process</key>
     <array>
         <dict>
