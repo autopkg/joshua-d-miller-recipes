@@ -33,7 +33,7 @@
             # Mircosoft Word 2011 Plugin for Zotero
             # Last Updated April 10, 2014 - Joshua D. Miller
             # Set Permissions to allow the Zotero Word Plugin to Install
-            [ -e /Applications/Microsoft\ Office\ 2011/ ] &amp;&amp; chmod o+w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
+            [ ! -e /Applications/Microsoft\ Office\ 2011/ ] || chmod o+w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
             </string>
             <key>display_name</key>
             <string>%NAME%</string>
@@ -44,7 +44,7 @@
             # Remove the Zotero Template file
             [ -e /Applications/Microsoft\ Office\ 2011/Office/Word/Startup/Zotero.dot ] &amp;&amp; rm /Applications/Microsoft\ Office\ 2011/Office/Startup/Word/Zotero.dot
             # Restore Permissions on the folder /Applications/Microsoft Office 2011/Office/Startup/Word/
-            [ -e /Applications/Microsoft\ Office\ 2011/ ] &amp;&amp; chmod o-w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
+            [ ! -e /Applications/Microsoft\ Office\ 2011/ ] || chmod o-w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
             </string>
             <key>unattended_install</key>
             <true/>
