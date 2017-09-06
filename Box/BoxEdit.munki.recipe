@@ -77,7 +77,7 @@ fi
 
 # Allow all users to modify the Box Edit Folder
 # This is required so that Box Edit can function from its new location
-/bin/chmod 777 -R "/Library/Application Support/Box/Box Edit/"
+/bin/chmod -R 777 "/Library/Application Support/Box/Box Edit/"
 
 # Create Box Edit LaunchAgent
 if [ ! -e /Library/LaunchAgents/edu.psu.educ.boxedit.plist ]
@@ -268,7 +268,7 @@ fi
                     <key>minosversion</key>
                     <string>10.8</string>
                     <key>path</key>
-                    <string>/Library/Application Support/Box/Box Edit/Box/Box Device Trust.app</string>
+                    <string>/Library/Application Support/Box/Box Edit/Box Device Trust.app</string>
                     <key>type</key>
                     <string>application</string>
                     <key>version_comparison_key</key>
