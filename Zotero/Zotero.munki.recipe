@@ -14,6 +14,11 @@
         <string>Zotero</string>
     	<key>pkginfo</key>
     	<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Microsoft Word</string>
+				<string>Zotero</string>
+			</array>
     		<key>catalogs</key>
     		<array>
     			<string>testing</string>
