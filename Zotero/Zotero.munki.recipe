@@ -14,6 +14,11 @@
         <string>Zotero</string>
     	<key>pkginfo</key>
     	<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>Microsoft Word</string>
+				<string>Zotero</string>
+			</array>
     		<key>catalogs</key>
     		<array>
     			<string>testing</string>
@@ -34,6 +39,19 @@
             # Last Updated April 10, 2014 - Joshua D. Miller
             # Set Permissions to allow the Zotero Word Plugin to Install
             [ ! -e /Applications/Microsoft\ Office\ 2011/ ] || chmod o+w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
+            
+            # Install script Microsoft Word 2016 Plugin for Zotero
+            # Check if Word 2016 is installed
+            if [ -e /Applications/Microsoft\ Word.app ]; then
+            echo "Word 2016 detected. Installing Zotero Word template."
+            # Get logged in user
+            loggedInUser=$(/usr/bin/python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in   [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
+            echo "Logged in user is" $loggedInUser
+            # Copy Zotero.dotm to Word 2016 Startup directory
+            /bin/cp /Applications/Zotero.app/Contents/Resources/extensions/zoteroMacWordIntegration@zotero.org/install/Zotero.dotm /Users/$loggedInUser/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Startup.localized/Word/
+            else echo "Word 2016 not found. Skipping installation of Zotero Word template."
+            fi
+            exit 0
             </string>
             <key>display_name</key>
             <string>%NAME%</string>
@@ -45,6 +63,18 @@
             [ -e /Applications/Microsoft\ Office\ 2011/Office/Word/Startup/Zotero.dot ] &amp;&amp; rm /Applications/Microsoft\ Office\ 2011/Office/Startup/Word/Zotero.dot
             # Restore Permissions on the folder /Applications/Microsoft Office 2011/Office/Startup/Word/
             [ ! -e /Applications/Microsoft\ Office\ 2011/ ] || chmod o-w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
+			
+			# Uninstall script for Microsoft Word 2016 Plugin for Zotero
+            # Get logged in user
+            loggedInUser=$(/usr/bin/python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in   [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
+            echo "Logged in user is" $loggedInUser
+            echo "Checking for existence of Zotero.dotm"
+            if [ -e /Users/$loggedInUser/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Startup.localized/Word/Zotero.dotm ]; then
+            echo "Zotero.dotm found. Attempting removal."
+            /bin/rm /Users/$loggedInUser/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Startup.localized/Word/Zotero.dotm
+            else echo "Zotero.dotm not found. Skipping attempted removal."
+            fi
+            exit 0
             </string>
             <key>unattended_install</key>
             <true/>
