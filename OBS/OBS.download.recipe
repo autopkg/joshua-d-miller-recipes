@@ -23,7 +23,7 @@
 			<key>asset_regex</key>
 			<string>obs-mac-[\.\d]+-installer\.pkg</string>
 			<key>github_repo</key>
-			<string>jp9000/obs-studio</string>
+			<string>obsproject/obs-studio</string>
 		</dict>
 	</dict>
 	<dict>
