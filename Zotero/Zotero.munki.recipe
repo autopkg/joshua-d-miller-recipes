@@ -77,7 +77,7 @@
             exit 0
             </string>
             <key>unattended_install</key>
-            <true/>
+            <false/>
     	</dict>
     </dict>
     <key>MinimumVersion</key>
