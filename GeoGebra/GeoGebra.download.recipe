@@ -11,9 +11,7 @@
 		<key>NAME</key>
 		<string>GeoGebra</string>
 		<key>DOWNLOAD_URL</key>
-		<string>https://www.geogebra.org/download/index.php?os=mac</string>
-		<key>USER_AGENT</key>
-        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
+		<string>https://download.geogebra.org/package/mac-port</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.3.0</string>
