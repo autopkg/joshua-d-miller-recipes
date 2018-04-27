@@ -22,8 +22,8 @@
             <dict>
                 <key>url</key>
                 <string>http://www.lyx.org/Download</string>
-                <key>re_pattern</key>
-                <string>(?P&lt;url&gt;ftp://ftp\.lyx\.org/pub/lyx/bin/.*?/LyX-.*?\+qt.*?-x86_64-cocoa\.dmg)</string>
+                <key>version</key>
+                <string>ftp://ftp\.lyx\.org/pub/lyx/bin/.*?/LyX-(?P&lt;version&gt;.*?\)+qt.*?-x86_64-cocoa\.dmg</string>
             </dict>
         </dict>
         <dict>
@@ -32,7 +32,7 @@
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-        		<string>%url%</string>
+        		<string>https://ftp.icm.edu.pl/packages/lyx/bin/%version%/LyX-%version%+qt5-x86_x64-cocoa.dmg</string>
         		<key>filename</key>
         		<string>%NAME%.dmg</string>
         	</dict>
