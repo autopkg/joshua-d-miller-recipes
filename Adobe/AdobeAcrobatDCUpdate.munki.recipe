@@ -59,7 +59,7 @@
                                 <key>CFBundleVersion</key>
                                 <string>%version%</string>
                                 <key>path</key>
-                                <string>/Applications/Adobe Acrobat DC/Adobe Acrobat.app</string>
+                                <string>/Applications/Adobe Acrobat 2017/Adobe Acrobat.app</string>
                                 <key>type</key>
                                 <string>application</string>
                                 <key>version_comparison_key</key>
