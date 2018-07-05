@@ -120,7 +120,7 @@
                 <key>source</key>
                 <string>%RECIPE_CACHE_DIR%/jdk</string>
                 <key>target</key>
-                <string>%pkgroot%/Library/Java/JavaVirtualMachines/jdk%version%.jdk</string>
+                <string>%pkgroot%/Library/Java/JavaVirtualMachines/jdk-%version%.jdk</string>
             </dict>
         </dict>
         <dict>
@@ -132,7 +132,7 @@
                 <string>%pkgroot%</string>
                 <key>installs_item_paths</key>
                 <array>
-                    <string>/Library/Java/JavaVirtualMachines/jdk%version%.jdk</string>
+                    <string>/Library/Java/JavaVirtualMachines/jdk-%version%.jdk</string>
                 </array>
                 <key>version_comparison_key</key>
                 <string>CFBundleVersion</string>
