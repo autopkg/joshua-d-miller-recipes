@@ -16,7 +16,7 @@
         <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.3.0</string>
+    <string>0.3.1</string>
     <key>Process</key>
     <array>
         <dict>
@@ -39,6 +39,17 @@
             <key>Processor</key>
             <string>EndOfCheckPhase</string>
         </dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/%NAME%.app</string>
+				<key>requirement</key>
+				<string>identifier "com.hnc.Discord" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "53Q6R32WPB"</string>
+			</dict>
+		</dict>
     </array>
 </dict>
 </plist>
