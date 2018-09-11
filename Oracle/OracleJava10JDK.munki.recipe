@@ -9,7 +9,7 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>OracleJava8JDK</string>
+        <string>OracleJava10JDK</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/Oracle/Java/JDK/10</string>
         <key>pkginfo</key>
