@@ -87,6 +87,12 @@
             <string>MunkiInstallsItemsCreator</string>
         </dict>
         <dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+            <key>Arguments</key>
+            <dict/>
+        </dict>
+        <dict>
             <key>Arguments</key>
             <dict>
                 <key>input_plist_path</key>
