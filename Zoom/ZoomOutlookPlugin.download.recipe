@@ -32,7 +32,7 @@
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%pathname%/%NAME%.pkg</string>
+                <string>%pathname%</string>
                 <key>expected_authority_names</key>
                 <array>
                     <string>Developer ID Installer: Zoom Video Communications, Inc. (BJ4HAAB9B3)</string>
