@@ -28,24 +28,62 @@
     		<string>%NAME%</string>
             <key>postinstall_script</key>
             <string>#!/bin/bash
-# Mircosoft Word 2011 Plugin for Mendeley
-# Last Updated April 10, 2014 - Joshua D. Miller
-# Set Permissions to allow the Mendeley Word Plugin to Install
-[ ! -e /Applications/Microsoft\ Office\ 2011/ ] || chmod o+w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
-</string>
+# Microsoft Word 2016/2019 Plugin for Mendeley
+# Updated December 6, 2018 - Andrew Valentine
+# Copy Mendeley plugin to user plugin directory
+
+if [ -e /Applications/Microsoft\ Word.app ]; then
+	echo "Microsoft Word found. Proceeding to setup Mendeley plugin if required."
+	else echo "Microsoft Word not found. Nothing more to do."
+	exit 0
+fi
+
+# Get logged in user
+
+loggedInUser=$(/usr/bin/python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
+
+# Get Mendeley version
+
+mendeleyVersion=`(/usr/bin/defaults read /Applications/Mendeley\ Desktop.app/Contents/Info.plist CFBundleShortVersionString)`
+
+# Get plugin versions and paths
+
+appPlugin=`(/bin/ls /Applications/Mendeley\ Desktop.app/Contents/Resources/macWordPlugin/word2016/)`
+pathToAppPlugin=/Applications/Mendeley\ Desktop.app/Contents/Resources/macWordPlugin/word2016/$appPlugin
+targetPlugin=/Users/$loggedInUser/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Startup.localized/Word/$appPlugin
+pathToTargetPluginDirectory=/Users/$loggedInUser/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Startup.localized/Word/
+
+# If not already present, copy current Mendeley plugin to user plugin directory
+
+if [ ! -e "$targetPlugin" ]; then
+	echo "No user plugin for Mendeley version $mendeleyVersion installed. Proceeding to install."
+	if [ ! -e "$pathToTargetPluginDirectory" ]; then
+		/bin/mkdir -p $pathToTargetPluginDirectory
+	fi
+	/bin/cp "$pathToAppPlugin" "$pathToTargetPluginDirectory"
+	else echo "Plugin does not need updating."
+	exit 0
+fi</string>
             <key>display_name</key>
             <string>%NAME%</string>
-            <key>postuninstall_script</key>
-            <string>#!/bin/bash
-            # Uninstall Script for Word Plugin for Mendeley
-            # Last Updated April 10, 2014 - Joshua D. Miller
-            # Remove the Mendeley Template file
-            [ -e /Applications/Microsoft\ Office\ 2011/Office/Word/Startup/Mendeley.dot ] &amp;&amp; rm /Applications/Microsoft\ Office\ 2011/Office/Startup/Word/Mendeley.dot
-            # Restore Permissions on the folder /Applications/Microsoft Office 2011/Office/Startup/Word/
-            [ -e /Applications/Microsoft\ Office\ 2011/ ] &amp;&amp; chmod o-w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
-            </string>
-    		<key>unattended_install</key>
-    		<true/>
+	    <key>postuninstall_script</key>
+	    <string>#!/bin/bash
+
+# Get logged in user
+
+loggedInUser=$(/usr/bin/python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
+
+# Get plugin directory path
+
+pluginDirectory=/Users/$loggedInUser/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Startup.localized/Word
+
+# Remove installed Mendeley plugins
+
+/bin/rm "$pluginDirectory"/Mendeley*
+
+exit 0</string>
+    	   <key>unattended_install</key>
+    	   <true/>
     	</dict>
     </dict>
     <key>MinimumVersion</key>
