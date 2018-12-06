@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest verison of Zoom Outlook Plugin</string>
+	<key>Identifier</key>
+	<string>com.github.joshua-d-miller.download.zoomoutlookplugin</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Zoom Outlook Plugin</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.9</string>
+	<key>Process</key>
+	<array>
+        <dict>
+        	<key>Processor</key>
+        	<string>URLDownloader</string>
+        	<key>Arguments</key>
+        	<dict>
+        		<key>url</key>
+        		<string>https://zoom.us/client/latest/ZoomMacOutlookPlugin.pkg</string>
+        		<key>filename</key>
+        		<string>%NAME%.pkg</string>
+        	</dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%</string>
+                <key>expected_authority_names</key>
+                <array>
+                    <string>Developer ID Installer: Zoom Video Communications, Inc. (BJ4HAAB9B3)</string>
+                    <string>Developer ID Certification Authority</string>
+                    <string>Apple Root CA</string>
+                </array>
+            </dict>
+        </dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -3,39 +3,47 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of Unity3D and imports it into Munki.</string>
+    <string>Download the latest version of the Zoom Outlook Plugin and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.autopkg.munki.Unity3D</string>
+    <string>com.github.joshua-d-miller.autopkg.munki.zoomoutlookplugin</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/unity</string>
+        <string>apps/Zoom/Outlook Plugin</string>
         <key>NAME</key>
-        <string>Unity 3D</string>
-        <key>pkginfo</key>
-        <dict>
-            <key>catalogs</key>
-            <array>
-                <string>testing</string>
-            </array>
+        <string>Zoom Outlook Plugin</string>
+    	<key>pkginfo</key>
+    	<dict>
+            <key>blocking_applications</key>
+            <array/>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
             <key>category</key>
-            <string>Application Development</string>
+            <string>Web Plugins</string>
             <key>developer</key>
-            <string>Unity Technologies</string>
+            <string>Zoom Video Communications, Inc.</string>
             <key>display_name</key>
-            <string>Unity 3D</string>
-            <key>description</key>
-            <string>Unity is a flexible and powerful development platform for creating multiplatform 3D and 2D games and interactive experiences. It's a complete ecosystem for anyone who aims to build a business on creating high-end content and connecting to their most loyal and enthusiastic players and customers.</string>
-            <key>name</key>
+            <string>Zoom Outlook Plugin</string>
+    		<key>description</key>
+    		<string>The Zoom Plugin for Outlook installs a button on the Microsoft Outlook tool bar to enable you to start or schedule a meeting with one-click.</string>
+    		<key>name</key>
+    		<string>%NAME%</string>
+            <key>display_name</key>
             <string>%NAME%</string>
-            <key>unattended_install</key>
-            <true/>
-        </dict>
+            <key>update_for</key>
+            <array>
+                <string>Zoom</string>
+            </array>
+    		<key>unattended_install</key>
+    		<true/>
+    	</dict>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.hansen-m.download.Unity3D</string>
+    <string>com.github.joshua-d-miller.download.zoomoutlookplugin</string>
     <key>Process</key>
     <array>
         <dict>
@@ -64,9 +72,9 @@
             <key>Arguments</key>
             <dict>
                 <key>pkg_payload_path</key>
-                <string>%RECIPE_CACHE_DIR%/Unpack/Unity.pkg.tmp/Payload</string>
+                <string>%RECIPE_CACHE_DIR%/Unpack/zoomoutlookplugin.pkg/Payload</string>
                 <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/application_payload/Applications</string>
+                <string>%RECIPE_CACHE_DIR%/application_payload/Applications/ZoomOutlookPlugin</string>
                 <key>purge_destination</key>
                 <true/>
             </dict>
@@ -80,7 +88,7 @@
                 <string>%RECIPE_CACHE_DIR%/application_payload</string>
                 <key>installs_item_paths</key>
                 <array>
-                    <string>/Applications/Unity/Unity.app</string>
+                    <string>/Applications/ZoomOutlookPlugin/PluginLauncher.app</string>
                 </array>
             </dict>
             <key>Processor</key>
@@ -96,9 +104,9 @@
             <key>Arguments</key>
             <dict>
                 <key>input_plist_path</key>
-                <string>%RECIPE_CACHE_DIR%/application_payload/Applications/Unity/Unity.app/Contents/Info.plist</string>
+                <string>%RECIPE_CACHE_DIR%/application_payload/Applications/ZoomOutlookPlugin/PluginLauncher.app/Contents/Info.plist</string>
                 <key>plist_version_key</key>
-                <string>CFBundleVersion</string>
+                <string>CFBundleShortVersionString</string>
             </dict>
             <key>Processor</key>
             <string>Versioner</string>
@@ -119,7 +127,7 @@
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+                <string>%pathname%</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
