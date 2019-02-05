@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest version of the specified MAJOR_VERSION of NVivo.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.download.nvivo11</string>
+    <string>com.github.joshua-d-miller.download.nvivo</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
