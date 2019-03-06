@@ -121,7 +121,7 @@
                 <string>%MUNKI_REPO_SUBDIR%</string>
                 <key>additional_makepkginfo_options</key>
                 <array>
-                    <key>name</key>
+                    <string>--name</string>
                     <string>%NAME%</string>
                 </array>
             </dict>
