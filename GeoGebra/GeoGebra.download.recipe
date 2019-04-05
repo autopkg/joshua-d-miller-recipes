@@ -56,7 +56,7 @@
         		<key>dmg_path</key>
         		<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
                 <key>dmg_megabytes</key>
-                <string>200</string>
+                <string>500</string>
         	</dict>
         </dict>
 	</array>
