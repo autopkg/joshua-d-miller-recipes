@@ -29,6 +29,10 @@
                         <key>user-agent</key>
                         <string>%USER_AGENT%</string>
                 </dict>
+                <key>curl_opts</key>
+                <array>
+                    <string>L</string>
+                </array>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
         	</dict>
