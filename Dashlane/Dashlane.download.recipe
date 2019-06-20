@@ -14,12 +14,12 @@
         <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/604.4.7 (KHTML, like Gecko) Version/11.0.2 Safari/604.4.7</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
         <dict>
         	<key>Processor</key>
-        	<string>URLDownloader</string>
+        	<string>CURLDownloader</string>
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
@@ -29,10 +29,6 @@
                         <key>user-agent</key>
                         <string>%USER_AGENT%</string>
                 </dict>
-                <key>curl_opts</key>
-                <array>
-                    <string>-L</string>
-                </array>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
         	</dict>
