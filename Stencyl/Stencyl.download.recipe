@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.stencyl.com/download/get/dmg/</string>
+		<string>http://mario.stencyl.net/public/Stencyl-full.dmg</string>
 		<key>NAME</key>
 		<string>Stencyl</string>
 	</dict>
@@ -26,11 +26,12 @@
 				<string>%NAME%.dmg</string>
 				<key>url</key>
 				<string>%DOWNLOAD_URL%</string>
+                <key>request_headers</key>
+                <dict>
+                        <key>user-agent</key>
+                        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.94 Safari/537.36 Vivaldi/2.6.1566.40</string>
+                </dict>
 			</dict>
-            <key>curl_opts</key>
-            <array>
-                <string>-L</string>
-            </array>
 			<key>Processor</key>
 			<string>CURLDownloader</string>
 		</dict>
