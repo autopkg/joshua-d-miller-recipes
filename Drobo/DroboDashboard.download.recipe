@@ -10,36 +10,18 @@
 	<dict>
 		<key>NAME</key>
 		<string>DroboDashboard</string>
-        <key>USER_AGENT</key>
-        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
 	<key>Process</key>
 	<array>
         <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>http://www.drobo.com/start/start-drobo-dashboard/</string>
-                <key>request_headers</key>
-                <dict>
-                    <key>user-agent</key>
-                    <string>%USER_AGENT%</string>
-                </dict>
-                <key>re_pattern</key>
-                <string>(http.*?-[\d+.]*.dmg)</string>
-            </dict>
-        </dict>
-        <dict>
         	<key>Processor</key>
         	<string>URLDownloader</string>
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-        		<string>%match%</string>
+        		<string>http://files.drobo.com/webrelease/dashboard/Drobo-Dashboard.dmg</string>
         		<key>filename</key>
         		<string>%NAME%.dmg</string>
         	</dict>
@@ -50,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Install.app/Contents/Drobo_Dashboard_Installer_*.pkg</string>
+				<string>%pathname%/Install.app/Contents/Resources/Drobo_Dashboard_Installer_*.pkg</string>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Installer: Drobo, Inc. (7L83S9698G)</string>

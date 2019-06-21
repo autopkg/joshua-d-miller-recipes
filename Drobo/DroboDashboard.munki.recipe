@@ -49,7 +49,7 @@ exit 0
             <key>Arguments</key>
             <dict>
                 <key>source_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/Install.app/Contents/Drobo_Dashboard_Installer_*.pkg</string>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg/Install.app/Contents/Resources/Drobo_Dashboard_Installer_*.pkg</string>
                 <key>destination_path</key>
                 <string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
                 <key>overwrite</key>
@@ -94,6 +94,23 @@ exit 0
             </dict>
             <key>Processor</key>
             <string>PkgPayloadUnpacker</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>faux_root</key>
+                <string>%RECIPE_CACHE_DIR%/application_payload</string>
+                <key>installs_item_paths</key>
+                <array>
+                    <string>/Applications/Drobo Dashboard.app</string>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiInstallsItemsCreator</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
         </dict>
         <dict>
             <key>Arguments</key>

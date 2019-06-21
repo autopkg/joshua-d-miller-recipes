@@ -35,7 +35,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.hansen-m.download.Unity3D</string>
+    <string>com.github.joshua-d-miller.autopkg.download.Unity3D</string>
     <key>Process</key>
     <array>
         <dict>
