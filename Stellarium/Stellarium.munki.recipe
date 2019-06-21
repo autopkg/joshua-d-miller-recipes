@@ -35,7 +35,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.joshua-d-miller.download.Stellarium</string>
+    <string>com.github.joshua-d-miller.autopkg.download.Stellarium</string>
     <key>Process</key>
     <array>
         <dict>
