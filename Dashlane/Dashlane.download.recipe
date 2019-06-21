@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Dashlane</string>
         <key>USER_AGENT</key>
-        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/604.4.7 (KHTML, like Gecko) Version/11.0.2 Safari/604.4.7</string>
+        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.94 Safari/537.36 Vivaldi/2.6.1566.40</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
