@@ -27,8 +27,12 @@
 				<key>url</key>
 				<string>%DOWNLOAD_URL%</string>
 			</dict>
+            <key>curl_opts</key>
+            <array>
+                <string>-L</string>
+            </array>
 			<key>Processor</key>
-			<string>URLDownloader</string>
+			<string>CURLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
