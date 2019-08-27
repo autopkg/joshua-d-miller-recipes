@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://www.dymo.com/en-US/online-support/dymo-user-guides</string>
                 <key>re_pattern</key>
-                <string>http://download.dymo.com/dymo/Software/Mac/DL.*?Setup\.(?P&lt;build&gt;.*?)\.dmg</string>
+                <string>download.dymo.com/dymo/Software/Mac/DL.*?Setup\.(?P&lt;build&gt;.*?)\.dmg</string>
             </dict>
         </dict>
         <dict>
@@ -34,7 +34,7 @@
                 <key>url</key>
                 <string>http://www.dymo.com/en-US/online-support/dymo-user-guides</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://download.dymo.com/dymo/Software/Mac/DLS.*?Setup\..*?\.dmg)</string>
+                <string>(?P&lt;url&gt;download.dymo.com/dymo/Software/Mac/DLS.*?Setup\..*?\.dmg)</string>
             </dict>
         </dict>
         <dict>
