@@ -21,9 +21,13 @@
         <key>Arguments</key>
         <dict>
             <key>url</key>
-            <string>https://unity3d.com/unity/whats-new</string>
+            <string>https://unity3d.com/unity-release/latest</string>
+            <key>curl_opts</key>
+            <array>
+                <string>-L</string>
+            </array>
             <key>re_pattern</key>
-            <string>(?P&lt;url&gt;https:\/\/download\.unity3d\.com\/download_unity\/.*\/MacEditorInstaller\/Unity\.pkg)</string>
+            <string>(?P&lt;url&gt;https:\/\/beta.unity3d.com\/download\/.*\/MacEditorInstaller\/Unity.pkg)</string>
         </dict>
     </dict>
 	<dict>
