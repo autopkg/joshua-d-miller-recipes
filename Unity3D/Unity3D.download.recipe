@@ -27,7 +27,7 @@
                 <string>-L</string>
             </array>
             <key>re_pattern</key>
-            <string>(?P&lt;url&gt;https:\/\/beta.unity3d.com\/download\/.*\/MacEditorInstaller\/Unity.pkg)</string>
+            <string>(?P&lt;url&gt;https:\/\/beta\.unity3d\.com\/download\/.*\/MacEditorInstaller\/Unity\.pkg)</string>
         </dict>
     </dict>
 	<dict>
