@@ -10,8 +10,6 @@
 	<string>com.github.joshua-d-miller.autopkg.download.Stencyl</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>http://mario.stencyl.net/public/Stencyl-full.dmg</string>
 		<key>NAME</key>
 		<string>Stencyl</string>
 	</dict>
@@ -22,15 +20,26 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>re_pattern</key>
+				<string>(?P&lt;url&gt;http\:\/\/www\.stencyl\.com\/.*/(?P&lt;version&gt;[\d.]+)\/mac\.dmg)</string>
+				<key>url</key>
+				<string>http://stencyl.com/download/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.94 Safari/537.36 Vivaldi/2.6.1566.40</string>
+				</dict>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
-                <key>request_headers</key>
-                <dict>
-                        <key>user-agent</key>
-                        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.94 Safari/537.36 Vivaldi/2.6.1566.40</string>
-                </dict>
+				<string>%url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
