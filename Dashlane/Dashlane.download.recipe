@@ -26,6 +26,7 @@
                 <string>https://ws1.dashlane.com/5/binaries/query?format=json&os=OS_X_10_14_5&target=archive&platform=launcher_macosx</string>
                 <key>re_pattern</key>
                 <string>(?P&lt;url&gt;https:\/\/.*.cloudfront\.net\/releases\/.*\/.*\/Dashlane\.dmg)</string>
+            </dict>
         </dict>
         <dict>
         	<key>Processor</key>
