@@ -62,7 +62,7 @@ Stencyl isn't your average game creation software; it's a gorgeous, intuitive to
 				<key>overwrite</key>
 				<true/>
           		<key>source_path</key>
-          		<string>%pathname%/Stencyl</string>
+          		<string>%pathname%/Stencyl-*</string>
           	</dict>
 			<key>Processor</key>
 			<string>Copier</string>
