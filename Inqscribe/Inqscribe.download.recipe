@@ -31,6 +31,11 @@
                 <string>%URL%</string>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
+                <key>request_headers</key>
+                <dict>
+                        <key>user-agent</key>
+                        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.94 Safari/537.36 Vivaldi/2.6.1566.40</string>
+                </dict>
             </dict>
         </dict>
 		<dict>
