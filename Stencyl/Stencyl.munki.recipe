@@ -14,6 +14,10 @@
 		<string>Stencyl</string>
 		<key>DESTINATION_PATH</key>
 		<string>/Applications</string>
+        <key>MUNKI_CATEGORY</key>
+        <string>Multimedia</string>
+        <key>MUNKI_DEVELOPER</key>
+        <string>Stencyl, LLC</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,15 +25,14 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Build software systems reliably with object-oriented approach.</string>
+			<string>Game Studio in a Box
+Stencyl isn't your average game creation software; it's a gorgeous, intuitive toolset that accelerates your workflow and then gets out of the way. We take care of the essentials, so you can focus on what's important - making your game yours.</string>
 			<key>developer</key>
-			<string>Jonathan Chung</string>
+			<string>%MUNKI_DEVELOPER%</string>
 			<key>category</key>
-			<string>Multimedia</string>
+			<string>%MUNKI_CATEGORY%</string>
 			<key>display_name</key>
 			<string>Stencyl</string>
-			<key>minimum_os_version</key>
-			<string>10.10</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
