@@ -23,7 +23,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://ws1.dashlane.com/5/binaries/query?format=json&os=OS_X_10_14_5&target=archive&platform=launcher_macosx</string>
+                <string>https://ws1.dashlane.com/5/binaries/query?format=json&amp;os=OS_X_10_14_5&amp;target=archive&amp;platform=launcher_macosx</string>
                 <key>re_pattern</key>
                 <string>(?P&lt;url&gt;https:\/\/.*.cloudfront\.net\/releases\/.*\/.*\/Dashlane\.dmg)</string>
             </dict>
