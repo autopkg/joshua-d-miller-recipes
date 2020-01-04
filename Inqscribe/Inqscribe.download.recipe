@@ -6,22 +6,26 @@
 	<string>Downloads the latest verison of Inqscribe</string>
 	<key>Identifier</key>
 	<string>com.github.joshua-d-miller.download.inqscribe</string>
-	<key>Input</key>
-	<dict>
-        <key>Processor</key>
-        <string>URLTextSearcher</string>
-        <key>Arguments</key>
-        <dict>
-            <key>url</key>
-            <string>https://www.inqscribe.com/download.html</string>
-            <key>re_pattern</key>
-            <string>(?P&lt;url&gt;files\.inqscribe\.com\/InqScribe_.*?\.dmg).*&lt;br&gt;\n.*&lt;br&gt;\n.*current version</string>
-        </dict>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Inqscribe</string>
     </dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>Process</key>
 	<array>
+    	<dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>https://www.inqscribe.com/download.html</string>
+                <key>re_pattern</key>
+                <string>(?P&lt;url&gt;files\.inqscribe\.com\/InqScribe_.*?\.dmg).*&lt;br&gt;\n.*&lt;br&gt;\n.*current version</string>
+            </dict>
+        </dict>
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
