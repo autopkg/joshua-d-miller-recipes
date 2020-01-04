@@ -15,7 +15,7 @@
             <key>url</key>
             <string>https://www.inqscribe.com/download.html</string>
             <key>re_pattern</key>
-            <string>(?P&lt;url&gt;http:\/\/files\.inqscribe\.com\/InqScribe_.*?\.dmg).*&lt;br&gt;\n.*&lt;br&gt;\n.*current version</string>
+            <string>(?P&lt;url&gt;files\.inqscribe\.com\/InqScribe_.*?\.dmg).*&lt;br&gt;\n.*&lt;br&gt;\n.*current version</string>
         </dict>
     </dict>
 	<key>MinimumVersion</key>
