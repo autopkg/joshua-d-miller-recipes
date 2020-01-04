@@ -12,11 +12,11 @@
         <string>apps/inqscribe</string>
         <key>NAME</key>
         <string>Inqscribe</string>
-    	<key>pkginfo</key>
         <key>MUNKI_CATEGORY</key>
         <string>Multimedia</string>
         <key>MUNKI_DEVELOPER</key>
         <string>Inquirium, LLC</string>
+    	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
     		<array>
