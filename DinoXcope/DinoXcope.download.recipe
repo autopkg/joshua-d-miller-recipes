@@ -23,7 +23,7 @@
         	   <key>Arguments</key>
         	   <dict>
         	       <key>url</key>
-        	       <string>http://dinolite.us/index.php/downloads/dl/file/id/4/dinoxcope.dmg</string>
+        	       <string>https://www.dinolite.us/dl/archive/DinoXcope_OSX_2.0.dmg</string>
                     <key>filename</key>
                     <string>%NAME%.dmg</string>
         	   </dict>
