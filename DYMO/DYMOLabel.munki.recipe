@@ -41,6 +41,8 @@
     <key>Process</key>
     <array>
         <dict>
+            <key>Processor</key>
+            <string>FlatPkgUnpacker</string>
             <key>Arguments</key>
             <dict>
                 <key>flat_pkg_path</key>
@@ -48,10 +50,10 @@
                 <key>destination_path</key>
                 <string>%RECIPE_CACHE_DIR%/Unpack/</string>
             </dict>
-            <key>Processor</key>
-            <string>FlatPkgUnpacker</string>
         </dict>
         <dict>
+            <key>Processor</key>
+            <string>PkgRootCreator</string>
             <key>Arguments</key>
             <dict>
                 <key>pkgroot</key>
@@ -59,10 +61,10 @@
                 <key>pkgdirs</key>
                 <dict/>
             </dict>
-            <key>Processor</key>
-            <string>PkgRootCreator</string>
         </dict>
         <dict>
+            <key>Processor</key>
+            <string>PkgPayloadUnpacker</string>
             <key>Arguments</key>
             <dict>
                 <key>pkg_payload_path</key>
@@ -72,10 +74,10 @@
                 <key>purge_destination</key>
                 <true/>
             </dict>
-            <key>Processor</key>
-            <string>PkgPayloadUnpacker</string>
         </dict>
         <dict>
+            <key>Processor</key>
+            <string>MunkiInstallsItemsCreator</string>
             <key>Arguments</key>
             <dict>
                 <key>faux_root</key>
@@ -85,26 +87,35 @@
                     <string>/Applications/DYMO Label.app</string>
                 </array>
             </dict>
+        </dict>
+        <dict>
             <key>Processor</key>
-            <string>MunkiInstallsItemsCreator</string>
+            <string>Versioner</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>%RECIPE_CACHE_DIR%/application_payload/Applications/DYMO Label.app/Contents/Info.plist</string>
+            </dict>
         </dict>
         <dict>
             <key>Processor</key>
             <string>MunkiPkginfoMerger</string>
         </dict>
         <dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
             <key>Arguments</key>
             <dict>
                 <key>additional_pkginfo</key>
                 <dict>
                     <key>version</key>
-                    <string>%build%</string>
+                    <string>%version%</string>
                 </dict>
             </dict>
-            <key>Processor</key>
-            <string>MunkiPkginfoMerger</string>
         </dict>
         <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
@@ -112,8 +123,6 @@
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
         </dict>
     </array>
 </dict>

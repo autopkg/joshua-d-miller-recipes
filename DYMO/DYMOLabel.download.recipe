@@ -21,20 +21,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.dymo.com/en-US/online-support/dymo-user-guides</string>
+                <string>http://www.dymo.com/en-GB/online-support/dymo-user-guides</string>
                 <key>re_pattern</key>
-                <string>download.dymo.com/dymo/Software/Mac/DL.*?Setup\.(?P&lt;build&gt;.*?)\.dmg</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>http://www.dymo.com/en-US/online-support/dymo-user-guides</string>
-                <key>re_pattern</key>
-                <string>(?P&lt;url&gt;download.dymo.com/dymo/Software/Mac/DLS.*?Setup\..*?\.dmg)</string>
+                <string>https://atropos\.newellco\.com/filestore/getLink\.php\?HASH=[a-zA-Z0-9]*</string>
             </dict>
         </dict>
         <dict>
@@ -43,9 +32,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%url%</string>
+                <string>%match%&amp;TEMP=1</string>
                 <key>filename</key>
-                <string>DymoLabel-%build%.dmg</string>
+                <string>DymoLabel.dmg</string>
             </dict>
         </dict>
         <dict>
