@@ -3,34 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest verison of DYMO Label Software</string>
+	<string>Downloads the latest verison of DinoXcope Software</string>
 	<key>Identifier</key>
 	<string>com.github.joshua-d-miller.download.dinoxcope</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>DinoXcope</string>
-                        <key>USER_AGENT</key>
-                        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
+        <key>USER_AGENT</key>
+        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.2 Safari/605.1.15</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
 	<key>Process</key>
 	<array>
-            <dict>
-        	   <key>Processor</key>
-        	   <string>URLDownloader</string>
-        	   <key>Arguments</key>
-        	   <dict>
-        	       <key>url</key>
-        	       <string>http://dinolite.us/index.php/downloads/dl/file/id/4/dinoxcope.dmg</string>
-                    <key>filename</key>
-                    <string>%NAME%.dmg</string>
-        	   </dict>
-            </dict>
+        <dict>
+    	   <key>Processor</key>
+    	   <string>URLDownloader</string>
+    	   <key>Arguments</key>
+    	   <dict>
+    	       <key>url</key>
+    	       <string>https://www.dinolite.us/dl/archive/DinoXcope_OSX_2.0.2.dmg</string>
+               <key>filename</key>
+               <string>%NAME%.dmg</string>
+    	   </dict>
+        </dict>
 	<dict>
 	   <key>Processor</key>
-                <string>EndOfCheckPhase</string>
+       <string>EndOfCheckPhase</string>
 	</dict>
 	</array>
 </dict>
