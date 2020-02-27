@@ -135,7 +135,7 @@ Stencyl isn't your average game creation software; it's a gorgeous, intuitive to
 				<key>munkiimport_appname</key>
 				<string>Stencyl</string>
 				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.dmg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
