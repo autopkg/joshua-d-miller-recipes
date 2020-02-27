@@ -94,16 +94,23 @@ Stencyl isn't your average game creation software; it's a gorgeous, intuitive to
 		<dict>
 			<key>Arguments</key>
 			<dict>
-          		<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.dmg</string>
-				<key>overwrite</key>
-				<true/>
-          		<key>source_path</key>
-          		<string>%pathname%</string>
+          		<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 			</dict>
 			<key>Processor</key>
-			<string>Copier</string>
+			<string>DmgCreator</string>
 		</dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+            </dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+        </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict/>
