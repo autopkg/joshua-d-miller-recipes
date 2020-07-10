@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Amazon Photos and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.joshua-d-miller.munki.AmazonPhotos</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>Amazon Photos</string>
+        <key>MUNKI_REPO_DEVELOPER</key>
+        <string>Amazon Inc.</string>
+        <key>MUNKI_REPO_CATEGORY</key>
+        <string>Multimedia</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>Create lasting momemories with custom prints:
+From prints ready to frame or wall decor ready to hang, display your favorite memories for everyone to enjoy.
+
+Your photos, on the big screen:
+Set your photos as your Fire TV screensaver, and view a slideshow of your favorites on the biggest screen in the house.
+
+Expand your storage:
+Choose storage plans staring at 100GB and cancel anytime.
+
+From https://www.amazon.com/Amazon-Photos/b
+            </string>
+			<key>developer</key>
+			<string>%MUNKI_REPO_DEVELOPER%</string>
+            <key>cateogry</key>
+            <string>%MUNKI_REPO_CATEGORY%</string>
+			<key>display_name</key>
+			<string>%NAME</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.joshua-d-miller.download.AmazonPhotos</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%dmg_path%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>

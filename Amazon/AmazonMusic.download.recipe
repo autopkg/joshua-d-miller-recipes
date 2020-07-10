@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest verison of Amazon Music</string>
+	<key>Identifier</key>
+	<string>com.github.joshua-d-miller.download.AmazonMusic</string>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+        <dict>
+        	<key>Processor</key>
+        	<string>URLDownloader</string>
+        	<key>Arguments</key>
+        	<dict>
+        		<key>url</key>
+        		<string>https://morpho-releases.s3-us-west-2.amazonaws.com/mac/2002102177/AmazonMusicInstaller.dmg</string>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
+        	</dict>
+        </dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
