@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest verison of Amazon Music</string>
 	<key>Identifier</key>
-	<string>com.github.joshua-d-miller.download.AmazonMusic</string>
+	<string>com.github.joshua-d-miller.download.AmazonMusic-jdm</string>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>Process</key>
