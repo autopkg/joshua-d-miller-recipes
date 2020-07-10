@@ -43,7 +43,7 @@
     <key>MinimumVersion</key>
     <string>1.0.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.download.AmazonMusic</string>
+    <string>com.github.joshua-d-miller.download.AmazonMusicJDM</string>
     <key>Process</key>
     <array>
         <dict>
