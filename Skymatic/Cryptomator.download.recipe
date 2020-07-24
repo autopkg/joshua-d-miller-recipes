@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Cryptomator</string>
 		<key>SEARCH_URL</key>
-		<string>https://cryptomator.org/downloads/#macDownload</string>
+		<string>https://cryptomator.org/downloads/mac/thanks/</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.3.0</string>
@@ -25,7 +25,7 @@
                 <key>url</key>
                 <string>%SEARCH_URL%</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;https:\/\/dl\.bintray\.com\/cryptomator\/cryptomator\/.*\/Cryptomator-.*\.dmg)</string>
+                <string>(?P&lt;url&gt;https:\/\/dl\.bintray\.com\/cryptomator\/cryptomator\/.*\/Cryptomator-.*\.dmg)\.</string>
             </dict>
         </dict>
         <dict>
