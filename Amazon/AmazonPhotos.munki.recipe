@@ -39,7 +39,7 @@ From https://www.amazon.com/Amazon-Photos/b
             <key>cateogry</key>
             <string>%MUNKI_REPO_CATEGORY%</string>
 			<key>display_name</key>
-			<string>%NAME</string>
+			<string>%NAME%</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
