@@ -3,19 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest version of the specified MAJOR_VERSION of NVivo.</string>
+    <string>Downloads the latest version of NVivo.</string>
     <key>Identifier</key>
     <string>com.github.joshua-d-miller.download.nvivo</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>NVivo</string>
-        <key>MAJOR_VERSION</key>
-        <string>12</string>
-        <key>SEARCH_URL</key>
-        <string>https://qsrinternational.com/nvivo/support-overview/downloads</string>
-        <key>SEARCH_PATTERN</key>
-        <string>(?P&lt;url&gt;http(s)?\://download\.qsrinternational\.com/Software/NVivo%MAJOR_VERSION%forMac/NVivo( [0-9]{2})?\.dmg)</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -23,35 +17,11 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%SEARCH_URL%</string>
-                <key>re_pattern</key>
-                <string>%SEARCH_PATTERN%</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-            <key>Arguments</key>
-            <dict>
-                <key>find</key>
-                <string> </string>
-                <key>input_string</key>
-                <string>%url%</string>
-                <key>replace</key>
-                <string>%20</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
             <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%output_string%</string>
+                <string>http://download.qsrinternational.com/Software/NVivoforMac/NVivo.dmg</string>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
             </dict>

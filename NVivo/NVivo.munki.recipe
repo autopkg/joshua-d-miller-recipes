@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of Stellarium and imports it into Munki.</string>
+    <string>Downloads the latest version of NVivo and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.autopkg.munki.Stellarium</string>
+    <string>com.github.joshua-d-miller.autopkg.munki.nvivo</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/stellarium</string>
+        <string>apps/nvivo</string>
         <key>NAME</key>
-        <string>Stellarium</string>
+        <string>NVivo</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -19,30 +19,30 @@
     			<string>testing</string>
     		</array>
             <key>category</key>
-            <string>Science</string>
+            <string>Mathematics</string>
             <key>developer</key>
-            <string>Stellarium Development Team</string>
+            <string>QSR International</string>
     		<key>description</key>
-    		<string>Stellarium is a free open source planetarium for your computer. It shows a realistic sky in 3D, just like what you see with the naked eye, binoculars or a telescope.</string>
+    		<string>NVivo for Mac is your platform for analyzing all forms of unstructured data.  Quickly interrogate data using powerful search, query and visualization tools.  Get the big picture or get into the detail.  Uncover subtle connections, rigorously justify findings, and effortlessly share your work.</string>
     		<key>name</key>
     		<string>%NAME%</string>
-    		<key>unattended_install</key>
-            <true/>
             <key>display_name</key>
             <string>%NAME%</string>
+    		<key>unattended_install</key>
+    		<true/>
     	</dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.9</string>
+    <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.autopkg.download.Stellarium</string>
+    <string>com.github.joshua-d-miller.download.nvivo</string>
     <key>Process</key>
     <array>
         <dict>
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%.app</string>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
