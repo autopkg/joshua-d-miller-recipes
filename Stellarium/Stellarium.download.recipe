@@ -71,7 +71,6 @@
             <key>dmg_path</key>
             <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
         </dict>
-	<dict>
 		<key>Processor</key>
 		<string>EndOfCheckPhase</string>
 	</dict>
