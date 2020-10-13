@@ -62,7 +62,7 @@
         </dict>
     </dict>
     <dict>
-        <key>Process</key>
+        <key>Processor</key>
         <string>DmgCreator</string>
         <key>Arguments</key>
         <dict>
