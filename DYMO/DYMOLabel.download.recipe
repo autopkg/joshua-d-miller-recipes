@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>DYMO Label</string>
         <key>url</key>
-        <string>https://download.dymo.com/dymo/Software/DLS8Setup.dmg
+        <string>https://download.dymo.com/dymo/Software/DLS8Setup.dmg</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
