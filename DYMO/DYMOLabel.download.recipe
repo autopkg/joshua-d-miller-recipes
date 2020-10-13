@@ -9,7 +9,9 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>Dymo Label</string>
+        <string>DYMO Label</string>
+        <key>url</key>
+        <string>https://download.dymo.com/dymo/Software/DLS8Setup.dmg
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.9</string>
@@ -23,7 +25,7 @@
                 <key>url</key>
                 <string>%url%</string>
                 <key>filename</key>
-                <string>DYMO Label.dmg</string>
+                <string>%NAME%.dmg</string>
             </dict>
         </dict>
         <dict>
