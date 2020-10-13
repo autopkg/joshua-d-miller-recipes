@@ -61,6 +61,16 @@
             <string>identifier "org.stellarium.Stellarium" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "3WW8XR23DF"</string>
         </dict>
     </dict>
+    <dict>
+        <key>Process</key>
+        <string>DMGCreator</string>
+        <key>Arguments</key>
+        <dict>
+            <key>dmg_root</key>
+            <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+            <key>dmg_path</key>
+            <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+        </dict>
 	<dict>
 		<key>Processor</key>
 		<string>EndOfCheckPhase</string>
