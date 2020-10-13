@@ -63,7 +63,7 @@
     </dict>
     <dict>
         <key>Process</key>
-        <string>DMGCreator</string>
+        <string>DmgCreator</string>
         <key>Arguments</key>
         <dict>
             <key>dmg_root</key>
