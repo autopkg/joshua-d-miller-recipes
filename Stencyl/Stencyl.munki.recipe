@@ -147,7 +147,7 @@ Stencyl isn't your average game creation software; it's a gorgeous, intuitive to
 			<dict>
 				<key>path_list</key>
 				<array>
-					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				</array>
 			</dict>
 			<key>Processor</key>
