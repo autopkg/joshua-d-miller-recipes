@@ -28,6 +28,21 @@
                 <string>%NAME%.dmg</string>
             </dict>
         </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>   
+                <string>%pathname%/JabraDirectSetup.pkg</string>
+                <key>expected_authority_names</key>
+                <array>
+                    <string>Developer ID Installer: GN Audio AS (55LV32M29R)</string>
+                    <string>Developer ID Certification Authority</string>
+                    <string>Apple Root CA</string>
+                </array>
+            </dict>
+        </dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
