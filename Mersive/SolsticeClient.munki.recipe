@@ -103,7 +103,10 @@ fi
             <key>Arguments</key>
             <dict>
                 <key>path_list</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+                    <string>%RECIPE_CACHE_DIR%/%NAME%.app</string>
+                </array>
             </dict>
             <key>Processor</key>
             <string>PathDeleter</string>
