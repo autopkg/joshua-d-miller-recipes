@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of the Mersive Solstice Client and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.solsticeclient</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/solsticeclient</string>
+        <key>NAME</key>
+        <string>Solstice Client</string>
+    	<key>pkginfo</key>
+    	<dict>
+    	    <key>catalogs</key>
+    	    <array>
+    	       <string>testing</string>
+    	    </array>
+            <key>display_name</key>
+            <string>Solstice Client</string>
+            <key>category</key>
+            <string>Productivity</string>
+            <key>developer</key>
+            <string>Mersive</string>
+            <key>description</key>
+            <string>Mersive Solstice is a high-performance in-room collaboration platform that improves the usability and productivity of meeting and learning spaces. Solstice enables users on any device to easily share, control, and mark up content on in-room displays to drive more efficient, engaging, and productive meetings.</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+        	<true/>
+            <key>postinstall_script</key>
+            <string>#!/bin/bash
+# Install the Solstice Audio Driver
+# Joshua D. Miller - josh@psu.edu
+# The Pennsylvania State University
+# Last Updated - Oct 2, 2018
+
+# Unload Kext File
+/sbin/kextunload "/System/Library/Extensions/SolsticeAudioDevice.kext"
+
+# Check and remove old Solstice Kext File
+if [[ -f "/System/Library/Extensions/SolsticeAudioDevice.kext" ]]
+then
+	/bin/rm -f "/System/Library/Extensions/SolsticeAudioDevice.kext"
+else
+	/bin/echo "File not found. Continuing..."
+fi
+
+# Copy the new Kext File
+/bin/cp -R "/Applications/Solstice Client.app/Contents/Resources/SolsticeAudioDevice.kext" "/System/Library/Extensions/"
+/bin/chmod -R 755 "/System/Library/Extensions/SolsticeAudioDevice.kext"
+/usr/sbin/chown -R root:wheel "/System/Library/Extensions/SolsticeAudioDevice.kext"
+
+# Load Kext File
+/sbin/kextload "/System/Library/Extensions/SolsticeAudioDevice.kext"
+            </string>
+	   </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.0.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.joshua-d-miller.download.solsticeclient</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>source_path</key>
+                <string>%pathname%/SolsticeClient.app</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.app</string>
+            </dict>
+            <key>Processor</key>
+            <string>Copier</string>
+        </dict>
+        <dict>
+        	<key>Processor</key>
+        	<string>DmgCreator</string>
+        	<key>Arguments</key>
+        	<dict>
+        		<key>dmg_root</key>
+        		<string>%RECIPE_CACHE_DIR%/%NAME%.app</string>
+        		<key>dmg_path</key>
+        		<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+                <key>dmg_megabytes</key>
+                <string>250</string>
+        	</dict>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+            </dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
