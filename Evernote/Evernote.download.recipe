@@ -9,7 +9,7 @@
     <key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Cryptomator</string>
+		<string>Evernote</string>
 		<key>SEARCH_URL</key>
 		<string>https://evernote.com/download</string>
         <key>USER_AGENT</key>
