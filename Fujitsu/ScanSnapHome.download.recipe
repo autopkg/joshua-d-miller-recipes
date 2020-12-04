@@ -48,21 +48,6 @@
         </dict>
         <dict>
             <key>Processor</key>
-            <string>CodeSignatureVerifier</string>
-            <key>Arguments</key>
-            <dict>
-                <key>input_path</key>
-                <string>%pathname%/Download/MacSSHomeInstaller_%major%_%minor%_%patch%.dmg/%NAME%.pkg</string>
-                <key>expected_authority_names</key>
-                <array>
-                    <string>Developer ID Installer: PFU LIMITED (XW4U7W2E9L)</string>
-                    <string>Developer ID Certification Authority</string>
-                    <string>Apple Root CA</string>
-                </array>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
             <string>Copier</string>
             <key>Arguments</key>
             <dict>
@@ -76,6 +61,21 @@
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
+                <key>expected_authority_names</key>
+                <array>
+                    <string>Developer ID Installer: PFU LIMITED (XW4U7W2E9L)</string>
+                    <string>Developer ID Certification Authority</string>
+                    <string>Apple Root CA</string>
+                </array>
+            </dict>
+        </dict>
 	</array>
 </dict>
 </plist>
