@@ -33,6 +33,7 @@ if [[ -d /Applications/Jing.app ]]
 then
     /bin/rm -rf /Applications/Jing.app
 fi
+            </string>
             <key>display_name</key>
             <string>%NAME%</string>
     		<key>unattended_install</key>
