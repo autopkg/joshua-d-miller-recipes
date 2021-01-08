@@ -21,7 +21,7 @@
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-        		<string>http://www.chronoviz.com/ChronoViz.zip</string>
+        		<string>https://www.chronoviz.com/ChronoViz.zip</string>
         		<key>filename</key>
         		<string>%NAME%.zip</string>
         	</dict>
