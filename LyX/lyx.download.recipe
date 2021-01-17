@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://www.lyx.org/Download</string>
                 <key>re_pattern</key>
-								<string>bin\/(?P&lt;versiondir&gt;.*?)\/LyX-(?P&lt;version&gt;.*?)\+qt.*?-x86_64-cocoa\.dmg</string>
+								<string>bin\/(?P&lt;versiondir&gt;.*?)\/LyX-(?P&lt;version&gt;.*?)\+qt.*?-12-x86_64-cocoa\.dmg</string>
             </dict>
         </dict>
         <dict>
@@ -32,7 +32,7 @@
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-						<string>https://ftp.lip6.fr/pub/lyx/bin/%versiondir%/LyX-%version%+qt5-x86_64-cocoa.dmg</string>
+						<string>https://ftp.lip6.fr/pub/lyx/bin/%versiondir%/LyX-%version%+qt5-12-x86_64-cocoa.dmg</string>
         		<key>filename</key>
         		<string>%NAME%.dmg</string>
         	</dict>
