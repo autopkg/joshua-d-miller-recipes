@@ -75,9 +75,9 @@ fi
             <key>Arguments</key>
             <dict>
                 <key>source_path</key>
-                <string>%pathname%/SolsticeClient.app</string>
+                <string>%pathname%/Mersive Solstice.app</string>
                 <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%.app</string>
+                <string>%RECIPE_CACHE_DIR%/Mersive Solstice.app</string>
                 <key>overwrite</key>
                 <true/>
             </dict>
@@ -90,7 +90,7 @@ fi
         	<key>Arguments</key>
         	<dict>
         		<key>dmg_root</key>
-        		<string>%RECIPE_CACHE_DIR%/%NAME%.app</string>
+        		<string>%RECIPE_CACHE_DIR%/Mersive Solstice.app</string>
         		<key>dmg_path</key>
         		<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
                 <key>dmg_megabytes</key>
@@ -114,7 +114,7 @@ fi
                 <key>path_list</key>
                 <array>
                     <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-                    <string>%RECIPE_CACHE_DIR%/%NAME%.app</string>
+                    <string>%RECIPE_CACHE_DIR%/Mersive Solstice.app</string>
                 </array>
             </dict>
             <key>Processor</key>
