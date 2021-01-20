@@ -56,7 +56,7 @@ else
 fi
 
 # Copy the new Kext File
-/bin/cp -R "/Applications/Solstice Client.app/Contents/Resources/SolsticeAudioDevice.kext" "/System/Library/Extensions/"
+/bin/cp -R "/Applications/Mersive Solstice.app/Contents/Resources/SolsticeAudioDevice.kext" "/System/Library/Extensions/"
 /bin/chmod -R 755 "/System/Library/Extensions/SolsticeAudioDevice.kext"
 /usr/sbin/chown -R root:wheel "/System/Library/Extensions/SolsticeAudioDevice.kext"
 
