@@ -48,6 +48,13 @@ else
 	/bin/echo "File not found. Continuing..."
 fi
 
+if [[ -f "/Applications/SolsticeClient.app" ]]
+then
+    /bin/rm -rf "/Applications/SolsticeClient.app"
+else
+    /bin/echo "Old version not found. Continuing..."
+fi
+
 # Copy the new Kext File
 /bin/cp -R "/Applications/Solstice Client.app/Contents/Resources/SolsticeAudioDevice.kext" "/System/Library/Extensions/"
 /bin/chmod -R 755 "/System/Library/Extensions/SolsticeAudioDevice.kext"
