@@ -32,7 +32,7 @@
                         <string>%USER_AGENT%</string>
                 </dict>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;https:\/\/cdn1\.evernote\.com\/boron\/mac\/builds\/Evernote-[\d.]+-[\d]+\.dmg)</string>
+                <string>(?P&lt;url&gt;https:\/\/cdn[\d]\.evernote\.com\/boron\/mac\/builds\/Evernote-[\d.]+-.*[\d]+\.dmg)</string>
             </dict>
         </dict>
         <dict>
