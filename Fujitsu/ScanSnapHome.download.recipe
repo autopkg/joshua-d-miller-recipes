@@ -32,7 +32,7 @@
                         <string>%USER_AGENT%</string>
                 </dict>
                 <key>re_pattern</key>
-                <string>ScanSnap Home Offline Installer (?P&lt;major&gt;[\d])\.(?P&lt;minor&gt;[\d])\.(?P&lt;patch&gt;[\d])</string>
+                <string>ScanSnap Home Offline Installer (?P&lt;major&gt;[\d])\.(?P&lt;minor&gt;[\d])\.(?P&lt;patch&gt;[\d]+)</string>
             </dict>
         </dict>
         <dict>
