@@ -10,20 +10,31 @@
     <dict>
         <key>NAME</key>
         <string>Silhouette Studio</string>
-        <key>url</key>
-        <string>https://dl.silhcdn.com/9fe0f01ebb6bd530</string>
     </dict>
     <key>MinimumVersion</key>
     <string>2.0.0</string>
     <key>Process</key>
     <array>
+		<dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>href="\/\/(dl\.silhcdn\.com\/\S*)">Mac \(64-bit\)</string>
+				<key>result_output_var_name</key>
+				<string>match</string>
+				<key>url</key>
+				<string>https://www.silhouetteamerica.com/software</string>
+			</dict>
+		</dict>
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%url%</string>
+                <string>https://%match%</string>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
             </dict>
