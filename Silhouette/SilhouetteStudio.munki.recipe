@@ -28,6 +28,19 @@
     		<string>Create designs and send to a Silhouette machine. This is the free basic version of this software.</string>
     		<key>name</key>
     		<string>%NAME%</string>
+            <key>postinstall_script</key>
+            <string>#!/bin/sh
+# Create necessary directories for non admins to run Silhouette Studio
+# Suggested from JCSmillie https://github.com/JCSmillie
+# Created in recipe March 19, 2021
+
+# Make Directories
+/bin/mkdir "/Library/Application Support/com.aspexsoftware.Silhouette_Studio"
+/bin/mkdir "/Library/Application Support/com.aspexsoftware.Silhouette_Studio.license"
+# Give all users access
+/bin/chmod -R 777 "/Library/Application Support/com.aspexsoftware.Silhouette_Studio"
+/bin/chmod -R 777 "/Library/Application Support/com.aspexsoftware.Silhouette_Studio.license"
+            </string>
     		<key>unattended_install</key>
     		<true/>
     	</dict>
