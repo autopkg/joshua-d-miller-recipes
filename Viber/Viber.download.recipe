@@ -21,7 +21,7 @@
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-        		<string>http://download.viber.com/desktop/mac/Viber.dmg</string>
+        		<string>https://download.viber.com/desktop/mac/Viber.dmg</string>
         		<key>filename</key>
         		<string>%NAME%.dmg</string>
         	</dict>

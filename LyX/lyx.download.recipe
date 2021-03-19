@@ -21,7 +21,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.lyx.org/Download</string>
+                <string>https://www.lyx.org/Download</string>
                 <key>re_pattern</key>
 				<string>bin\/(?P&lt;versiondir&gt;.*?)\/(?P&lt;file&gt;LyX-.*?\+qt.*?-x86_64-cocoa\.dmg)</string>
             </dict>

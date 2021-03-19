@@ -21,7 +21,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.voipconnect.com/download</string>
+                <string>https://www.voipconnect.com/download</string>
                 <key>re_pattern</key>
                 <string>(?P&lt;url&gt;/public/download/VoipConnect.*?\.pkg)</string>
             </dict>
@@ -32,7 +32,7 @@
         	<key>Arguments</key>
         	<dict>
         		<key>url</key>
-        		<string>http://www.voipconnect.com/%url%</string>
+        		<string>https://www.voipconnect.com/%url%</string>
         		<key>filename</key>
         		<string>%NAME%.pkg</string>
         	</dict>
