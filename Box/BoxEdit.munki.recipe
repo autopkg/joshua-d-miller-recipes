@@ -2,12 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the latest version of Box Edit, imports into Munki.
-
-temp recipe waiting on pr: https://github.com/autopkg/joshua-d-miller-recipes/pull/99</string>
     <key>Identifier</key>
-    <string>com.github.dataJAR-private.temp.munki.BoxEdit</string>
+    <string>com.github.joshua-d-miller.autopkg.munki.boxedit</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
@@ -16,8 +12,6 @@ temp recipe waiting on pr: https://github.com/autopkg/joshua-d-miller-recipes/pu
         <string>Box Edit</string>
         <key>pkginfo</key>
         <dict>
-      	<key>blocking_applications</key>
-      	<array/>
             <key>catalogs</key>
             <array>
                 <string>testing</string>
@@ -324,6 +318,17 @@ fi</string>
                   <string>--item=Install Box Tools.app/Contents/Resources/Box Edit.app</string>
                   <string>--destinationpath=/Library/Application Support/Box/Box Edit.app</string>
               </array>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/%NAME%/</string>
+                </array>
             </dict>
         </dict>
   </array>
