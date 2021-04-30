@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Sketchpad - BETA</string>
+		<string>Sketchpad</string>
 		<key>SEARCH_URL</key>
 		<string>https://gsptest.scratchconsortium.com/download.html</string>
 	</dict>

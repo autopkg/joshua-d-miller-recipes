@@ -11,7 +11,7 @@
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/sketchpad</string>
         <key>NAME</key>
-        <string>Sketchpad - BETA</string>
+        <string>Sketchpad</string>
         <key>MUNKI_CATEGORY</key>
         <string>Mathematics</string>
         <key>MUNKI_DEVELOPER</key>
