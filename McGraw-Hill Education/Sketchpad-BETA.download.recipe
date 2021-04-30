@@ -25,7 +25,7 @@
                 <key>url</key>
                 <string>%SEARCH_URL%</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;https:\/\/gsptest\.scratchconsortium\.com\/downloads\/GSP_\d{4,}\.zip)</string>
+                <string>(?P&lt;url&gt;downloads\/GSP_\d{4,}\.zip)</string>
             </dict>
         </dict>
         <dict>
@@ -34,7 +34,7 @@
         	<key>Arguments</key>
         	<dict>
         	   <key>url</key>
-        	   <string>%url%</string>
+        	   <string>https://gsptest.scratchconsortium.com/%url%</string>
         	   <key>filename</key>
         	   <string>%NAME%.zip</string>
         	</dict>
