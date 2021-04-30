@@ -44,9 +44,9 @@
             <key>Arguments</key>
             <dict>
                 <key>source</key>
-                <string>%found_filename%/Contents/Resources/LogiMgr.mpkg</string>
+                <string>%found_filename%/Contents/Resources/LogiMgr.pkg</string>
                 <key>target</key>
-                <string>%RECIPE_CACHE_DIR%/Logitech Options.mpkg</string>
+                <string>%RECIPE_CACHE_DIR%/Logitech Options.pkg</string>
             </dict>
             <key>Processor</key>
             <string>FileMover</string>
@@ -55,7 +55,7 @@
             <key>Arguments</key>
             <dict>
                 <key>flat_pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/Logitech Options.mpkg</string>
+                <string>%RECIPE_CACHE_DIR%/Logitech Options.pkg</string>
                 <key>destination_path</key>
                 <string>%RECIPE_CACHE_DIR%/unpack</string>
             </dict>
@@ -127,7 +127,7 @@
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/Logitech Options.mpkg</string>
+                <string>%RECIPE_CACHE_DIR%/Logitech Options.pkg</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
