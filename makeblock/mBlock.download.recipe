@@ -34,7 +34,7 @@
         	<key>Arguments</key>
         	<dict>
         	   <key>url</key>
-        	   <string>https://dl.makeblock.com/mblock5/darwin/V5.3.0.pkg</string>
+        	   <string>%url%</string>
         	   <key>filename</key>
         	   <string>%NAME%.pkg</string>
         	</dict>
