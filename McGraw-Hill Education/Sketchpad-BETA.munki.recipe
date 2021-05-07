@@ -30,11 +30,11 @@
             <string>%NAME%</string>
     		<key>description</key>
     		<string>The Geometer's Sketchpad is the world's leading software for teaching mathematics. Sketchpad gives students at all levels-from third grade through college-a tangible, visual way to learn mathematics that increases their engagement, understanding, and achievement. Make math more meaningful and memorable using Sketchpad.</string>
-    		<key>name</key>
             <key>preinstall_script</key>
             <string>#!/bin/sh
 /bin/rm -rf /Applications/Sketchpad\ 5.1*
             </string>
+    		<key>name</key>
     		<string>%NAME%</string>
             <key>display_name</key>
             <string>%NAME%</string>
