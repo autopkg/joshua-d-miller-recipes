@@ -30,6 +30,17 @@
             <string>Multimedia</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>postinstall_script</key>
+			<string>#!/bin/sh
+# copy virtual camera plug-in to its needed location to avoid an admin
+# credentials prompt when starting the virtual camera for the first time
+/bin/cp -R /Applications/OBS.app/Contents/Resources/data/obs-mac-virtualcam.plugin /Library/CoreMediaIO/Plug-Ins/DAL/
+			</string>
+			<key>postuninstall_script</key>
+			<string>#!/bin/sh
+# remove virtual camera plug-in
+/bin/rm -r /Library/CoreMediaIO/Plug-Ins/DAL/obs-mac-virtualcam.plugin
+		</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
