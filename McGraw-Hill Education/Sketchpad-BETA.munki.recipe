@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of Sketchpad BETA Universal and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.sketchpadbeta</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/sketchpad</string>
+        <key>NAME</key>
+        <string>Sketchpad</string>
+        <key>MUNKI_CATEGORY</key>
+        <string>Mathematics</string>
+        <key>MUNKI_DEVELOPER</key>
+        <string>KCP Technologies &amp; McGraw-Hill Education</string>
+    	<key>pkginfo</key>
+    	<dict>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
+            <key>category</key>
+            <string>%MUNKI_CATEGORY%</string>
+            <key>developer</key>
+            <string>%MUNKI_DEVELOPER%</string>
+            <key>display_name</key>
+            <string>%NAME%</string>
+    		<key>description</key>
+    		<string>The Geometer's Sketchpad is the world's leading software for teaching mathematics. Sketchpad gives students at all levels-from third grade through college-a tangible, visual way to learn mathematics that increases their engagement, understanding, and achievement. Make math more meaningful and memorable using Sketchpad.</string>
+            <key>preinstall_script</key>
+            <string>#!/bin/sh
+/bin/rm -rf /Applications/Sketchpad\ 5.1*
+            </string>
+    		<key>name</key>
+    		<string>%NAME%</string>
+            <key>display_name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+    	</dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.3.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.joshua-d-miller.download.sketchpadbeta</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
