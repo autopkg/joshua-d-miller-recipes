@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>DYMO Label</string>
         <key>url</key>
-        <string>https://download.dymo.com/dymo/Software/DLS8Setup.dmg</string>
+        <string>http://labelwriter.com/software/dymoconnect/binaries/DLS8Setup.dmg</string>
         <key>USER_AGENT</key>
         <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.63</string>
     </dict>
