@@ -30,6 +30,8 @@
             <string>Adobe Digital Editions</string>
             <key>description</key>
             <string>Adobe Digital Editions software offers an engaging way to view and manage eBooks and other digital publications. Use it to download and purchase digital content, which can be read both online and offline. Transfer copy-protected eBooks from your personal computer to other computers or devices. Organize your eBooks into a custom library and annotate pages. Digital Editions also supports industry-standard eBook formats, including PDF/A and EPUB.</string>
+            <key>minimum_os_version</key>
+            <string>10.7</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
@@ -43,6 +45,51 @@
     <key>Process</key>
     <array>
         <dict>
+            <key>Processor</key>
+            <string>FlatPkgUnpacker</string>
+            <key>Arguments</key>
+            <dict>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/unpack/</string>
+                <key>flat_pkg_path</key>
+                <string>%pathname%/Digital Editions 4.5 Installer.pkg</string>
+                <key>purge_destination</key>
+                <string>true</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>PkgPayloadUnpacker</string>
+            <key>Arguments</key>
+            <dict>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/payload/Applications</string>
+                <key>pkg_payload_path</key>
+                <string>%RECIPE_CACHE_DIR%/unpack/build.pkg/Payload</string>
+                <key>purge_destination</key>
+                <string>true</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiInstallsItemsCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>faux_root</key>
+                <string>%RECIPE_CACHE_DIR%/payload/</string>
+                <key>installs_item_paths</key>
+                <array>
+                    <string>/Applications/Adobe Digital Editions 4.5.app</string>
+                </array>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
@@ -50,8 +97,18 @@
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
+        </dict>
+        <dict>
             <key>Processor</key>
-            <string>MunkiImporter</string>
+            <string>PathDeleter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/payload</string>
+                    <string>%RECIPE_CACHE_DIR%/unpack</string>
+                </array>
+            </dict>
         </dict>
     </array>
 </dict>
