@@ -48,7 +48,7 @@
                         <string>%USER_AGENT%</string>
                 </dict>
                 <key>re_pattern</key>
-                <string>(?P&lt;URL&gt;https:\/\/software\.bigfix\.com\/download\/bes\/\d{1,}\/BESAgent-\d{1,}\.[\d]\.[\d]\.\d{1,}-BigFix_MacOS\d{2,}\.[\d]\.pkg)</string>
+                <string>(?P&lt;DOWNLOAD_URL&gt;https:\/\/software\.bigfix\.com\/download\/bes\/\d{1,}\/BESAgent-\d{1,}\.[\d]\.[\d]\.\d{1,}-BigFix_MacOS\d{2,}\.[\d]\.pkg)</string>
             </dict>
         </dict>
         <dict>
@@ -57,7 +57,7 @@
         	<key>Arguments</key>
         	<dict>
         	   <key>url</key>
-        	   <string>%url%</string>
+        	   <string>%DOWNLOAD_URL%</string>
         	   <key>filename</key>
         	   <string>%NAME%.pkg</string>
         	</dict>
