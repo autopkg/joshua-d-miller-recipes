@@ -43,7 +43,7 @@
     <key>MinimumVersion</key>
     <string>2.0.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.download.kalturacapture</string>
+    <string>com.github.joshua-d-miller.download.bigfixclient</string>
     <key>Process</key>
     <array>
         <dict>
