@@ -32,7 +32,7 @@
                         <string>%USER_AGENT%</string>
                 </dict>
                 <key>re_pattern</key>
-                <string>(?&lt;SEARCH_URL2&gt;https:\/\/support\.bigfix\.com\/bes\/release\/\d{1,}.[\d]\/patch\d{1,})</string>
+                <string>(?&lt;VERSION_URL&gt;\d{1,}.[\d]\/patch\d{1,})</string>
             </dict>
         </dict>
         <dict>
@@ -41,7 +41,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%SEARCH_URL2%</string>
+                <string>https:\/\/support\.bigfix\.com\/bes\/release\/%VERSION_URL%</string>
                 <key>request_headers</key>
                 <dict>
                         <key>user-agent</key>
