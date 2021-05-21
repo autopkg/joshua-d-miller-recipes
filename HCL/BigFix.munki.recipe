@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of Vivaldi and imports it into Munki.</string>
+    <string>Download the latest version of BES Client and imports it into Munki. NOTE: This version is universal but will only run on macOS 11 and newer.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.autopkg.munki.vivaldi</string>
+    <string>com.github.joshua-d-miller.autopkg.munki.bigfixclient</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/vivaldi</string>
+        <string>apps/bigfix</string>
         <key>NAME</key>
-        <string>Vivaldi</string>
+        <string>HCL BigFix</string>
         <key>MUNKI_CATEGORY</key>
-        <string>Productivity</string>
+        <string>Security</string>
         <key>MUNKI_DEVELOPER</key>
-        <string>Vivaldi Technologies</string>
+        <string>HCL</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -29,19 +29,21 @@
             <key>display_name</key>
             <string>%NAME%</string>
     		<key>description</key>
-    		<string>A browser for our friends.</string>
+    		<string>HCL BigFix - A powerful, cross-platform systems management suite for remotely managing and monitoring workstations. BigFix is designed to save IT staff time and licensing costs by maintaining a single BigFix infrastructure centrally for all areas.</string>
     		<key>name</key>
     		<string>%NAME%</string>
             <key>display_name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>minimum_os_version</key>
+            <string>11.0.0</string>
     	</dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.3.0</string>
+    <string>2.0.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.download.vivaldi</string>
+    <string>com.github.joshua-d-miller.download.kalturacapture</string>
     <key>Process</key>
     <array>
         <dict>

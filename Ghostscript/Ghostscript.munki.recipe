@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of Vivaldi and imports it into Munki.</string>
+    <string>Download the latest version of Ghostscript and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.autopkg.munki.vivaldi</string>
+    <string>com.github.joshua-d-miller.autopkg.munki.ghostscript</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/vivaldi</string>
+        <string>apps/ghostscript</string>
         <key>NAME</key>
-        <string>Vivaldi</string>
+        <string>Ghostscript</string>
         <key>MUNKI_CATEGORY</key>
         <string>Productivity</string>
         <key>MUNKI_DEVELOPER</key>
-        <string>Vivaldi Technologies</string>
+        <string>Richard Koch</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -29,7 +29,7 @@
             <key>display_name</key>
             <string>%NAME%</string>
     		<key>description</key>
-    		<string>A browser for our friends.</string>
+    		<string>Ghostscript is an interpreter for the PostScript®  language and PDF files. It is available under either the GNU GPL Affero license or  licensed for commercial use from Artifex Software, Inc. It has been under active development for over 30 years and has been ported to several different systems during this time. Ghostscript consists of a PostScript interpreter layer and a graphics library.</string>
     		<key>name</key>
     		<string>%NAME%</string>
             <key>display_name</key>
@@ -39,9 +39,9 @@
     	</dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.3.0</string>
+    <string>2.0.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.download.vivaldi</string>
+    <string>com.github.joshua-d-miller.download.ghostscript</string>
     <key>Process</key>
     <array>
         <dict>

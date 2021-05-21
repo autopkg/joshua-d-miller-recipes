@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of Vivaldi and imports it into Munki.</string>
+    <string>Download the latest version of Kaltura Capture and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.autopkg.munki.vivaldi</string>
+    <string>com.github.joshua-d-miller.autopkg.munki.kalturacapture</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/vivaldi</string>
+        <string>apps/kalturacapture</string>
         <key>NAME</key>
-        <string>Vivaldi</string>
+        <string>Kaltura Capture</string>
         <key>MUNKI_CATEGORY</key>
         <string>Productivity</string>
         <key>MUNKI_DEVELOPER</key>
-        <string>Vivaldi Technologies</string>
+        <string>Kaltura Inc.</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -29,7 +29,7 @@
             <key>display_name</key>
             <string>%NAME%</string>
     		<key>description</key>
-    		<string>A browser for our friends.</string>
+    		<string>Kaltura Capture offers users the ability to record both screen and camera in just one click. It also includes a new automatic slide detection feature – if a user has a PowerPoint presentation in presenter mode when recording the screen, Kaltura Capture automatically detects and captures it, allowing the viewer to search and browse by slide.</string>
     		<key>name</key>
     		<string>%NAME%</string>
             <key>display_name</key>
@@ -39,9 +39,9 @@
     	</dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.3.0</string>
+    <string>2.0.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.download.vivaldi</string>
+    <string>com.github.joshua-d-miller.download.kalturacapture</string>
     <key>Process</key>
     <array>
         <dict>
