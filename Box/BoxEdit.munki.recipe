@@ -2,36 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Identifier</key>
-	<string>com.github.joshua-d-miller.autopkg.munki.boxedit</string>
-	<key>Input</key>
-	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/box</string>
-		<key>NAME</key>
-		<string>Box Edit</string>
-		<key>pkginfo</key>
-		<dict>
-      <key>blocking_applications</key>
-      <array/>
-			<key>catalogs</key>
-			<array>
-				<string>testing</string>
-			</array>
-			<key>description</key>
-			<string>Box Edit is an add-on feature that allows you to edit or create files directly on Box. Designed for all file types, browsers, and platforms, Box Edit uses the default application installed on your computer to edit or create simple and centralized content: DOC files open in Microsoft Word, PPT files open in Microsoft PowerPoint, images open in Photoshop (if installed), CAD files open in AutoCAD, and so forth.</string>
-			<key>display_name</key>
-			<string>Box Edit</string>
-			<key>category</key>
-			<string>Social</string>
-			<key>developer</key>
-			<string>Box</string>
-			<key>minimum_os_version</key>
-			<string>10.7</string>
-			<key>name</key>
-			<string>%NAME%</string>
-      <key>postinstall_script</key>
-      <string>#!/bin/bash
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.boxedit</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/box</string>
+        <key>NAME</key>
+        <string>Box Edit</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>description</key>
+            <string>Box Edit is an add-on feature that allows you to edit or create files directly on Box. Designed for all file types, browsers, and platforms, Box Edit uses the default application installed on your computer to edit or create simple and centralized content: DOC files open in Microsoft Word, PPT files open in Microsoft PowerPoint, images open in Photoshop (if installed), CAD files open in AutoCAD, and so forth.</string>
+            <key>display_name</key>
+            <string>Box Edit</string>
+            <key>category</key>
+            <string>Social</string>
+            <key>developer</key>
+            <string>Box</string>
+            <key>minimum_os_version</key>
+            <string>10.7</string>
+            <key>name</key>
+            <string>%NAME%</string>
+      		<key>postinstall_script</key>
+      		<string>#!/bin/bash
 # This script will create the LaunchAgent and script needed
 # to make this application somewhat enterprise ready - Joshua D. Miller
 # josh@psu.edu - July 22, 2015 - The Pennsylvania State University
@@ -103,10 +101,9 @@ else
   /bin/echo "LaunchAgent exists.  Creation not needed."
 fi
 
-exit 0
-      </string>
-      <key>preuninstall_script</key>
-      <string>#!/bin/bash
+exit 0</string>
+      		<key>preuninstall_script</key>
+      		<string>#!/bin/bash
 # Kill Box Edit Processes
 if /bin/ps -ax | /usr/bin/grep \"Box Edit\" | /usr/bin/grep -v grep | /usr/bin/grep -v bash
 then
@@ -114,10 +111,9 @@ then
   /usr/bin/killall "Box Local Com Server"
 else
   /bin/echo "Processes not running.  Continuing..."
-fi
-      </string>
-      <key>postuninstall_script</key>
-      <string>#!/bin/bash
+fi</string>
+      		<key>postuninstall_script</key>
+      		<string>#!/bin/bash
 # This script will remove all the pieces of Box Edit that were
 # installed - Joshua D. Miller - josh@psu.edu - July 22, 2015
 # The Pennsylvania State University
@@ -154,10 +150,9 @@ then
   /bin/rm -rf "/Library/Application Support/Box"
 else
   /bin/echo "Directory not empty.  Continuing..."
-fi
-      </string>
-      <key>preinstall_script</key>
-      <string>#!/bin/bash
+fi</string>
+      		<key>preinstall_script</key>
+      		<string>#!/bin/bash
 # This preinstall script will basically do what the Box
 # Edit Installer Application does and remove the remnants
 # of version 1.0+ - Joshua D. Miller - josh@psu.edu
@@ -186,99 +181,99 @@ then
   /usr/bin/killall "Box Local Com Server"
 else
   /bin/echo "Box Edit is not running.  Proceeding with Install..."
-fi
-      </string>
-			<key>unattended_install</key>
-			<true/>
-			<key>unattended_uninstall</key>
-			<true/>
-		</dict>
-	</dict>
-  <key>MinimumVersion</key>
-  <string>0.2.9</string>
-	<key>ParentRecipe</key>
-	<string>com.github.hansen-m.download.boxedit</string>
-  <key>Process</key>
-  <array>
-      <dict>
+fi</string>
+            <key>unattended_install</key>
+            <true/>
+            <key>unattended_uninstall</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>ParentRecipe</key>
+    <string>com.github.hansen-m.download.boxedit</string>
+    <key>Process</key>
+    <array>
+        <dict>
           <key>Processor</key>
           <string>Versioner</string>
           <key>Arguments</key>
           <dict>
               <key>input_plist_path</key>
-              <string>%pathname%/Install Box Tools.app/Contents/Resources/Box Edit.app/Contents/Info.plist</string>
+              <string>%pathname%/Install Box Tools.app/Contents/Info.plist</string>
               <key>plist_version_key</key>
               <string>CFBundleVersion</string>
           </dict>
-      </dict>
-      <dict>
-        <key>Processor</key>
-        <string>MunkiPkginfoMerger</string>
-        <key>Arguments</key>
-        <dict>
-          <key>additional_pkginfo</key>
-          <dict>
-              <key>installs</key>
-              <array>
-                  <dict>
-                      <key>CFBundleIdentifier</key>
-                      <string>box.com.Box-Edit</string>
-                      <key>CFBundleName</key>
-                      <string>Box Edit</string>
-                      <key>CFBundleVersion</key>
-                      <string>%version%</string>
-                      <key>CFBundleShortVersionString</key>
-                      <string>%version%</string>
-                      <key>minosversion</key>
-                      <string>10.8</string>
-                      <key>path</key>
-                      <string>/Library/Application Support/Box/Box Edit/Box Edit.app</string>
-                      <key>type</key>
-                      <string>application</string>
-                      <key>version_comparison_key</key>
-                      <string>CFBundleVersion</string>
-                  </dict>
-                  <dict>
-                      <key>CFBundleIdentifier</key>
-                      <string>com.box.Box-Local-Com-Server</string>
-                      <key>CFBundleName</key>
-                      <string>Box Local Com Server</string>
-                      <key>CFBundleVersion</key>
-                      <string>%version%</string>
-                      <key>CFBundleShortVersionString</key>
-                      <string>%version%</string>
-                      <key>minosversion</key>
-                      <string>10.8</string>
-                      <key>path</key>
-                      <string>/Library/Application Support/Box/Box Edit/Box Local Com Server.app</string>
-                      <key>type</key>
-                      <string>application</string>
-                      <key>version_comparison_key</key>
-                      <string>CFBundleVersion</string>
-                  </dict>
-                  <dict>
-                    <key>CFBundleIdentifier</key>
-                    <string>com.box.Box-Device-Trust</string>
-                    <key>CFBundleName</key>
-                    <string>Box Device Trust</string>
-                    <key>CFBundleShortVersionString</key>
-                    <string>1.0</string>
-                    <key>CFBundleVersion</key>
-                    <string>1</string>
-                    <key>minosversion</key>
-                    <string>10.8</string>
-                    <key>path</key>
-                    <string>/Library/Application Support/Box/Box Edit/Box Device Trust.app</string>
-                    <key>type</key>
-                    <string>application</string>
-                    <key>version_comparison_key</key>
-                    <string>CFBundleShortVersionString</string>
-                  </dict>
-              </array>
-          </dict>
         </dict>
-      </dict>
-      <dict>
+        <dict>
+            <key>Processor</key>
+            <string>PkgRootCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkgroot</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/Library/Application Support/Box</string>
+                <key>pkgdirs</key>
+                <dict>
+                    <key>Box Edit</key>
+                    <string>0775</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Copier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>destination_path</key>
+                <string>%pkgroot%/Box Edit/Box Device Trust.app</string>
+                <key>source_path</key>
+                <string>%pathname%/Install Box Tools.app/Contents/Resources/Box Device Trust.app</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Copier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>destination_path</key>
+                <string>%pkgroot%/Box Edit/Box Edit.app</string>
+                <key>source_path</key>
+                <string>%pathname%/Install Box Tools.app/Contents/Resources/Box Edit.app</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Copier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>destination_path</key>
+                <string>%pkgroot%/Box Edit/Box Local Com Server.app</string>
+                <key>source_path</key>
+                <string>%pathname%/Install Box Tools.app/Contents/Resources/Box Local Com Server.app</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiInstallsItemsCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>faux_root</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <key>version_comparison_key</key>
+                <string>CFBundleShortVersionString</string>
+                <key>installs_item_paths</key>
+                <array>
+                    <string>/Library/Application Support/Box/Box Edit/Box Device Trust.app</string>
+                    <string>/Library/Application Support/Box/Box Edit/Box Edit.app</string>
+                    <string>/Library/Application Support/Box/Box Edit/Box Local Com Server.app</string>
+                </array>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiPkginfoMerger</string>
+        </dict>
+        <dict>
           <key>Processor</key>
           <string>MunkiPkginfoMerger</string>
           <key>Arguments</key>
@@ -287,18 +282,18 @@ fi
               <dict>
                   <key>items_to_copy</key>
                   <array>
-                  	<dict>
-                  		<key>destination_path</key>
-                  		<string>/Library/Application Support/Box/Box Edit</string>
-                  		<key>source_item</key>
-                  		<string>Install Box Tools.app/Contents/Resources/Box Edit.app</string>
-                  	</dict>
-                  	<dict>
-                  		<key>destination_path</key>
-                  		<string>/Library/Application Support/Box/Box Edit</string>
-                  		<key>source_item</key>
-                  		<string>Install Box Tools.app/Contents/Resources/Box Local Com Server.app</string>
-                  	</dict>
+                    <dict>
+                        <key>destination_path</key>
+                        <string>/Library/Application Support/Box/Box Edit</string>
+                        <key>source_item</key>
+                        <string>Install Box Tools.app/Contents/Resources/Box Edit.app</string>
+                    </dict>
+                    <dict>
+                        <key>destination_path</key>
+                        <string>/Library/Application Support/Box/Box Edit</string>
+                        <key>source_item</key>
+                        <string>Install Box Tools.app/Contents/Resources/Box Local Com Server.app</string>
+                    </dict>
                       <dict>
                         <key>destination_path</key>
                         <string>/Library/Application Support/Box/Box Edit</string>
@@ -308,23 +303,34 @@ fi
                   </array>
               </dict>
           </dict>
-      </dict>
-      <dict>
-        <key>Processor</key>
-        <string>MunkiImporter</string>
-        <key>Arguments</key>
-        <dict>
-          <key>pkg_path</key>
-          <string>%pathname%</string>
-          <key>repo_subdirectory</key>
-          <string>%MUNKI_REPO_SUBDIR%</string>
-          <key>additional_makepkginfo_options</key>
-          <array>
-              <string>--item=Install Box Tools.app/Contents/Resources/Box Edit.app</string>
-              <string>--destinationpath=/Library/Application Support/Box/Box Edit.app</string>
-          </array>
         </dict>
-      </dict>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+            <key>Arguments</key>
+            <dict>
+              <key>pkg_path</key>
+              <string>%pathname%</string>
+              <key>repo_subdirectory</key>
+              <string>%MUNKI_REPO_SUBDIR%</string>
+              <key>additional_makepkginfo_options</key>
+              <array>
+                  <string>--item=Install Box Tools.app/Contents/Resources/Box Edit.app</string>
+                  <string>--destinationpath=/Library/Application Support/Box/Box Edit.app</string>
+              </array>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>PathDeleter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>path_list</key>
+                <array>
+                    <string>%RECIPE_CACHE_DIR%/%NAME%/</string>
+                </array>
+            </dict>
+        </dict>
   </array>
 </dict>
 </plist>
