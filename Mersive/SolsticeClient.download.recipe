@@ -12,6 +12,8 @@
 		<string>Solstice Client</string>
 		<key>SEARCH_URL</key>
 		<string>https://www.mersive.com/download</string>
+		<key>USER_AGENT</key>
+		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.214 Safari/537.36</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
@@ -22,11 +24,11 @@
             <string>URLTextSearcher</string>
             <key>Arguments</key>
             <dict>
-				<key>curl_opts</key>
-				<array>
-					<string>--location</string>
-					<string>%SEARCH_URL%</string>
-				</array>
+				<key>request_headers</key>
+				<dict>
+						<key>user-agent</key>
+						<string>%USER_AGENT%</string>
+				</dict>
                 <key>url</key>
                 <string>%SEARCH_URL%</string>
                 <key>re_pattern</key>
