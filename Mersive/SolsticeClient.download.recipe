@@ -22,6 +22,10 @@
             <string>URLTextSearcher</string>
             <key>Arguments</key>
             <dict>
+				<key>curl_opts</key>
+				<array>
+					<string>L</string>
+				</array>
                 <key>url</key>
                 <string>%SEARCH_URL%</string>
                 <key>re_pattern</key>
