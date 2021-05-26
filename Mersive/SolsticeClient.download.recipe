@@ -24,7 +24,7 @@
             <dict>
 				<key>curl_opts</key>
 				<array>
-					<string>-L</string>
+					<string>--location</string>
 				</array>
                 <key>url</key>
                 <string>%SEARCH_URL%</string>
