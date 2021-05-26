@@ -23,7 +23,7 @@
 			<key>github_repo</key>
 			<string>audacity/audacity</string>
 			<key>asset_regex</key>
-			<string>dmg</string>
+			<string>audacity-macos-[\d]\.[\d]\.[\d]\.dmg</string>
 		</dict>
 	</dict>
 	<dict>
