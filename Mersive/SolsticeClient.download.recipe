@@ -25,6 +25,7 @@
 				<key>curl_opts</key>
 				<array>
 					<string>--location</string>
+					<string>%SEARCH_URL%</string>
 				</array>
                 <key>url</key>
                 <string>%SEARCH_URL%</string>
