@@ -37,7 +37,7 @@
 # The Pennsylvania State University
 # Last Updated - May 21, 2021
 
-/usr/sbin/installer -pkg "/Applications/Mersive Solstice.app/Contents/Resources/DesktopSpeaker.pkg" -target /
+/usr/sbin/installer -pkg "/Applications/Mersive Solstice.app/Contents/Resources/Solstice.pkg" -target /
             </string>
 	   </dict>
     </dict>
