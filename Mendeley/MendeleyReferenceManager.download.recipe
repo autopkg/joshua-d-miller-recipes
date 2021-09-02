@@ -13,7 +13,7 @@
 		<key>SEARCH_URL</key>
 		<string>https://www.mendeley.com/download-reference-manager</string>
     <key>DOWNLOAD_PART_URL</key>
-    <string>https:\/\/static\.mendeley\.com\/bin\/desktop\/mendeley-reference-manager-</string>
+    <string>https:\/\/static\.mendeley\.com\/bin\/desktop\/mendeley-reference-manager</string>
     <key>USER_AGENT</key>
     <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36 Edg/86.0.622.68</string>
 	</dict>
@@ -43,7 +43,7 @@
         	<key>Arguments</key>
         	<dict>
         	   <key>url</key>
-        	   <string>%DOWNLOAD_URL%%Version%</string>
+        	   <string>%DOWNLOAD_PART_URL%-%Version%</string>
         	   <key>filename</key>
         	   <string>%NAME%.dmg</string>
         	</dict>
