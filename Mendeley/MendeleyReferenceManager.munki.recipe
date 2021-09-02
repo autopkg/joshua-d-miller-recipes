@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of Mendeley Reference Manager and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.mendeleyreferencemanager</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/mendeleyreferencemanager</string>
+        <key>NAME</key>
+        <string>Mendeley Reference Manager</string>
+    	<key>pkginfo</key>
+    	<dict>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
+        <key>category</key>
+        <string>Reference</string>
+        <key>developer</key>
+        <string>Elsevier</string>
+        <key>display_name</key>
+        <string>%NAME%</string>
+    		<key>description</key>
+    		<string>Mendeley Reference Manager simplifies your workflow, so you can focus on achieving your goals.</string>
+    		<key>name</key>
+    		<string>%NAME%</string>
+        <key>display_name</key>
+        <string>%NAME%</string>
+        <key>unattended_install</key>
+        <true/>
+    	</dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.3.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.joshua-d-miller.download.mendeleyreferencemanager</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>

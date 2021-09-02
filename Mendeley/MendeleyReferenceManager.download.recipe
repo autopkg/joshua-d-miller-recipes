@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest verison of Mendeley Reference Manager</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.download.mendeleyreferencemanager</string>
+    <key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Mendeley Reference Manager</string>
+		<key>SEARCH_URL</key>
+		<string>https://www.mendeley.com/download-reference-manager</string>
+    <key>USER_AGENT</key>
+    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36 Edg/86.0.622.68</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>Process</key>
+	<array>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%SEARCH_URL%</string>
+                <key>request_headers</key>
+                <dict>
+                        <key>user-agent</key>
+                        <string>%USER_AGENT%</string>
+                </dict>
+                <key>re_pattern</key>
+                <string>https:\/\/static\.mendeley\.com\/bin\/desktop\/mendeley-reference-manager-[\d]\.\d{2}\.[\d]\.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+        	<key>Processor</key>
+        	<string>URLDownloader</string>
+        	<key>Arguments</key>
+        	<dict>
+        	   <key>url</key>
+        	   <string>%url%</string>
+        	   <key>filename</key>
+        	   <string>%NAME%.dmg</string>
+        	</dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%/%NAME%.app</string>
+                <key>requirement</key>
+                <array>
+                    <string>identifier "com.elsevier.mendeley" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "45K89Y5X9B"</string>
+                </array>
+            </dict>
+        </dict>
+	</array>
+</dict>
+</plist>
