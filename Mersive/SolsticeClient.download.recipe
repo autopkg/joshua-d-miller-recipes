@@ -10,8 +10,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Solstice Client</string>
-		<key>SEARCH_URL</key>
-		<string>https://www.mersive.com/download</string>
 		<key>USER_AGENT</key>
 		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.214 Safari/537.36</string>
 	</dict>
@@ -21,27 +19,11 @@
 	<array>
         <dict>
             <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-				<key>request_headers</key>
-				<dict>
-						<key>user-agent</key>
-						<string>%USER_AGENT%</string>
-				</dict>
-                <key>url</key>
-                <string>%SEARCH_URL%</string>
-                <key>re_pattern</key>
-                <string>(?P&lt;url&gt;https:\/\/www\.mersive\.com\/downloads\/SolsticeClient-[\d.]+[a-z]?\.dmg)</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
             <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%url%</string>
+                <string>https://www.mersive.com/files/41693/</string>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
             </dict>
