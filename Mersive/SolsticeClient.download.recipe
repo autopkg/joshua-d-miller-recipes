@@ -12,6 +12,7 @@
 		<string>Solstice Client</string>
 		<key>USER_AGENT</key>
     <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36 Edg/86.0.622.68</string>
+	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
 	<key>Process</key>
