@@ -21,11 +21,11 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>href="\/\/(dl\.silhcdn\.com\/\S*)">Mac \(64-bit\)</string>
+				<string>href="\/\/(dl\.silhcdn\.com\/\S*)"></string>
 				<key>result_output_var_name</key>
 				<string>match</string>
 				<key>url</key>
-				<string>https://www.silhouetteamerica.com/software</string>
+				<string>https://www.silhouetteamerica.com/software/ss/download</string>
 			</dict>
 		</dict>
         <dict>
