@@ -11,8 +11,7 @@
 		<key>NAME</key>
 		<string>Solstice Client</string>
 		<key>USER_AGENT</key>
-		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.214 Safari/537.36</string>
-	</dict>
+    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36 Edg/86.0.622.68</string>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
 	<key>Process</key>
@@ -26,6 +25,11 @@
 						<string>href="https:\/\/(www\.mersive\.com\/files\/\S*)"></string>
 						<key>result_output_var_name</key>
 						<string>match</string>
+						<key>request_headers</key>
+						<dict>
+										<key>user-agent</key>
+										<string>%USER_AGENT%</string>
+						</dict>
 						<key>url</key>
 						<string>https://www.mersive.com/download/</string>
 					</dict>
