@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.nstrauss.pkg.DropboxCapture</string>
+	<string>com.github.joshua-d-miller.pkg.DropboxCapture</string>
 	<key>Process</key>
 	<array>
 		<dict>

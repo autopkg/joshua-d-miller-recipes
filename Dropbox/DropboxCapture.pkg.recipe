@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Dropbox Capture and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.joshua-d-miller.pkg.DropboxCapture/string>
+	<string>com.github.joshua-d-miller.pkg.DropboxCapture</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
