@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest verison of Dropbox Capture/string>
+	<string>Downloads the latest verison of Dropbox Capture</string>
 	<key>Identifier</key>
 	<string>com.github.joshua-d-miller.download.DropboxCapture</string>
 	<key>Input</key>
