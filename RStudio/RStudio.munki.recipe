@@ -18,12 +18,12 @@
     		<array>
     			<string>testing</string>
     		</array>
-            <key>category</key>
-            <string>Mathematics</string>
-            <key>developer</key>
-            <string>RStudio</string>
-            <key>display_name</key>
-            <string>RStudio</string>
+        <key>category</key>
+        <string>Mathematics</string>
+        <key>developer</key>
+        <string>RStudio</string>
+        <key>display_name</key>
+        <string>RStudio</string>
     		<key>description</key>
     		<string>RStudio is the premier integrated development environment for R. It is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux) or over the web with RStudio Server.</string>
     		<key>name</key>
@@ -39,7 +39,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.hansen-m.download.RStudio</string>
+    <string>com.github.joshua-d-miller.download.RStudio</string>
     <key>Process</key>
     <array>
         <dict>
