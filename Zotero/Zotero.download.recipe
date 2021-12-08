@@ -21,14 +21,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://www.zotero.org/download/</string>
+				<string>https://www.zotero.org/support/changelog</string>
 				<key>re_pattern</key>
-				<string>version=(?P&lt;version&gt;\d\.\d\.\d{2}\.\d)</string>
-				<key>request_headers</key>
-				<dict>
-								<key>user-agent</key>
-								<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.94 Safari/537.36 Vivaldi/2.6.1566.40</string>
-				</dict>
+				<string>\AChanges in (?P&lt;version&gt;\d\.\d\.\d{2}\.\d)</string>
 			</dict>
 		</dict>
 		<dict>
