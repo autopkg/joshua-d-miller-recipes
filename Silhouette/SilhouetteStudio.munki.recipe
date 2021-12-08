@@ -48,7 +48,7 @@
     <key>MinimumVersion</key>
     <string>2.0.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.download.silhouettestudio</string>
+    <string>com.github.ahousseini-recipes.download.SilhouetteStudio</string>
     <key>Process</key>
     <array>
         <dict>

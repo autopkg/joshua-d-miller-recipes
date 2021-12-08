@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://www.stencyl.com/download/</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http:\/\/www\.stencyl\.com\/download\/get\/.*\/mac.dmg)</string>
+                <string>(?P&lt;url&gt;https:\/\/www\.stencyl\.com\/download\/get\/.*\/mac\.dmg)</string>
             </dict>
         </dict>
 		<dict>

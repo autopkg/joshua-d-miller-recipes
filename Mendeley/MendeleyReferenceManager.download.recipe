@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Mendeley Reference Manager</string>
 		<key>SEARCH_URL</key>
-		<string>https://www.mendeley.com/download-reference-manager</string>
+		<string>https://www.mendeley.com/download-reference-manager/macOS</string>
     <key>DOWNLOAD_PART_URL</key>
     <string>https://static.mendeley.com/bin/desktop/mendeley-reference-manager</string>
     <key>USER_AGENT</key>
