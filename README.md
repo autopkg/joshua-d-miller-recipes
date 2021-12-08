@@ -7,14 +7,12 @@ The following recipe(s) require @ahousseini's recipes: https://github.com/autopk
  - Silhouette Studio
 
 The following recipe(s) require @hansen_m's recipes: https://github.com/autopkg/hansen-m-recipes/
- - Adobe Digital Editions,
- - Box Sync,
- - Exceed onDemand Client,
+ - Adobe Digital Editions
+ - Box Sync
+ - Exceed onDemand Client
  - Doceri Desktop,
  - Google Voice and Video
  - Mendeley Desktop
- - RStudio
- - Stellarium
  - TN3270X
 
 The following recipe(s) require @nstrauss' recipes: https://github.com/autopkg/nstrauss-recipes/
