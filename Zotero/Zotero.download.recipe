@@ -23,7 +23,7 @@
 				<key>url</key>
 				<string>https://www.zotero.org/download/</string>
 				<key>re_pattern</key>
-				<string>version=(?P&lt;version&gt;.*?)&quot;&gt;</string>
+				<string>version=(?P&lt;version&gt;\d\.\d\.\d{2}\.\d)</string>
 			</dict>
 		</dict>
 		<dict>
