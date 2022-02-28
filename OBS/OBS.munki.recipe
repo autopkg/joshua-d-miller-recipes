@@ -34,7 +34,7 @@
 			<string>#!/bin/sh
 # copy virtual camera plug-in to its needed location to avoid an admin
 # credentials prompt when starting the virtual camera for the first time
-/bin/cp -R /Applications/OBS.app/Contents/Resources/data/obs-mac-virtualcam.plugin /Library/CoreMediaIO/Plug-Ins/DAL/
+/bin/cp -R /Applications/OBS.app/Contents/Resources/data/obs-plugins/mac-virtualcam/obs-mac-virtualcam.plugin /Library/CoreMediaIO/Plug-Ins/DAL/
 			</string>
 			<key>postuninstall_script</key>
 			<string>#!/bin/sh
