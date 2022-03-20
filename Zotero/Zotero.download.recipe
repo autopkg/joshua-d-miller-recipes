@@ -23,7 +23,7 @@
 				<key>url</key>
 				<string>https://www.zotero.org/support/changelog</string>
 				<key>re_pattern</key>
-				<string>Changes in (?P&lt;version&gt;\d\.\d\.\d{2}\.\d)</string>
+				<string>Changes in (?P&lt;version&gt;\d\.[0-9\.]+)</string>
 			</dict>
 		</dict>
 		<dict>
