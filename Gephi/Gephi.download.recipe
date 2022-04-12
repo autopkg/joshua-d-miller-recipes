@@ -24,7 +24,7 @@
 				<dict>
 					<key>asset_regex</key>
 					<!--Change regex to match linux.tar.gz or windows.exe-->
-					<string>(gephi-[0-9\.]+-macos.dmg)</string>
+					<string>(gephi-[0-9\.]+-macos-x64.dmg)</string>
 					<key>github_repo</key>
 					<string>gephi/gephi</string>
 				</dict>
