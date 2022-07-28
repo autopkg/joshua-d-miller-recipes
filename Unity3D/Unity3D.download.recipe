@@ -6,9 +6,15 @@
 	<dict>
 		<key>NAME</key>
 		<string>Unity 3D</string>
+        <key>ARCH</key>
+        <string></string>
 	</dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Unity 3D Editor.</string>
+	<string>Downloads the latest version of Unity 3D Editor for Macs. 
+
+Possible values for "ARCH":
+- Leave blank for "Intel" (Default)
+- "Arm64" for Apple Silicon</string>
 	<key>Identifier</key>
 	<string>com.github.joshua-d-miller.autopkg.download.Unity3D</string>
 	<key>MinimumVersion</key>
@@ -27,7 +33,7 @@
                 <string>-L</string>
             </array>
             <key>re_pattern</key>
-            <string>(?P&lt;url&gt;https:\/\/[a-z0-9]+\.unity3d\.com\/.*\/MacEditorInstaller\/Unity\.pkg)</string>
+            <string>(?P&lt;url&gt;https:\/\/[a-z0-9]+\.unity3d\.com\/.*\/MacEditorInstaller%ARCH%\/Unity\.pkg)</string>
         </dict>
     </dict>
 	<dict>
