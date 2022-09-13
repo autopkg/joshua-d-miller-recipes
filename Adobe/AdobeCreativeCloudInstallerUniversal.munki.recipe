@@ -12,7 +12,7 @@
         <string>Adobe Creative Cloud</string>
         <key>VENDOR</key>
         <string>Adobe</string>
-        <key>NAMEWITHOUTSPACES</string>
+        <key>NAMEWITHOUTSPACES</key>
         <string>CreativeCloudInstaller</string>
         <key>MUNKI_CATEGORY</key>
         <string>Creative Cloud</string>
