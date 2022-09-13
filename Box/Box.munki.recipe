@@ -39,7 +39,7 @@
         </dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.4.0</string>
     <key>ParentRecipe</key>
     <string>com.github.joshua-d-miller.download.Box</string>
     <key>Process</key>
@@ -53,7 +53,7 @@
                 </array>
             </dict>
             <key>Processor</key>
-            <string>MunkiPkginfoReceiptsEditor</string>
+            <string>com.github.keeleysam.recipes.GoogleTalkPlugin/MunkiPkginfoReceiptsEditor</string>
         </dict>
         <dict>
             <key>Arguments</key>
