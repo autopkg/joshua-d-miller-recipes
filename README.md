@@ -26,3 +26,6 @@ The following recipe(s) require @rtrouton's recipes: https://github.com/autopkg/
 
 The following recipe(s) require @rustymyers' recipes: https://github.com/autopkg/rustymyers-recipes/
  - QnA
+
+ The follwing recipe(s) require @keelysam's recipes https://github.com/autopkg/keelysam-recipes/
+  - Box

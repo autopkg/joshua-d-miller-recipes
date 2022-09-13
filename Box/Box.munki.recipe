@@ -47,6 +47,17 @@
         <dict>
             <key>Arguments</key>
             <dict>
+                <key>pkg_ids_set_optional_true</key>
+                <array>
+                    <string>com.box.desktop.installer.osxfuse</string>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>com.github.keeleysam.recipes.GoogleTalkPlugin/MunkiPkginfoReceiptsEditor</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
                 <key>pkg_path</key>
                 <string>%pathname%</string>
                 <key>repo_subdirectory</key>
