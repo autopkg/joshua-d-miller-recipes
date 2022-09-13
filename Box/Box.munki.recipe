@@ -58,6 +58,15 @@
         <dict>
             <key>Arguments</key>
             <dict>
+               <key>predicate</key>
+               <string>%STOPPROCESSINGIF_PREDICATE%</string>
+            </dict>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
                 <key>pkg_ids_set_optional_true</key>
                 <array>
                     <string>com.box.desktop.installer.osxfuse</string>
