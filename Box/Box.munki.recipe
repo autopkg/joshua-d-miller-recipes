@@ -59,7 +59,7 @@
             <key>Arguments</key>
             <dict>
                <key>predicate</key>
-               <string>%STOPPROCESSINGIF_PREDICATE%</string>
+               <string>munki_repo_changed == FALSE</string>
             </dict>
             <key>Processor</key>
             <string>StopProcessingIf</string>
