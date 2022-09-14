@@ -55,7 +55,7 @@
 			<dict>
 				<key>source</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/GSP_*.app</string>
-				<key>destination</key>
+				<key>target</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%/Sketchpad BETA %betaversion%.app</string>
 			</dict>
 		</dict>
