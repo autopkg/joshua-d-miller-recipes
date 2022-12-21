@@ -2,10 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>Description</key>
+    <string>Downloads the latest version of Box Edit and imports it into Munki.
+
+Set the DERIVE_MIN_OS variable to a non-empty string to set the minimum_os_version via MunkiInstallsItemsCreator. This requires a minimum AutoPkg version of 2.7 please update if you're not already running it.</string>
     <key>Identifier</key>
     <string>com.github.joshua-d-miller.autopkg.munki.boxedit</string>
     <key>Input</key>
     <dict>
+        <key>DERIVE_MIN_OS</key>
+        <string>YES</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/box</string>
         <key>NAME</key>
@@ -24,12 +30,10 @@
             <string>Social</string>
             <key>developer</key>
             <string>Box</string>
-            <key>minimum_os_version</key>
-            <string>10.7</string>
             <key>name</key>
             <string>%NAME%</string>
-      		<key>postinstall_script</key>
-      		<string>#!/bin/bash
+            <key>postinstall_script</key>
+            <string>#!/bin/bash
 # This script will create the LaunchAgent and script needed
 # to make this application somewhat enterprise ready - Joshua D. Miller
 # josh@psu.edu - July 22, 2015 - The Pennsylvania State University
@@ -102,8 +106,8 @@ else
 fi
 
 exit 0</string>
-      		<key>preuninstall_script</key>
-      		<string>#!/bin/bash
+            <key>preuninstall_script</key>
+            <string>#!/bin/bash
 # Kill Box Edit Processes
 if /bin/ps -ax | /usr/bin/grep \"Box Edit\" | /usr/bin/grep -v grep | /usr/bin/grep -v bash
 then
@@ -112,8 +116,8 @@ then
 else
   /bin/echo "Processes not running.  Continuing..."
 fi</string>
-      		<key>postuninstall_script</key>
-      		<string>#!/bin/bash
+            <key>postuninstall_script</key>
+            <string>#!/bin/bash
 # This script will remove all the pieces of Box Edit that were
 # installed - Joshua D. Miller - josh@psu.edu - July 22, 2015
 # The Pennsylvania State University
@@ -151,8 +155,8 @@ then
 else
   /bin/echo "Directory not empty.  Continuing..."
 fi</string>
-      		<key>preinstall_script</key>
-      		<string>#!/bin/bash
+            <key>preinstall_script</key>
+            <string>#!/bin/bash
 # This preinstall script will basically do what the Box
 # Edit Installer Application does and remove the remnants
 # of version 1.0+ - Joshua D. Miller - josh@psu.edu
@@ -267,6 +271,8 @@ fi</string>
                     <string>/Library/Application Support/Box/Box Edit/Box Edit.app</string>
                     <string>/Library/Application Support/Box/Box Edit/Box Local Com Server.app</string>
                 </array>
+                <key>derive_minimum_os_version</key>
+                <string>%DERIVE_MIN_OS%</string>
             </dict>
         </dict>
         <dict>
