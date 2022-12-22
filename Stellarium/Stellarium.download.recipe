@@ -6,11 +6,9 @@
 	<dict>
 		<key>NAME</key>
 		<string>Stellarium</string>
-		<key>ARCHITECTURE</key>
-		<string>x86_64</string>
 	</dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Stellarium. You may choose between x64 and arm64 as architecture; this recipes defaults to x64.</string>
+	<string>Downloads the latest version of Stellarium, which is now Universal.</string>
 	<key>Identifier</key>
 	<string>com.github.joshua-d-miller.autopkg.download.Stellarium</string>
 	<key>MinimumVersion</key>
@@ -25,7 +23,7 @@
 			<key>github_repo</key>
 			<string>Stellarium/Stellarium</string>
             		<key>asset_regex</key>
-            		<string>.*%ARCHITECTURE%.zip</string>
+            		<string>.*\.zip</string>
 		</dict>
 	</dict>
 	<dict>
