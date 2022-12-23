@@ -3,11 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of Jabra Direct and imports it into Munki.</string>
+    <string>Download the latest version of Jabra Direct and imports it into Munki.
+
+Set the DERIVE_MIN_OS variable to a non-empty string to set the minimum_os_version via MunkiInstallsItemsCreator. This requires a minimum AutoPkg version of 2.7 please update if you're not already running it.</string>
     <key>Identifier</key>
     <string>com.github.joshua-d-miller.autopkg.munki.jabradirect</string>
     <key>Input</key>
     <dict>
+    	<key>DERIVE_MIN_OS</key>
+        <string>YES</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/jabradirect</string>
         <key>NAME</key>
@@ -33,7 +37,7 @@
     	</dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.3.0</string>
+    <string>2.7</string>
     <key>ParentRecipe</key>
     <string>com.github.joshua-d-miller.download.jabradirect</string>
     <key>Process</key>
@@ -105,6 +109,8 @@
                 <array>
                     <string>/Applications/Jabra Direct.app</string>
                 </array>
+                <key>derive_minimum_os_version</key>
+                <string>%DERIVE_MIN_OS%</string>
             </dict>
             <key>Processor</key>
             <string>MunkiInstallsItemsCreator</string>
