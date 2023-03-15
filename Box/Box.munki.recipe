@@ -39,7 +39,7 @@
         </dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.4.0</string>
+    <string>2.7</string>
     <key>ParentRecipe</key>
     <string>com.github.joshua-d-miller.download.Box</string>
     <key>Process</key>
