@@ -23,7 +23,9 @@
 				<key>url</key>
 				<string>https://tug.org/mactex/</string>
 				<key>re_pattern</key>
-				<string>The current distribution is MacTeX-(?P&lt;version&gt;.*)</string>
+				<string>The MacTeX-([0-9]+) Distribution</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
 			</dict>
 		</dict>
 		<dict>
