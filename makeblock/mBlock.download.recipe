@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest verison of mBlock</string>
+	<string>Downloads the latest version of mBlock</string>
 	<key>Identifier</key>
 	<string>com.github.joshua-d-miller.download.mblock</string>
 	<key>MinimumVersion</key>
