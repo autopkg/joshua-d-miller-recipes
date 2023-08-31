@@ -8,6 +8,8 @@
         <string>Unity 3D</string>
         <key>ARCH</key>
         <string></string>
+        <key>RELEASE_YEAR</key>
+        <string>2023</string>
     </dict>
     <key>Description</key>
     <string>Downloads the latest version of Unity 3D Editor for Macs.
@@ -27,13 +29,13 @@ Possible values for "ARCH":
         <key>Arguments</key>
         <dict>
             <key>url</key>
-            <string>https://unity.com/releases/editor/latest</string>
+            <string>https://unity.com/releases/editor/archive</string>
             <key>curl_opts</key>
             <array>
                 <string>-L</string>
             </array>
             <key>re_pattern</key>
-            <string>href=\"(https://download\.unity3d\.com/download_unity/[A-Za-z0-9]+/MacEditorInstaller%ARCH%/Unity-[0-9]*\.[0-9]+\.[A-Za-z0-9]+\.pkg)\"</string>
+            <string>href=\"unityhub://%RELEASE_YEAR%\.[0-9]+\.[0-9]+f[0-9]+/([A-Za-z0-9]+)\"</string>
         </dict>
     </dict>
     <dict>
@@ -42,7 +44,7 @@ Possible values for "ARCH":
         <key>Arguments</key>
         <dict>
             <key>url</key>
-            <string>%match%</string>
+            <string>https://download.unity3d.com/download_unity/%match%/MacEditorInstaller%ARCH%/Unity.pkg</string>
             <key>filename</key>
             <string>%NAME%.pkg</string>
         </dict>
