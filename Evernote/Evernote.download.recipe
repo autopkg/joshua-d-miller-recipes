@@ -32,7 +32,7 @@
                         <string>%USER_AGENT%</string>
                 </dict>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;https:\/\/cdn[\d]\.evernote\.com\/boron\/mac\/builds\/Evernote-[\d.]+-.*\.dmg)</string>
+                <string>(npath: (?P&lt;url&gt;https:\/\/cdn[\d]\.evernote\.com\/boron\/mac\/builds\/Evernote-[\d.]+-.*)\.zip)</string>
             </dict>
         </dict>
         <dict>
@@ -41,7 +41,7 @@
         	<key>Arguments</key>
         	<dict>
         	   <key>url</key>
-        	   <string>%url%</string>
+        	   <string>%url%.dmg</string>
         	   <key>filename</key>
         	   <string>%NAME%.dmg</string>
         	</dict>
