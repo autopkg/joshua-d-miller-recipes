@@ -23,7 +23,7 @@
 			<key>github_repo</key>
 			<string>Stellarium/Stellarium</string>
             		<key>asset_regex</key>
-            		<string>.*\.zip</string>
+            		<string>.*macOS\.zip</string>
 		</dict>
 	</dict>
 	<dict>

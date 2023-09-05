@@ -23,7 +23,7 @@
 				<key>url</key>
 				<string>https://tug.org/mactex/</string>
 				<key>re_pattern</key>
-				<string>The current distribution is MacTeX-(?P&lt;version&gt;.*)</string>
+				<string>The MacTeX-(?P&lt;version&gt;.*) Distribution</string>
 			</dict>
 		</dict>
 		<dict>
