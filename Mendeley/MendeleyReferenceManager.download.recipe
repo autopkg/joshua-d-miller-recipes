@@ -34,7 +34,7 @@
                         <string>%USER_AGENT%</string>
                 </dict>
                 <key>re_pattern</key>
-                <string>(?P&lt;Version&gt;\d\.\d{2}\.\d\.dmg)</string>
+                <string>(?P&lt;Version&gt;\d\.\d{1,3}\.\d\.dmg)</string>
             </dict>
         </dict>
         <dict>
