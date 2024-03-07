@@ -56,7 +56,7 @@ Possible values for "ARCH":
         <dict>
             <key>expected_authority_names</key>
             <array>
-                <string>Developer ID Installer: Unity Technologies ApS (BVPN9UFA9B)</string>
+                <string>Developer ID Installer: Unity Technologies SF (9QW8UQUTAA)</string>
                 <string>Developer ID Certification Authority</string>
                 <string>Apple Root CA</string>
             </array>
