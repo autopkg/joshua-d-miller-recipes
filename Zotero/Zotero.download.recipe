@@ -21,9 +21,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://www.zotero.org/support/changelog</string>
+				<string>https://www.zotero.org/download/</string>
 				<key>re_pattern</key>
-				<string>Changes in ([0-9]+(\.[0-9]+)+) \([a-zA-Z]+ [0-9]+, [0-9]+\)</string>
+				<string>\"mac\":\"(.*?)\",</string>
 			</dict>
 		</dict>
 		<dict>
