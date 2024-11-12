@@ -29,13 +29,11 @@ Possible values for "ARCH":
         <key>Arguments</key>
         <dict>
             <key>url</key>
-            <string>https://unity.com/releases/editor/archive</string>
-            <key>curl_opts</key>
-            <array>
-                <string>-L</string>
-            </array>
+            <string>https://services.api.unity.com/unity/editor/release/v1/releases?version=%RELEASE_YEAR%</string>
+            <key>result_output_var_name</key>
+            <string>DOWNLOAD_URL</string>
             <key>re_pattern</key>
-            <string>href=\"unityhub://%RELEASE_YEAR%\.[0-9]+\.[0-9]+f[0-9]+/([A-Za-z0-9]+)\"</string>
+            <string>(https://download\.unity3d\.com/download_unity/[A-Za-z0-9]+/MacEditorInstaller%ARCH%/Unity-([0-9]+(\.[0-9]+)+)f[0-9]+\.pkg)</string>
         </dict>
     </dict>
     <dict>
@@ -44,7 +42,7 @@ Possible values for "ARCH":
         <key>Arguments</key>
         <dict>
             <key>url</key>
-            <string>https://download.unity3d.com/download_unity/%match%/MacEditorInstaller%ARCH%/Unity.pkg</string>
+            <string>%DOWNLOAD_URL%</string>
             <key>filename</key>
             <string>%NAME%.pkg</string>
         </dict>
