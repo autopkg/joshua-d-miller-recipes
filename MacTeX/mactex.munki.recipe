@@ -16,6 +16,8 @@ Set the DERIVE_MIN_OS variable to a non-empty string to set the minimum_os_versi
         <string>apps/mactex</string>
         <key>NAME</key>
         <string>MacTeX</string>
+        <key>INSTALLS_ARRAY_APP</key>
+        <string>LaTeXiT</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -103,7 +105,7 @@ Set the DERIVE_MIN_OS variable to a non-empty string to set the minimum_os_versi
                 <string>%RECIPE_CACHE_DIR%/application_payload</string>
                 <key>installs_item_paths</key>
                 <array>
-                    <string>/Applications/TeX/LaTeXiT.app</string>
+                    <string>/Applications/TeX/%INSTALLS_ARRAY_APP%.app</string>
                 </array>
                 <key>derive_minimum_os_version</key>
                 <string>%DERIVE_MIN_OS%</string>
