@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest verison of mBlock</string>
+	<string>Downloads the latest version of mBlock</string>
 	<key>Identifier</key>
 	<string>com.github.joshua-d-miller.download.mblock</string>
 	<key>MinimumVersion</key>
@@ -12,29 +12,16 @@
 	<dict>
 		<key>NAME</key>
 		<string>mBlock</string>
-		<key>SEARCH_URL</key>
-		<string>https://mblock.makeblock.com/en-us/download/</string>
 	</dict>
 	<key>Process</key>
 	<array>
-		<dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%SEARCH_URL%</string>
-                <key>re_pattern</key>
-                <string>(?P&lt;url&gt;https:\/\/dl\.makeblock\.com\/mblock[\d]\/darwin\/V[\d].+\.pkg)</string>
-            </dict>
-        </dict>
         <dict>
         	<key>Processor</key>
         	<string>URLDownloader</string>
         	<key>Arguments</key>
         	<dict>
         	   <key>url</key>
-        	   <string>%url%</string>
+        	   <string>https://s.mblock.cc/download/pc-mac</string>
         	   <key>filename</key>
         	   <string>%NAME%.pkg</string>
         	</dict>

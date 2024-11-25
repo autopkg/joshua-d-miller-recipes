@@ -3,13 +3,29 @@ autopkg-recipes
 
 My recipes for autopkg https://github.com/autopkg
 
+The following recipe(s) require @ahousseini's recipes: https://github.com/autopkg/ahousseini-recipes/
+ - Silhouette Studio
 
-Please keep in mind the recipes Adobe Digital Editions, Box Sync, Exceed onDemand Client, Doceri Desktop, Google Voice and Video, Mendeley, RStudio, Stellarium, and TN3270X are just munki recipes for the download recipes created by @hansen_m.  These recipes MUST have his repo also in order to function.  His recipe repo can be found at https://github.com/autopkg/hansen-m-recipes/
+The following recipe(s) require @hansen_m's recipes: https://github.com/autopkg/hansen-m-recipes/
+ - Adobe Digital Editions
+ - Box Sync
+ - Exceed onDemand Client
+ - Doceri Desktop,
+ - Google Voice and Video
+ - Mendeley Desktop
+ - TN3270X
 
-The OBS recipe requires the download recipe created by @nstrauss. his repo can be found at https://github.com/autopkg/nstrauss-recipes/
+The following recipe(s) require @nstrauss' recipes: https://github.com/autopkg/nstrauss-recipes/
+ - OBS
 
-The QnA recipe requires the download recipe created by @rustymyers.  His repo can be found at https://github.com/autopkg/rustymyers-recipes/
+The following recipe(s) require @novaksam's recipes: https://github.com/autopkg/novaksam-recipes/
+ - Adobe Acrobat DC
 
-The Box Edit recipe should work fine in Munki.  Still I would recommend submitting a ticket for your organization to Box to let them know about their "enterprise" product.
+The following recipe(s) require @rtrouton's recipes: https://github.com/autopkg/rtrouton-recipes/
+ - Adobe Creative Cloud Installer Universal
 
-The new Adobe Acrobat DC Update recipe will require novaksam's recipe repo which you can get here https://github.com/autopkg/novaksam-recipes/.
+The following recipe(s) require @rustymyers' recipes: https://github.com/autopkg/rustymyers-recipes/
+ - QnA
+
+ The follwing recipe(s) require @keelysam's recipes https://github.com/autopkg/keeleysam-recipes/
+  - Box

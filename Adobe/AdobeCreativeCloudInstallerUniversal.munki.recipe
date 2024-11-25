@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Download the latest version of the Adobe Creative Cloud Universal Installer and imports it into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.joshua-d-miller.autopkg.munki.AdobeCreativeCloudInstallerUniversal</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Adobe Creative Cloud</string>
+        <key>VENDOR</key>
+        <string>Adobe</string>
+        <key>NAMEWITHOUTSPACES</key>
+        <string>CreativeCloudInstaller</string>
+        <key>MUNKI_CATEGORY</key>
+        <string>Creative Cloud</string>
+        <key>MUNKI_DEVELOPER</key>
+        <string>Adobe Systems Inc.</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/adobe</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>developer</key>
+            <string>%MUNKI_DEVELOPER%</string>
+            <key>category</key>
+            <string>%MUNKI_CATEGORY%</string>
+            <key>description</key>
+            <string>Adobe Creative Cloud gives you the world's best creative apps and services so you can make anything you can imagine, whereever you're inspired. </string>
+            <key>display_name</key>
+            <string>%NAME%</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>2.0.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.rtrouton.pkg.AdobeCreativeCloudInstallerUniversal</string>
+    <key>Process</key>
+    <array>
+      <dict>
+          <key>Processor</key>
+          <string>MunkiImporter</string>
+          <key>Arguments</key>
+          <dict>
+              <key>pkg_path</key>
+              <string>%RECIPE_CACHE_DIR%/%VENDOR%%NAMEWITHOUTSPACES%-Universal-%version%.pkg</string>
+              <key>repo_subdirectory</key>
+              <string>%MUNKI_REPO_SUBDIR%</string>
+          </dict>
+      </dict>
+    </array>
+</dict>
+</plist>

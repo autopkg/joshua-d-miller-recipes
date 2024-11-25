@@ -25,7 +25,7 @@
                 <key>url</key>
                 <string>%SEARCH_URL%</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;downloads\/GSP_\d{4,}\.zip)</string>
+                <string>(?P&lt;url&gt;downloads\/GSP_(?P&lt;betaversion&gt;\d{4,})\.zip)</string>
             </dict>
         </dict>
         <dict>
@@ -48,6 +48,17 @@
         		<true/>
         	</dict>
         </dict>
+		<dict>
+			<key>Processor</key>
+			<string>FileMover</string>
+			<key>Arguments</key>
+			<dict>
+				<key>source</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/GSP_%betaversion%.app</string>
+				<key>target</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Sketchpad BETA %betaversion%.app</string>
+			</dict>
+		</dict>
 		<dict>
             <key>Processor</key>
             <string>CodeSignatureVerifier</string>

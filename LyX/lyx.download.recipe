@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>https://www.lyx.org/Download</string>
                 <key>re_pattern</key>
-				<string>bin\/(?P&lt;versiondir&gt;.*?)\/(?P&lt;file&gt;LyX-.*?\+qt.*?-x86_64-cocoa\.dmg)</string>
+				<string>bin\/(?P&lt;versiondir&gt;.*?)\/(?P&lt;file&gt;LyX-.*?\+qt.*?-x86_64-arm64-cocoa\.dmg)</string>
             </dict>
         </dict>
         <dict>
@@ -45,7 +45,7 @@
                 <key>input_path</key>
                 <string>%pathname%/LyX.app</string>
                 <key>requirement</key>
-                <string>identifier "org.lyx.lyx" and certificate leaf = H"08a2c27dfa7e46463bc0dad278e5797b4aea3556"</string>
+                <string>identifier "org.lyx.lyx" and certificate leaf = H"bc48ff7941c33f70838298a129f92745a39e654b"</string>
             </dict>
         </dict>
 		<dict>

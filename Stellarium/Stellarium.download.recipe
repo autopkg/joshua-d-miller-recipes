@@ -8,7 +8,7 @@
 		<string>Stellarium</string>
 	</dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Stellarium.</string>
+	<string>Downloads the latest version of Stellarium, which is now Universal.</string>
 	<key>Identifier</key>
 	<string>com.github.joshua-d-miller.autopkg.download.Stellarium</string>
 	<key>MinimumVersion</key>
@@ -22,8 +22,8 @@
 		<dict>
 			<key>github_repo</key>
 			<string>Stellarium/Stellarium</string>
-            <key>asset_regex</key>
-            <string>.*\.zip</string>
+            		<key>asset_regex</key>
+            		<string>.*macOS\.zip</string>
 		</dict>
 	</dict>
 	<dict>
