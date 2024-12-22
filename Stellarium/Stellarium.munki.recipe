@@ -35,9 +35,20 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.autopkg.download.Stellarium</string>
+    <string>com.github.ahousseini-recipes.download.Stellarium</string>
     <key>Process</key>
     <array>
+        <dict>
+            <key>Processor</key>
+            <string>DmgCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>dmg_root</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <key>dmg_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+            </dict>
+        </dict>
         <dict>
             <key>Arguments</key>
             <dict>
