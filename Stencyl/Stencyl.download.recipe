@@ -15,29 +15,24 @@
 	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>http://www.stencyl.com/download/</string>
-                <key>re_pattern</key>
-                <string>(?P&lt;url&gt;https:\/\/www\.stencyl\.com\/download\/get\/.*\/mac\.dmg)</string>
-            </dict>
-        </dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>https://community.stencyl.com/index.php/topic,5530.0.html</string>
+				<key>re_pattern</key>
+				<string>(https:\/\/www\.stencyl\.com\/download\/get\/.*\/mac\.dmg)</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>%url%</string>
-                <key>request_headers</key>
-                <dict>
-                        <key>user-agent</key>
-                        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.94 Safari/537.36 Vivaldi/2.6.1566.40</string>
-                </dict>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
