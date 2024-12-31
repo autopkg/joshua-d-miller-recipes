@@ -7,7 +7,7 @@
 	<key>Identifier</key>
 	<string>com.github.joshua-d-miller.download.qgis</string>
 	<key>MinimumVersion</key>
-	<string>0.3.0</string>
+	<string>1.1</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -15,6 +15,15 @@
 	</dict>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>Consider switching to the QGIS download or pkg recipes in the mlbz521-recipes repo or the QGIS munki recipe in the robperc-recipes repo. This recipe is deprecated and will be removed in the future.</string>
+			</dict>
+		</dict>
         <dict>
         	<key>Processor</key>
         	<string>URLDownloader</string>
@@ -26,6 +35,10 @@
         	   <string>%NAME%.dmg</string>
         	</dict>
         </dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
         <dict>
             <key>Processor</key>
             <string>CodeSignatureVerifier</string>
@@ -37,10 +50,6 @@
                 <string>identifier "org.qgis.qgis3" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "4F7N4UDA22"</string>
             </dict>
         </dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
 	</array>
 </dict>
 </plist>
