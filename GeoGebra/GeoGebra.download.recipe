@@ -17,48 +17,46 @@
 	<string>0.3.0</string>
 	<key>Process</key>
 	<array>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%DOWNLOAD_URL%</string>
-                <key>request_headers</key>
-                <dict>
-                        <key>user-agent</key>
-                        <string>%USER_AGENT%</string>
-                </dict>
-                <key>filename</key>
-                <string>%NAME%.zip</string>
-            </dict>
-        </dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+				<key>request_headers</key>
+				<dict>
+						<key>user-agent</key>
+						<string>%USER_AGENT%</string>
+				</dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
 		<dict>
-        	<key>Processor</key>
-        	<string>Unarchiver</string>
-        	<key>Arguments</key>
-        	<dict>
-        		<key>purge_destination</key>
-        		<true/>
-        	</dict>
-        </dict>
-        <dict>
-        	<key>Processor</key>
-        	<string>DmgCreator</string>
-        	<key>Arguments</key>
-        	<dict>
-        		<key>dmg_root</key>
-        		<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-        		<key>dmg_path</key>
-        		<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-                <key>dmg_megabytes</key>
-                <string>500</string>
-        	</dict>
-        </dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+			<key>Arguments</key>
+			<dict>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/GeoGebra Classic 6.app</string>
+				<key>requirements</key>
+				<string>identifier "org.geogebra6.mac" and anchor apple generic and certificate leaf[subject.CN] = "Apple Distribution: Internationales GeoGebra Institut, \"IGI\" (T9W862P4D2)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>
