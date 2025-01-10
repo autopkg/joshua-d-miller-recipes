@@ -12,9 +12,18 @@
 	<key>Identifier</key>
 	<string>com.github.joshua-d-miller.autopkg.download.audacity</string>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
+	<dict>
+		<key>Processor</key>
+		<string>DeprecationWarning</string>
+		<key>Arguments</key>
+		<dict>
+			<key>warning_message</key>
+			<string>Consider switching to the Audacity recipes in the dataJAR-recipes repo. This recipe is deprecated and will be removed in the future.</string>
+		</dict>
+	</dict>
 	<dict>
 		<key>Processor</key>
 		<string>GitHubReleasesInfoProvider</string>
