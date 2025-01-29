@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Download the latest version of QGIS and imports it into Munki.</string>
+    <string>Download the latest version of QGIS and imports it into Munki.
+
+Supports either the latest release or Long Term (support) Release.  Override the key "RELEASE_TYPE" to specify which you need:
+Latest Release = "pr"
+Long Term (support) Release = "ltr"</string>
     <key>Identifier</key>
     <string>com.github.joshua-d-miller.autopkg.munki.qgis</string>
     <key>Input</key>
@@ -16,6 +20,8 @@
         <string>Mathematics</string>
         <key>MUNKI_DEVELOPER</key>
         <string>QGIS.ORG</string>
+        <key>RELEASE_TYPE</key>
+        <string>pr</string>
     	<key>pkginfo</key>
     	<dict>
     		<key>catalogs</key>
@@ -41,7 +47,7 @@
     <key>MinimumVersion</key>
     <string>0.3.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.joshua-d-miller.download.qgis</string>
+    <string>com.github.mlbz521.download.QGIS</string>
     <key>Process</key>
     <array>
         <dict>
