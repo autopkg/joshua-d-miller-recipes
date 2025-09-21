@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>http://mirror.ctan.org/systems/mac/mactex/MacTeX.pkg</string>
+				<string>https://mirror.ctan.org/systems/mac/mactex/MacTeX.pkg</string>
 				<key>filename</key>
 				<string>%NAME%.pkg</string>
 			</dict>
