@@ -46,6 +46,10 @@
         	   <string>%NAME%.dmg</string>
         	</dict>
         </dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
         <dict>
             <key>Processor</key>
             <string>Copier</string>
@@ -57,10 +61,6 @@
                 <string>%RECIPE_CACHE_DIR%/%NAME%-Installer.dmg</string>
             </dict>
         </dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
         <dict>
             <key>Processor</key>
             <string>Copier</string>
@@ -72,10 +72,6 @@
                 <string>%RECIPE_CACHE_DIR%/%NAME%.pkg</string>
             </dict>
         </dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
         <dict>
             <key>Processor</key>
             <string>CodeSignatureVerifier</string>

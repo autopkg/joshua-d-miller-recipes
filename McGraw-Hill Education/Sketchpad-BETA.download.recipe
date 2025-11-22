@@ -41,6 +41,10 @@
 		</dict>
 		<dict>
 			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
 			<string>Unarchiver</string>
 			<key>Arguments</key>
 			<dict>
@@ -82,10 +86,6 @@
 				<key>dmg_megabytes</key>
 				<string>500</string>
 			</dict>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
 		</dict>
 	</array>
 </dict>

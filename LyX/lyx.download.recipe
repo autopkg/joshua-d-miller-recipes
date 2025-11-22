@@ -38,6 +38,10 @@
         	</dict>
         </dict>
 		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
             <key>Processor</key>
             <string>CodeSignatureVerifier</string>
             <key>Arguments</key>
@@ -48,10 +52,6 @@
                 <string>identifier "org.lyx.lyx" and certificate leaf = H"bc48ff7941c33f70838298a129f92745a39e654b"</string>
             </dict>
         </dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
 	</array>
 </dict>
 </plist>

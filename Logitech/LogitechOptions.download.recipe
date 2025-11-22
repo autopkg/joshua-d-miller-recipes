@@ -7,25 +7,29 @@
     <key>Identifier</key>
     <string>com.github.joshua-d-miller.download.logitechoptions</string>
     <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>LogiMgr</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.9</string>
+    <key>Process</key>
+    <array>
         <dict>
-            <key>NAME</key>
-            <string>LogiMgr</string>
-        </dict>
-        <key>MinimumVersion</key>
-        <string>0.2.9</string>
-        <key>Process</key>
-        <array>
+            <key>Arguments</key>
             <dict>
-                <key>Arguments</key>
-                <dict>
-                    <key>filename</key>
-                    <string>%NAME%.zip</string>
-                    <key>url</key>
-                    <string>https://download01.logi.com/web/ftp/pub/techsupport/options/options_installer.zip</string>
-                </dict>
-                <key>Processor</key>
-                <string>URLDownloader</string>
+                <key>filename</key>
+                <string>%NAME%.zip</string>
+                <key>url</key>
+                <string>https://download01.logi.com/web/ftp/pub/techsupport/options/options_installer.zip</string>
             </dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
         <dict>
             <key>Processor</key>
             <string>Unarchiver</string>
@@ -56,10 +60,6 @@
                 <key>requirement</key>
                 <string>identifier "com.logitech.manager.installer" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = QED4VVPZWA</string>
             </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
         </dict>
         </array>
 </dict>
