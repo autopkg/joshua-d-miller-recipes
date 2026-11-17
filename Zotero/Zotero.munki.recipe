@@ -37,15 +37,16 @@
             <string>#!/bin/bash
 
 # Install script Microsoft Word 2016 Plugin for Zotero
-# Check if Word 2016 is installed
-if [ -e /Applications/Microsoft\ Word.app ]; then
+# Get logged in user
+loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
+echo "Logged in user is $loggedInUser"
+# Check if Word 2016 or newer has been launched and startup dir has been created
+startupDir="/Users/$loggedInUser/Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word"
+if [ -d "$startupDir" ]; then
     echo "Word 2016 detected. Installing Zotero Word template."
-    # Get logged in user
-    loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
-    echo "Logged in user is $loggedInUser"
     # Copy Zotero.dotm to Word 2016 Startup directory
-    /bin/mkdir -p "/Users/$loggedInUser/Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word/"
-    /bin/cp /Applications/Zotero.app/Contents/Resources/integration/word-for-mac/Zotero.dotm "/Users/$loggedInUser/Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word/"
+    /bin/cp /Applications/Zotero.app/Contents/Resources/integration/word-for-mac/Zotero.dotm "$startupDir/"
+    /usr/sbin/chown "$loggedInUser" "$startupDir/Zotero.dotm"
 else
     echo "Word 2016 not found. Skipping installation of Zotero Word template."
 fi
@@ -62,9 +63,10 @@ exit 0
 loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
 echo "Logged in user is $loggedInUser"
 echo "Checking for existence of Zotero.dotm"
-if [ -e "/Users/$loggedInUser/Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word/Zotero.dotm" ]; then
+startupDir="/Users/$loggedInUser/Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word"
+if [ -e "$startupDir/Zotero.dotm" ]; then
     echo "Zotero.dotm found. Attempting removal."
-    /bin/rm "/Users/$loggedInUser/Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word/Zotero.dotm"
+    /bin/rm "$startupDir/Zotero.dotm"
 else
     echo "Zotero.dotm not found. Skipping attempted removal."
 fi
