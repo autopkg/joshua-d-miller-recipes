@@ -35,46 +35,43 @@
     		<string>%NAME%</string>
             <key>postinstall_script</key>
             <string>#!/bin/bash
-            # Mircosoft Word 2011 Plugin for Zotero
-            # Last Updated April 10, 2014 - Joshua D. Miller
-            # Set Permissions to allow the Zotero Word Plugin to Install
-            [ ! -e /Applications/Microsoft\ Office\ 2011/ ] || chmod o+w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
-            
-            # Install script Microsoft Word 2016 Plugin for Zotero
-            # Check if Word 2016 is installed
-            if [ -e /Applications/Microsoft\ Word.app ]; then
-            echo "Word 2016 detected. Installing Zotero Word template."
-            # Get logged in user
-            loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
-            echo "Logged in user is" $loggedInUser
-            # Copy Zotero.dotm to Word 2016 Startup directory
-            /bin/cp /Applications/Zotero.app/Contents/Resources/integration/word-for-mac/Zotero.dotm /Users/$loggedInUser/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Startup.localized/Word/
-            else echo "Word 2016 not found. Skipping installation of Zotero Word template."
-            fi
-            exit 0
+
+# Install script Microsoft Word 2016 Plugin for Zotero
+# Get logged in user
+loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
+echo "Logged in user is $loggedInUser"
+# Check if Word 2016 or newer has been launched and startup dir has been created
+startupDir="/Users/$loggedInUser/Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word"
+if [ -d "$startupDir" ]; then
+    echo "Word 2016 detected. Installing Zotero Word template."
+    # Copy Zotero.dotm to Word 2016 Startup directory
+    /bin/cp /Applications/Zotero.app/Contents/Resources/integration/word-for-mac/Zotero.dotm "$startupDir/"
+    /usr/sbin/chown "$loggedInUser" "$startupDir/Zotero.dotm"
+else
+    echo "Word 2016 not found. Skipping installation of Zotero Word template."
+fi
+
+exit 0
             </string>
             <key>display_name</key>
             <string>%NAME%</string>
             <key>postuninstall_script</key>
             <string>#!/bin/bash
-            # Uninstall Script for Word Plugin for Zotero
-            # Last Updated April 10, 2014 - Joshua D. Miller
-            # Remove the Zotero Template file
-            [ -e /Applications/Microsoft\ Office\ 2011/Office/Word/Startup/Zotero.dot ] &amp;&amp; rm /Applications/Microsoft\ Office\ 2011/Office/Startup/Word/Zotero.dot
-            # Restore Permissions on the folder /Applications/Microsoft Office 2011/Office/Startup/Word/
-            [ ! -e /Applications/Microsoft\ Office\ 2011/ ] || chmod o-w /Applications/Microsoft\ Office\ 2011/Office/Startup/Word
-			
-			# Uninstall script for Microsoft Word 2016 Plugin for Zotero
-            # Get logged in user
-            loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
-            echo "Logged in user is" $loggedInUser
-            echo "Checking for existence of Zotero.dotm"
-            if [ -e /Users/$loggedInUser/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Startup.localized/Word/Zotero.dotm ]; then
-            echo "Zotero.dotm found. Attempting removal."
-            /bin/rm /Users/$loggedInUser/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Startup.localized/Word/Zotero.dotm
-            else echo "Zotero.dotm not found. Skipping attempted removal."
-            fi
-            exit 0
+
+# Uninstall script for Microsoft Word 2016 Plugin for Zotero
+# Get logged in user
+loggedInUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
+echo "Logged in user is $loggedInUser"
+echo "Checking for existence of Zotero.dotm"
+startupDir="/Users/$loggedInUser/Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word"
+if [ -e "$startupDir/Zotero.dotm" ]; then
+    echo "Zotero.dotm found. Attempting removal."
+    /bin/rm "$startupDir/Zotero.dotm"
+else
+    echo "Zotero.dotm not found. Skipping attempted removal."
+fi
+
+exit 0
             </string>
             <key>unattended_install</key>
             <true/>
@@ -93,6 +90,11 @@
                 <string>%pathname%</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
+                <key>additional_makepkginfo_options</key>
+                <array>
+                    <string>--mode</string>
+                    <string>ug+w,o-w</string>
+                </array>
             </dict>
             <key>Processor</key>
             <string>MunkiImporter</string>
