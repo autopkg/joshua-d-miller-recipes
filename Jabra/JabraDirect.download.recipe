@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Jabra Direct</string>
 		<key>DOWNLOAD_URL</key>
-		<string>https://jabraxpressonlineprdstor.blob.core.windows.net/jdo/JabraDirectSetup.dmg</string>
+		<string>https://jabraxpressonlineprod.blob.core.windows.net/jdo/JabraDirectSetup.dmg</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.3.0</string>
